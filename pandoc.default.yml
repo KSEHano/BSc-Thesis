@@ -13,7 +13,6 @@ metadata:
   
 # Settings for the bibliography
 citeproc: true
-csl: ieee
 bibliography:
 - bibliography.json
 
