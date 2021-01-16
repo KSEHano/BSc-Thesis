@@ -1,6 +1,7 @@
 # All the valid command are documented online: https://pandoc.org/MANUAL.html#default-files
+# Just put everything you want to store in the "output" folder! :)
 
-from: gfm+smart+tex_math_dollars
+from: markdown+smart+tex_math_dollars
 to: pdf
 
 input-files:
