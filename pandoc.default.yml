@@ -1,4 +1,6 @@
-from: markdown+smart+tex_math_dollars
+# All the valid command are documented online: https://pandoc.org/MANUAL.html#default-files
+
+from: gfm+smart+tex_math_dollars
 to: pdf
 
 input-files:
