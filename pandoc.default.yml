@@ -1,0 +1,20 @@
+from: markdown+smart+tex_math_dollars
+to: pdf
+
+input-files: README.md
+output-file: output/example.pdf
+standalone: true
+
+# Specify meta data not added in the Markdown file
+metadata:
+  author:
+  - Christopher Gundler
+  
+# Settings for the bibliography
+citeproc: true
+csl: ieee
+bibliography:
+- bibliography.json
+
+# Add log files to the output
+log-file: output/log.json

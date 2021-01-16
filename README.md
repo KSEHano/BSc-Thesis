@@ -1,1 +1,2 @@
 # panwiz
+*panwiz* is a example project containing a Github action to convert between various formats using @macfarlane2006. Its primary usage is the compilation of pretty scientific papers from Markdown file. The command line arguments are specified in the [corresponding default file](pandoc.default.yml). 
