@@ -5,24 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: "Check default file"
+      - name: "Check for 'pandoc.default.yml'"
         uses: andstor/file-existence-action@v1
         with:
           files: "pandoc.default.yml"
-          allow_failure: true
-      - name: "Add default file to pandoc if it exists ..."
-        if: steps.check_files.outputs.files_exists == 'true'
-        run: echo "PANDOC_DEFAULT_FILE=--defaults=pandoc.default.yml" >> $GITHUB_ENV
-      - name: "... or ignore it."
-        if: steps.check_files.outputs.files_exists == 'false'
-        run: echo "PANDOC_DEFAULT_FILE=" >> $GITHUB_ENV
       - name: "Create output directory"
         run: mkdir output
       - name: "Run pandoc"
         uses: docker://pandoc/latex
         with:
-          args: $PANDOC_DEFAULT_FILE
-      - name: "Upload artifact"
+          args: "--defaults=pandoc.default.yml"
+      - name: "Upload artifacts"
         uses: actions/upload-artifact@master
         with:
           name: output
