@@ -29,7 +29,7 @@ jobs:
         with:
           image: cgundler/custom_pandoc_environment:latest
           run: "cd /document_root && pandoc --defaults=pandoc.default.yml"
-          options: "--volume=${{env.GITHUB_WORKSPACE}}:/document_root"
+          options: "--volume=${{github.workspace}}:/document_root"
       - name: "Upload artifacts"
         uses: actions/upload-artifact@master
         with:
