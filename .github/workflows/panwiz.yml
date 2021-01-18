@@ -11,10 +11,25 @@ jobs:
           files: "pandoc.default.yml"
       - name: "Create output directory"
         run: mkdir output
-      - name: "Run pandoc"
-        uses: docker://pandoc/latex
+      - name: "Create custom environment: Set up QEMU"
+        uses: docker/setup-qemu-action@v1
+      - name: "Create custom environment: Set up Docker Buildx"
+        uses: docker/setup-buildx-action@v1
         with:
-          args: "--defaults=pandoc.default.yml"
+          driver: docker
+      - name: "Create custom environment: Build"
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: false
+          tags: cgundler/custom_pandoc_environment
+          file: .github/workflows/custom_pandoc_environment.dockerfile
+      - name: "Convert files in custom pandoc environment"
+        uses: addnab/docker-run-action@v1
+        with:
+          image: cgundler/custom_pandoc_environment:latest
+          run: "cd /document_root && pandoc --defaults=pandoc.default.yml"
+          options: "--volume=${{env.GITHUB_WORKSPACE}}:/document_root"
       - name: "Upload artifacts"
         uses: actions/upload-artifact@master
         with:

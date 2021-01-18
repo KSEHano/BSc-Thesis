@@ -15,9 +15,13 @@ metadata:
   - Christopher Gundler
   
 # Settings for the bibliography
-citeproc: true
 bibliography:
 - bibliography.json
+
+filters:
+- type: json
+  path: pandoc-xnos
+- citeproc
 
 # Add log files to the output
 log-file: output/log.json
