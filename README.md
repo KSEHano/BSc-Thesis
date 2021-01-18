@@ -21,6 +21,14 @@ Extending the bare pandoc Docker containers, this repository builds a custom env
 
 $$\text{pandoc} + \text{filters} = \text{Even more amazing}$$ {#eq:equation_id}
 
-By default, *panwiz* installs the useful filters pandoc-fignos, pandoc-eqnos, pandoc-tablenos, and pandoc-secnos. With them, you can reference figures, equations, tables, and sections like eq. @eq:equation_id.
+By default, *panwiz* installs the useful filters:
+
+- pandoc-fignos
+- pandoc-eqnos
+- pandoc-tablenos
+- pandoc-secnos
+- pandoc-citeproc-preamble
+
+With them, you can reference figures, equations, tables, and sections like eq. @eq:equation_id or add a preamble before your bibliography.
 
 **All the best for your thesis or paper!**
