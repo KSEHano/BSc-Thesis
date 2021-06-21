@@ -5,14 +5,14 @@ from: markdown+smart+tex_math_dollars
 to: pdf
 
 input-files:
-  - README.md
+  - Thesis.md
 output-file: output/example.pdf
 standalone: true
 
 # Specify meta data not added in the Markdown file
 metadata:
   author:
-  - Christopher Gundler
+  - Kaja Hano
   citeproc-preamble: bibliography_preamble.latex
 
 # Settings for the bibliography
