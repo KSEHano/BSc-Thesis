@@ -14,6 +14,7 @@ metadata:
   author:
   - Kaja Hano
   citeproc-preamble: bibliography_preamble.latex
+  template_: eisvogel.tex
 
 # Settings for the bibliography
 bibliography:
