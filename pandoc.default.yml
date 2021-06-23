@@ -14,7 +14,7 @@ metadata:
   author:
   - Kaja Hano
   citeproc-preamble: bibliography_preamble.latex
-  #template: eisvogel.tex
+  template: eisvogel.tex
   title: Comparison of different Machine Translation Engines with BLEU
 
 # Settings for the bibliography
