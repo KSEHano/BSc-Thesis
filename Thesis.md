@@ -1,10 +1,10 @@
 Abstract
 
-##Introduction
+\section{Introduction}
 
 what I want to do
 
-Machine translation (MT) engines have been on the rise and seem to get better. In everyday lives an MT is already often used privately or by corporations to translate the fast changing content like social media feeds CITE THE BOOK. The quality of them is still questionable but they are improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done CITE BOOK AND THE EVALUATION LEATS TO BETTER TRANSLATION. IN LEADS TO BETTER TRANSLATION they showed that automatic evaluation can help improve MT. Automatic evaluation is an useful tool in the optimisation of MT engines; programmers have to have a fast feedback for a large dataset. Because if is les time consuming and less expensive, automatic evaluations are very practical but human evaluation is still the gold standard and so developers strive to come close to human judgment.
+Machine translation (MT) engines have been on the rise and seem to get better. In everyday lives an MT is already often used privately or by corporations to translate the fast changing content like social media feeds @book. The quality of them is still questionable but they are improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done  \cite{@book} CITE THE EVALUATION LEATS TO BETTER TRANSLATION. IN LEADS TO BETTER TRANSLATION they showed that automatic evaluation can help improve MT. Automatic evaluation is an useful tool in the optimisation of MT engines; programmers have to have a fast feedback for a large dataset. Because if is les time consuming and less expensive, automatic evaluations are very practical but human evaluation is still the gold standard and so developers strive to come close to human judgment.
 
 
 
@@ -28,6 +28,8 @@ DeepL
 
 Google
 
+Google Translate is a freely available online MT engine. As such it is often used in studies CITE ENGLISH CROATION AND LOOK IF I HAVE A STUDY THAT LOOKS INTO GT. 
+
 Bing
 
 
@@ -38,9 +40,11 @@ Bing
 
 motivation for using machine evaluation -> speed of evaluation
 
+problems with bleu
+
 other methods, examples Ter, Meteor, ter-p
 
-ausblick quality estimation
+how it is till used
 
 translators development
 
@@ -64,7 +68,7 @@ The translators were accessed in different ways. SDL Trados is not only a transl
 
 ###BLEU
 
-BLEU is an easy tool as it is a comparison between the new translation and a reference translation. It is not a very sophisticated tool as it only compares sentence segments of different length and returns if they are equal CITE THE BLEU PAPER. Any change of capitalisation can be the difference between a score of 0 and 1, 1 being a identical translation and 0 a translation with no similarity. Therefor, the data had to be prepared before it was scored. First I replaced every "-" with a space as that was not a significant translation difference. After that I striped all the punctuation and parentheses as BLEU does not work with these. Next I converted everything to lower case. The problem of not matching words because of weird capitalisation was higher than wrongly identifying word as matching if they had a difference between word groups. One example was "auf Seite" and "Auf Seite" there the BLEU score would be 0.5 instead of 1 simply because of the capitalisation. With the preparation done the segments could be scored.
+BLEU is an easy tool as it is a comparison between the new translation and a reference translation. It is not a very sophisticated tool as it only compares sentence segments of different length and returns if they are equal @BLEU. Any change of capitalisation can be the difference between a score of 0 and 1, 1 being a identical translation and 0 a translation with no similarity. Therefor, the data had to be prepared before it was scored. First I replaced every "-" with a space as that was not a significant translation difference. After that I striped all the punctuation and parentheses as BLEU does not work with these. Next I converted everything to lower case. The problem of not matching words because of weird capitalisation was higher than wrongly identifying word as matching if they had a difference between word groups. One example was "auf Seite" and "Auf Seite" there the BLEU score would be 0.5 instead of 1 simply because of the capitalisation. The last preparations were made because BLEU needs the words to match exactly. With the preparation done the segments could be scored.
 
 
 
