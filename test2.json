@@ -1,0 +1,205 @@
+[
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/ABRMD83F",
+		"type": "book",
+		"collection-title": "Cagliostro",
+		"genre": "python, C++, xml",
+		"title": "Cagliostro",
+		"URL": "https://github.com/Christopher22/cagliostro/releases/tag/v0.3.3.0",
+		"version": "0.3.3.0",
+		"author": [
+			{
+				"family": "Gundler",
+				"given": "Chrisopher"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					5,
+					19
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2020",
+					10,
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/MHWRKZIJ",
+		"type": "paper-conference",
+		"event": "20th Annual Conference of the European Association for Machine Translation, EAMT 2017",
+		"language": "English",
+		"source": "research.tilburguniversity.edu",
+		"title": "Empirical evaluation of NMT and PBSMT quality for large-scale translation production",
+		"URL": "https://research.tilburguniversity.edu/en/publications/empirical-evaluation-of-nmt-and-pbsmt-quality-for-large-scale-tra",
+		"author": [
+			{
+				"family": "Shterionov",
+				"given": "Dimitar"
+			},
+			{
+				"family": "Nagle",
+				"given": "Pat"
+			},
+			{
+				"family": "Casanellas",
+				"given": "Laura"
+			},
+			{
+				"family": "Superbo",
+				"given": "Riccardo"
+			},
+			{
+				"family": "O'Dowd",
+				"given": "Tony"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					5,
+					26
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2017"
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/PDAQ665X",
+		"type": "article-journal",
+		"container-title": "Machine Translation",
+		"DOI": "10.1007/s10590-018-9220-z",
+		"ISSN": "0922-6567, 1573-0573",
+		"issue": "3",
+		"journalAbbreviation": "Machine Translation",
+		"language": "en",
+		"page": "217-235",
+		"source": "DOI.org (Crossref)",
+		"title": "Human versus automatic quality evaluation of NMT and PBSMT",
+		"URL": "http://link.springer.com/10.1007/s10590-018-9220-z",
+		"volume": "32",
+		"author": [
+			{
+				"family": "Shterionov",
+				"given": "Dimitar"
+			},
+			{
+				"family": "Superbo",
+				"given": "Riccardo"
+			},
+			{
+				"family": "Nagle",
+				"given": "Pat"
+			},
+			{
+				"family": "Casanellas",
+				"given": "Laura"
+			},
+			{
+				"family": "O’Dowd",
+				"given": "Tony"
+			},
+			{
+				"family": "Way",
+				"given": "Andy"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					5,
+					26
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2018",
+					9
+				]
+			]
+		}
+	},
+	{
+		"id": "BLEU",
+		"type": "article",
+		"title": "Papineni et al. - 2001 - BLEU a method for automatic evaluation of machine.pdf",
+		"URL": "https://www.aclweb.org/anthology/P02-1040.pdf",
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					6,
+					24
+				]
+			]
+		}
+	},
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/2FD76XWZ",
+		"type": "paper-conference",
+		"container-title": "Proceedings of the 40th Annual Meeting on Association for Computational Linguistics  - ACL '02",
+		"DOI": "10.3115/1073083.1073135",
+		"event": "the 40th Annual Meeting",
+		"event-place": "Philadelphia, Pennsylvania",
+		"language": "en",
+		"page": "311",
+		"publisher": "Association for Computational Linguistics",
+		"publisher-place": "Philadelphia, Pennsylvania",
+		"source": "DOI.org (Crossref)",
+		"title": "BLEU: a method for automatic evaluation of machine translation",
+		"title-short": "BLEU",
+		"URL": "http://portal.acm.org/citation.cfm?doid=1073083.1073135",
+		"author": [
+			{
+				"family": "Papineni",
+				"given": "Kishore"
+			},
+			{
+				"family": "Roukos",
+				"given": "Salim"
+			},
+			{
+				"family": "Ward",
+				"given": "Todd"
+			},
+			{
+				"family": "Zhu",
+				"given": "Wei-Jing"
+			}
+		],
+		"accessed": {
+			"date-parts": [
+				[
+					"2021",
+					6,
+					24
+				]
+			]
+		},
+		"issued": {
+			"date-parts": [
+				[
+					"2001"
+				]
+			]
+		}
+	}
+]

@@ -19,8 +19,8 @@ metadata:
 
 # Settings for the bibliography
 bibliography:
-- bibliography.json
-- source.bib
+- test2.json
+
 
 filters:
 - type: json
@@ -28,7 +28,6 @@ filters:
 - citeproc
 - type: json
   path: pandoc-citeproc-preamble
-- type: bib
 
 # Add log files to the output
 log-file: output/log.json
