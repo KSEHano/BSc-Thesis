@@ -32,5 +32,77 @@ title = {{Translation quality assessment: from principles to practice}},
 url = {http://www.springer.com/series/15798},
 year = {2018}
 }
+@inproceedings{Re-evaluating,
+abstract = {We argue that the machine translation community is overly reliant on the Bleu machine translation evaluation metric. We show that an improved Bleu score is neither necessary nor sufficient for achieving an actual improvement in translation quality , and give two significant counterexamples to Bleu's correlation with human judgments of quality. This offers new potential for research which was previously deemed unpromising by an inability to improve upon Bleu scores.},
+annote = {Bleu as an automatic measure is not the be all end all as it allows for translation to be scored similarly when they are different in quality if a human scores them
+
+translations of similar systems?},
+author = {{Callison-Burch, Chris; OSBORNE, Miles; KOEHN}, Philipp},
+booktitle = {11th Conference of the European Chapter of the Association for Computational Linguistics},
+file = {:C\:/Users/Allgemein/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Callison-Burch, Chris OSBORNE, Miles KOEHN - 2006 - Re-evaluating the Role of BLEU in Machine Translation Research.pdf:pdf},
+issn = {0037-7732},
+keywords = {Adolescent Attitudes,Adolescent Behavior,Adolescents,Expectation,Family Influence,Peer Influence,Predictor Variables,Secondary School Students,Sexuality,Social Environment,Student Attitudes,Violence},
+mendeley-groups = {Thesis2},
+title = {{Re-evaluating the Role of BLEU in Machine Translation Research}},
+year = {2006}
+}
+@article{SentenceLength,
+abstract = {The cognitive load theory recommendations for enhancing the success of teaching are effective up to a certain boundary. The paper is dedicated to finding this boundary line in sentence length for 17-18-year-old students. The students filled in the blanks in 30 cloze tests. The cloze test results were correlated with the percentage of sentences over the boundary line. When the boundary-line was low, the coefficient of correlation increased with the rising of the line and the coefficient began to drop when the boundary line passed 140 characters. This size of the boundary line indicated the sentence length, up to which the taking of the load from the learners' mind was effective. The sentences with 130-50 characters were the most suitable for the students.},
+annote = {most counts in characters but understanding gets worst in 130-150 characters which are 15-17 words -> use 15 words as upper boundary
+
+good readers can process more but i make lower bounds for it to be easier},
+author = {Mikk, Jaan},
+doi = {10.1080/03055690701811164},
+file = {:C\:/Users/Allgemein/Bachelor/7.Semester/Thesis/paper/Mikk_2008_sentence_length.pdf:pdf},
+issn = {03055698},
+journal = {Educational Studies},
+keywords = {Cloze test,Cognitive load theory,Sentence comprehension,Textbooks,Upper secondary school},
+mendeley-groups = {Thesis2},
+number = {2},
+pages = {119--127},
+title = {{Sentence length for revealing the cognitive load reversal effect in text comprehension}},
+volume = {34},
+year = {2008}
+}
+@inproceedings{BetterTrans,
+abstract = {Many machine translation evaluation metrics have been proposed after the seminal BLEU metric, and many among them have been found to consistently outperform BLEU, demonstrated by their better correlations with human judgment. It has long been the hope that by tuning machine translation systems against these new generation metrics, advances in automatic machine translation evaluation can lead directly to advances in automatic machine translation. However, to date there has been no unambiguous report that these new metrics can improve a state-of-the-art machine translation system over its BLEU-tuned baseline. In this paper, we demonstrate that tuning Joshua, a hierarchical phrase-based statistical machine translation system, with the TESLA metrics results in significantly better human-judged translation quality than the BLEU-tuned baseline. TESLA-M in particular is simple and performs well in practice on large datasets. We release all our implementation under an open source license. It is our hope that this work will encourage the machine translation community to finally move away from BLEU as the unquestioned default and to consider the new generation metrics when tuning their systems. {\textcopyright} 2011 Association for Computational Linguistics.},
+annote = {comparison of metrics with machine translation and improvement of MT
+mainly with training a MT engine
+a lot of mre sources!
+BLEU: simple, no training, no language specific reurces, tendency to favour short translation despite penality
+TER: counts necessary edits for translation reference, simple, no language specific resources, similar to human inutuition
+TESLA-M: matches bags of n-grams but with weighs, language spezific, very good for into english
+TESLA-F: similar to tesla M, not so good out of english
+
+Tesla outperforms other two consistently
+teslas similar as well as Ter and Bleu},
+author = {Liu, Chang and Dahlmeier, Daniel and Ng, Hwee Tou},
+booktitle = {EMNLP 2011 - Conference on Empirical Methods in Natural Language Processing, Proceedings of the Conference},
+file = {:C\:/Users/Allgemein/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Liu, Dahlmeier, Ng - 2011 - Better evaluation metrics lead to better machine translation.pdf:pdf},
+isbn = {1937284115},
+mendeley-groups = {Thesis2},
+pages = {375--384},
+title = {{Better evaluation metrics lead to better machine translation}},
+year = {2011}
+}
+@article{Clarity,
+abstract = {The field of machine translation faces an under-recognized problem because of inconsistency in the reporting of scores from its dominant metric. Although people refer to "the" BLEU score, BLEU is in fact a parameterized metric whose values can vary wildly with changes to these parameters. These parameters are often not reported or are hard to find, and consequently, BLEU scores between papers cannot be directly compared. I quantify this variation, finding differences as high as 1.8 between commonly used configurations. The main culprit is different tokenization and normalization schemes applied to the reference. Pointing to the success of the parsing community, I suggest machine translation researchers settle upon the BLEU scheme used by the annual Conference on Machine Translation (WMT), which does not allow for user-supplied reference processing, and provide a new tool, SacreBLEU, to facilitate this.},
+annote = {variation in bleu scores
+comparison betweenstudies dificult
+mention not comparison between german and czech because different translation sets},
+archivePrefix = {arXiv},
+arxivId = {1804.08771},
+author = {Post, Matt},
+doi = {10.18653/v1/w18-6319},
+eprint = {1804.08771},
+file = {:C\:/Users/Allgemein/Bachelor/7.Semester/Thesis/paper/1804.08771.pdf:pdf},
+mendeley-groups = {Thesis2},
+pages = {186--191},
+title = {{A Call for Clarity in Reporting BLEU Scores}},
+year = {2018}
+}
+
+
+
 
 
