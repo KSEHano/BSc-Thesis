@@ -1,38 +1,5 @@
 [
 	{
-		"id": "http://zotero.org/users/local/ykoTgPnf/items/ABRMD83F",
-		"type": "book",
-		"collection-title": "Cagliostro",
-		"genre": "python, C++, xml",
-		"title": "Cagliostro",
-		"URL": "https://github.com/Christopher22/cagliostro/releases/tag/v0.3.3.0",
-		"version": "0.3.3.0",
-		"author": [
-			{
-				"family": "Gundler",
-				"given": "Chrisopher"
-			}
-		],
-		"accessed": {
-			"date-parts": [
-				[
-					"2021",
-					5,
-					19
-				]
-			]
-		},
-		"issued": {
-			"date-parts": [
-				[
-					"2020",
-					10,
-					9
-				]
-			]
-		}
-	},
-	{
 		"id": "http://zotero.org/users/local/ykoTgPnf/items/MHWRKZIJ",
 		"type": "paper-conference",
 		"event": "20th Annual Conference of the European Association for Machine Translation, EAMT 2017",
@@ -91,6 +58,7 @@
 		"page": "217-235",
 		"source": "DOI.org (Crossref)",
 		"title": "Human versus automatic quality evaluation of NMT and PBSMT",
+		"title-short": "hvsauto",
 		"URL": "http://link.springer.com/10.1007/s10590-018-9220-z",
 		"volume": "32",
 		"author": [
@@ -139,21 +107,6 @@
 	},
 	{
 		"id": "BLEU",
-		"type": "article",
-		"title": "Papineni et al. - 2001 - BLEU a method for automatic evaluation of machine.pdf",
-		"URL": "https://www.aclweb.org/anthology/P02-1040.pdf",
-		"accessed": {
-			"date-parts": [
-				[
-					"2021",
-					6,
-					24
-				]
-			]
-		}
-	},
-	{
-		"id": "http://zotero.org/users/local/ykoTgPnf/items/2FD76XWZ",
 		"type": "paper-conference",
 		"container-title": "Proceedings of the 40th Annual Meeting on Association for Computational Linguistics  - ACL '02",
 		"DOI": "10.3115/1073083.1073135",
@@ -201,5 +154,39 @@
 				]
 			]
 		}
+	},
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/I5WZMVY4",
+		"type": "article-journal",
+		"abstract": "We argue that the machine translation community is overly reliant on the Bleu machine translation evaluation metric. We show that an improved Bleu score is neither necessary nor sufﬁcient for achieving an actual improvement in translation quality, and give two signiﬁcant counterexamples to Bleu’s correlation with human judgments of quality. This offers new potential for research which was previously deemed unpromising by an inability to improve upon Bleu scores.",
+		"language": "en",
+		"page": "8",
+		"source": "Zotero",
+		"title": "Re-evaluating the Role of BLEU in Machine Translation Research",
+		"title-short": "Re_evaluating",
+		"author": [
+			{
+				"family": "Osborne",
+				"given": "Chris Callison-Burch Miles"
+			},
+			{
+				"family": "Koehn",
+				"given": "Philipp"
+			}
+		]
+	},
+	{
+		"id": "http://zotero.org/users/local/ykoTgPnf/items/6Q7W56BK",
+		"type": "book",
+		"publisher": "Berlin",
+		"source": "Google Scholar",
+		"title": "Translation Quality Assessment: From Principles to Practice",
+		"title-short": "book",
+		"author": [
+			{
+				"family": "Doherty",
+				"given": "Gaspari-S."
+			}
+		]
 	}
 ]
