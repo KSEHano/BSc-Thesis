@@ -19,7 +19,7 @@ metadata:
 
 # Settings for the bibliography
 bibliography:
-- test2.json
+- source.bib
 
 
 filters:
