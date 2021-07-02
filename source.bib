@@ -85,6 +85,7 @@ pages = {375--384},
 title = {{Better evaluation metrics lead to better machine translation}},
 year = {2011}
 }
+
 @article{Clarity,
 abstract = {The field of machine translation faces an under-recognized problem because of inconsistency in the reporting of scores from its dominant metric. Although people refer to "the" BLEU score, BLEU is in fact a parameterized metric whose values can vary wildly with changes to these parameters. These parameters are often not reported or are hard to find, and consequently, BLEU scores between papers cannot be directly compared. I quantify this variation, finding differences as high as 1.8 between commonly used configurations. The main culprit is different tokenization and normalization schemes applied to the reference. Pointing to the success of the parsing community, I suggest machine translation researchers settle upon the BLEU scheme used by the annual Conference on Machine Translation (WMT), which does not allow for user-supplied reference processing, and provide a new tool, SacreBLEU, to facilitate this.},
 annote = {variation in bleu scores
@@ -101,6 +102,21 @@ pages = {186--191},
 title = {{A Call for Clarity in Reporting BLEU Scores}},
 year = {2018}
 }
+
+@article{TER,
+abstract = {We examine a new, intuitive measure for evaluating machine-translation output that avoids the knowledge intensiveness of more meaning-based approaches, and the labor-intensiveness of human judgments. Translation Edit Rate (TER) measures the amount of editing that a human would have to perform to change a system output so it exactly matches a reference translation. We show that the single-reference variant of TER correlates as well with human judgments of MT quality as the four-reference variant of BLEU. We also define a human-targeted TER (or HTER) and show that it yields higher correlations with human judgments than BLEU-even when BLEU is given human-targeted references. Our results indicate that HTER correlates with human judgments better than HMETEOR and that the four-reference variants of TER and HTER correlate with human judgments as well as-or better than-a second human judgment does. {\textcopyright} 2006 The Association for Machine Translation in the Americas.},
+annote = {TER explained
+hter:edit of the mt we look at. has to be changed if new trans is significantly different},
+author = {Snover, Matthew and Dorr, Bonnie and Schwartz, Richard and Micciulla, Linnea and Makhoul, John},
+file = {:C\:/Users/Allgemein/Bachelor/7.Semester/Thesis/paper/2006.amta-papers.25.pdf:pdf},
+journal = {AMTA 2006 - Proceedings of the 7th Conference of the Association for Machine Translation of the Americas: Visions for the Future of Machine Translation},
+mendeley-groups = {Thesis2},
+number = {August},
+pages = {223--231},
+title = {{A study of translation edit rate with targeted human annotation}},
+year = {2006}
+}
+
 
 
 
