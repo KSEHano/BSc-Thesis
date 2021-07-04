@@ -16,7 +16,7 @@ In the remainder of this part I will introduce the computational metric I used f
 
 explaining how bleu works
 
-The BLEU score is one of the older scores but still often used to compare translations [@BLEU; @book; @Clarity]. It is a simple score and similar enough to human interpretation to still be of relevance. Although many better tool have been developed since the introduction of BLEU it is still widely used in the community [@book; @Clarity]  LOOK UP RASONS FOR STANDARD; CITE THE BOOK FOR STANDARD AND BETTER OTHER WORKS. 
+The BLEU score is one of the older scores but still often used to compare translations [@BLEU; @book; @Clarity]. It is a simple score and similar enough to human interpretation to still be of relevance. Although many better tool have been developed since the introduction of BLEU it is still widely used in the community [@book; @Clarity] Some of the reasons are that BLEU has a low computation time and is easy to run and can be integrated into the code for training a MT system [@METEOR]. 
 
 
 
@@ -44,9 +44,22 @@ motivation for using machine evaluation -> speed of evaluation
 
 problems with bleu
 
-other methods, examples Ter, Meteor, ter-p
+- bad single sentence scores[@METEOR]
+- no synonyms recognised
 
-how it is till used
+other methods, examples Ter, Meteor, ter-p, nist
+
+Considering the problems with BLEU, several alternative automatic evaluation methods have emerged. They have some similarities to BLEU but changes have been made to improve the correlation between the human and automatic judgment.
+
+
+
+@NIST have developed the evaluation method that resembles BLEU the most, it is called NIST. Like all the automatic evaluation methods NIST requires at least one reference translation. Further it compares the different n-grams of the reference(s) to the hypothesis and gives the whole segment score. NIST improves on BLEU by including information weights, i. e. that n-grams with a lower chance of co-occurrence are weighted more heavily than those with a high chance of co-occurrence [@NIST]. With those improvements NIST has a slightly higher correlation with human judgment in terms of adequacy but not fluency [@NIST]. NIST is very similar to BLEU but improves slightly on it in terms of correlation with human judgment.
+
+
+
+The next evaluation metric I want to introduce is METEOR. Again METEOR relies on a human made reference translation to score the MT. One of the big problems in BLEU is that there words have to be the exact same to be considered the same. METEOR works around this problem. It can score synonyms and word stems as the same words to with the help of a word net [@METEOR]. This helps to score give an more accurate score as it considers words the same that should be considered it other than BLEU that disregards the words if they do not match exactly. Another change in comparison to BLEU is that METEOR supports recall and has three tunable parameters[@METEOR]. The three parameter can be tuned to better correlate with human judgment. The first parameter controls the weights for precision and recall, the second shape of the penalty function and the third the weights of the penalty [@METEOR]. METEOR changes BLEU by considering synonyms and word stems, including recall and having three tunable parameters to get a better correlation with human judgment.
+
+how it is still used
 
 translators development
 
