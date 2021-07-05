@@ -48,12 +48,21 @@ motivation for using machine evaluation -> speed of evaluation
 
 problems with bleu
 
-- bad single sentence scores[@METEOR]
-- no synonyms cognised [@METEOR]
+BLEU is a old score and mainly used because it is fast and easy to use. It however has several flaws that are not addressed by the algorithm itself but since its publication several other systems have come forth improving on the idea. Later i will present four famous metrics. However, I will first present the problems BLEU has that are the reasons improvements are necessary to have a better correlation with human judgment.
+
+- bad single sentence scores[@METEOR] weights
+
+The first problem is that the scores for single sentences are not very accurate [@METEOR]. This is certainly a problem I had as well. The BLEU score is calculated via a geometric mean that leads to the problem that often scores are 0 if one of the n-grams are 0. This problem can be avoided by changing the weights as I have done and will explain in the third section. The problem is than that the weights can not be freely manipulate to have a good correlation with human judgment but so that the score is not alway 0 if the segment is for example to short. A more accurate score for single segments would would be useful in the fine-tuning of MT systems [@METEOR]. Automatic translation evaluation could therefor profit from a fairly accurate sentence score.
+
+- no synonyms considered [@METEOR]
+
+Another problem is that BLEU needs exact matches. It is even case sensitive, I describe below how I handled that. It does not consider synonyms and word with the same stem the same. That is a problem as adequate alternative translations in terms of synonyms are not considered the same [@METEOR]. As there are many good translation possibilities this leads to the problem that alternative good translations are not recognized CITE THIS IN ONE OF THE OTHER METRICS PAPERS. The problem could be reduced with several reference translations but even then it is possible that not all adequate synonyms and word forms are represented. A metric could profit by matching synonyms and different word forms even if that has higher computational cost and an additional resource is needed for that.
+
+- no recall [@recall], das muss ich noch lesen
 
 other methods, examples Ter, Meteor, ter-p, nist
 
-Considering the problems with BLEU, several alternative automatic evaluation methods have emerged. They have some similarities to BLEU but changes have been made to improve the correlation between the human and automatic judgment. In include here four of the most well known metrics that are alternatives to BLEU. NIST is the closest to BLEU, METEOR is also very similar. All of them calculate how similar segments are to each other by checking if the words and n-grams are the same. TER and its variants are a little different in that they calculate the editing rate between a reference and the hypothesis.
+Considering the problems with BLEU, several alternative automatic evaluation methods have emerged. They have some similarities to BLEU but changes have been made to improve the correlation between the human and automatic judgment. I include here four of the most well known metrics that are alternatives to BLEU. NIST is the closest to BLEU, METEOR is also very similar. All of them calculate how similar segments are to each other by checking if the words and n-grams are the same. TER and its variants are a little different in that they calculate the editing rate between a reference and the hypothesis.
 
 
 
