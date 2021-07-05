@@ -1,4 +1,8 @@
-Abstract
+Abstract importance of recall in Bib
+
+*kursive*
+
+**bold**
 
 \section{Introduction}
 
@@ -8,7 +12,7 @@ Machine translation (MT) systems have been on the rise and seem to get better. I
 
 
 
-One of the groups most interested in the development of MT are professional translators. They question if MT will be part of the work flow in the future. I worked with a translation company from Osnabrück that questioned how good the MTs are in specialised fields. The company often translates computer and machine manuals in many different languages. This is a specialised field with its own phrases that need to be translated in context. I decided to use two language pairs available for the comparison English-German and English-Czech. English German is a common translation pair that is often translated and and MT in this language pair could be very similar to a human translation. Czech, while still a European language with a Latin alphabet, is translated less often. My source translation for English-Czech translation was a shortened version of the same manual I used for the English-German pair. It is often the case that translations into Czech are only done on shortened versions of manuals. I do not work with the whole manual but with four chapters on the software of a printer. In my work I want to compare the translations of different MT engines. In the end I want to see how good the translations are compared to each other and to a professional human translation.  To make this judgment I used a human and an automatic evaluation. 
+One of the groups most interested in the development of MT are professional translators. They question if MT will be part of the work flow in the future. I worked with a translation company from Osnabrück that questioned how good the MTs are in specialized fields. The company often translates computer and machine manuals in many different languages. This is a specialized field with its own phrases that need to be translated in context. I decided to use two language pairs available for the comparison English-German and English-Czech. English German is a common translation pair that is often translated and and MT in this language pair could be very similar to a human translation. Czech, while still a European language with a Latin alphabet, is translated less often. My source translation for English-Czech translation was a shortened version of the same manual I used for the English-German pair. It is often the case that translations into Czech are only done on shortened versions of manuals. I do not work with the whole manual but with four chapters on the software of a printer. In my work I want to compare the translations of different MT engines. In the end I want to see how good the translations are compared to each other and to a professional human translation.  To make this judgment I used a human and an automatic evaluation. 
 
   
 
@@ -45,7 +49,7 @@ motivation for using machine evaluation -> speed of evaluation
 problems with bleu
 
 - bad single sentence scores[@METEOR]
-- no synonyms recognised
+- no synonyms cognised [@METEOR]
 
 other methods, examples Ter, Meteor, ter-p, nist
 
@@ -58,6 +62,11 @@ Considering the problems with BLEU, several alternative automatic evaluation met
 
 
 The next evaluation metric I want to introduce is METEOR. Again METEOR relies on a human made reference translation to score the MT. One of the big problems in BLEU is that there words have to be the exact same to be considered the same. METEOR works around this problem. It can score synonyms and word stems as the same words to with the help of a word net [@METEOR]. This helps to score give an more accurate score as it considers words the same that should be considered it other than BLEU that disregards the words if they do not match exactly. Another change in comparison to BLEU is that METEOR supports recall and has three tunable parameters[@METEOR]. The three parameter can be tuned to better correlate with human judgment. The first parameter controls the weights for precision and recall, the second shape of the penalty function and the third the weights of the penalty [@METEOR]. METEOR changes BLEU by considering synonyms and word stems, including recall and having three tunable parameters to get a better correlation with human judgment.
+
+
+
+Other than the the previous two the TER score does not measure the how different a translation is from a reference translation, instead it measures how many edits have to be preformed to get from a MT to the human translation [@TER]. Hence the name *translation edit rate* or TER. Other than the other metrics it counts the number of edits that have to be done to get from the translation to reference. Edits include deletions, insertions, substitutions and shifts. To reduce the processing time to find the minimal number of edits for a given segment the algorithm first calculates the shift, that reduces the number of edits the most with a greedy search algorithm and then the other edits [@TER]. This is the basic algorithm but there are two versions of it.   
+First there is the so called *human-targeted translation edit rate* or HTER. Additionally to the references of human translations there is a human targeted reference. This means that human annotator, that are fluent in the target language are given the MT and the reference and then edit the MT reference with minimal edits to be a fluent and adequate translation [@TER].  
 
 how it is still used
 
