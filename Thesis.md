@@ -8,7 +8,7 @@ Abstract importance of recall in Bib
 
 what I want to do
 
-Machine translation (MT) systems have been on the rise and seem to get better. In everyday lives an MT is already often used privately or by corporations to translate the fast changing content like social media feeds [@book]. The quality of them is still questionable but they are improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done  [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT. An automatic evaluation is very useful during the optimisation process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Another advantage is the potential for more objectivity [@book]. Other than human judgment an automatic evaluation can be more objective, this of course depends on the code. Despite the advantages of an automatic evaluation they are still lacking and a human evaluation remains the gold standard to judge a translation FIND CITATION. For that reason automatic evaluation strives to have considerable correlation with human evaluation [@BLEU; @TER] ADD OTHER PAPAERS .  Automated evaluation is an important tool for the improvement and the translation quality assessment of MT system.
+Machine translation (MT) systems have been on the rise and seem to get better. In everyday lives an MT is already often used privately or by corporations to translate the fast changing content like social media feeds [@book]. The quality of them is still questionable but they are improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done  [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Another advantage is the potential for more objectivity [@book]. Other than human judgment an automatic evaluation can be more objective, this of course depends on the code. Despite the advantages of an automatic evaluation they are still lacking and a human evaluation remains the gold standard to judge a translation FIND CITATION. For that reason automatic evaluation strives to have considerable correlation with human evaluation [@BLEU; @TER].  Automated evaluation is an important tool for the improvement and the translation quality assessment of MT system.
 
 
 
@@ -18,7 +18,7 @@ One of the groups most interested in the development of MT are professional tran
 
 In the remainder of this part I will introduce the computational metric I used for comparison. In part two I will show the current state of research. After that I will explain my experiment method, present the results, discuss them and finally I will draw a conclusion.
 
-explaining how bleu works
+\subsection{BLEU}
 
 The BLEU score is one of the older scores but still often used to compare translations [@BLEU; @book; @Clarity]. It is a simple score and similar enough to human interpretation to still be of relevance. Although many better tool have been developed since the introduction of BLEU it is still widely used in the community [@book; @Clarity] Some of the reasons are that BLEU has a low computation time and is easy to run and can be integrated into the code for training a MT system [@METEOR]. 
 
@@ -26,11 +26,13 @@ The BLEU score is one of the older scores but still often used to compare transl
 
 The BLEU score does not give an indication of an objectively good translation but a similarity measure. It works as follows, the computer is given at least one reference, a good translation done by a translator, and compares this reference to a hypothesis, a MT of the same source text [@BLEU]. Then it compares the n-grams, a segment with the number of words *n*, of the hypothesis with the references. To avoid the overuse of a word with high frequency like "the" the maximum number of a word in one reference is counted [@BLEU]. Another problem is the length of a sentence. BLEU prefers shorter sentences to avoid that problem, a "brevity penalty" is introduced if the hypothesis sentence is shorter than the closest reference in terms of length  reference sentence [@BLEU]. However, this is often not enough and short sentences still have a higher score I AM SURE I READ THAT IN A PAPER. Originally BLEU could boast a good correlation with human judgment of the translation but since the publication of the paper a host of different metrics have emerged that give a result closer to the human judgment CITE THAT COMPARISON STUDY. The easy use of BLEU gives us an orientation for the quality of a translation and can be applied with even little resources. One reference can be enough but when the scoring of a whole corpus the reference translation should be done by more than one translator to give an accurate end result, because it works with references for each sentence it is also language independent [@BLEU]. All this makes BLEU a simplistic but relatively easy tool and it is understandably still a standard.
 
-
+math for BLEU
 
 SDL Trados
 
 DeepL
+
+deepL and Microsoft translator (customized) in Schweizer post studie
 
 Google
 
@@ -46,6 +48,8 @@ Bing
 
 motivation for using machine evaluation -> speed of evaluation
 
+Automatic translation is a useful tool. The main motivations are economical in terms of time and money. Even if BLEU is still used it has several possibilities for improvement and the field is steadily expanding and improving on the possible metrics to avoid some of the problems BLEU has. In the following I will present some of the problems that BLEU has and some other metrics and how they work.
+
 problems with bleu
 
 BLEU is a old score and mainly used because it is fast and easy to use. It however has several flaws that are not addressed by the algorithm itself but since its publication several other systems have come forth improving on the idea. Later i will present four famous metrics. However, I will first present the problems BLEU has that are the reasons improvements are necessary to have a better correlation with human judgment.
@@ -56,9 +60,11 @@ The first problem is that the scores for single sentences are not very accurate 
 
 - no synonyms considered [@METEOR]
 
-Another problem is that BLEU needs exact matches. It is even case sensitive, I describe below how I handled that. It does not consider synonyms and word with the same stem the same. That is a problem as adequate alternative translations in terms of synonyms are not considered the same [@METEOR]. As there are many good translation possibilities this leads to the problem that alternative good translations are not recognized CITE THIS IN ONE OF THE OTHER METRICS PAPERS. The problem could be reduced with several reference translations but even then it is possible that not all adequate synonyms and word forms are represented. A metric could profit by matching synonyms and different word forms even if that has higher computational cost and an additional resource is needed for that.
+Another problem is that BLEU needs exact matches. It is even case sensitive, I describe below how I handled this difulcty. It does not consider synonyms and word with the same stem the same. That is a problem as adequate alternative translations in terms of synonyms are not considered the same [@METEOR]. As there are many good translation possibilities this leads to the problem that alternative good translations are not recognized CITE THIS IN ONE OF THE OTHER METRICS PAPERS. The problem could be reduced with several reference translations but even then it is possible that not all adequate synonyms and word forms are represented. @recall even suggest that stemming reference and hypothesis already improves the correlation to human judgment.  A metric could profit by matching synonyms and different word forms even if that has higher computational cost and an additional resource is needed for that.
 
-- no recall [@recall], das muss ich noch lesen
+- no recall [@recall], 
+
+Another point that is not considered in BLEU is recall. Unigram recall is the number of matches divided by the number of words in the *reference* [@recall]. The main calculation in BLEU is the so called precision which is the number of matched n-grams divided by the total number of fords in the *hypothesis* [@BLEU]. The reason for that is that recall is used on one reference. So the best match of one reference is used while BLEU can combine the matches of several references and combine those. To avoid a problem with the length of the translations BLEU include a brevity penalty, however, the results in @recall suggest that this is not enough to get results with good correlation without considering recall. Considering the study, recall seems to be a powerful tool achieve good correlation with human judgment and should be a part of a metric and heavily weighted. Recall could be a tool to improve correlation but it must be considered how to include it if one wants to pick matches from several translations at the same time and not only from the best match.
 
 other methods, examples Ter, Meteor, ter-p, nist
 
@@ -154,4 +160,8 @@ SOMETHING ABUT THE REPOTING OF BLEU SCORES
 With the changing of weights is the results are not directly comparable to other results. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code there is no one single BLEU score [@Clarity]. I can only compare the MT engines inside the study especially because they are all similar to each other. 
 
 \section{Conclusion}
+
+only one reference
+
+bleu als metric
 
