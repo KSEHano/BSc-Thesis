@@ -85,11 +85,15 @@ The first variant is the *human-targeted translation edit rate* or HTER. Additio
 The second variation of TER is TER-Plus or TERp. It works like TER with at least one reference and then calculated the optimal edits. Like METEOR it considers recall. Additionally, like METEOR, synonyms and word stems are considered in the calculation of the editing rate. Other than the basic TER algorithm it also has different costs for edits, i. e. shifts, substitutions, deletions and insertions do not have all the same cost of 1 as they have in TER [@TERp]. These parameters for cost are optimized to correlate with human judgment on a specific system with the help of a hill-climbing algorithm. The cost can be even further specified to certain word groups so that TERp can get an even higher correlation with human judgment[@TERp].    
 TER is a little bit different from the other metrics in that it calculates the edit rate and not the similarities or matches between hypothesis and reference. The variations of TER, HTER and TERp, try to improve on TER to give a more accurate editing cost. They are both more costly than TER because they rely on more resources. HTER is especially costly as it requires human labour. TER and its variants are closer to human evaluation but a little more costly than BLEU.
 
-how it is still used
 
-translators development
 
-endabsatz
+Despite the development of arguably better metrics, BLEU is still in use. For one every metric compares itself at least to BLEU to how how they improve the score. All the metrics I mentioned above prove there merit by comparing themselves to BLEU. When studying metrics BLEU is still used as a baseline. Beside the development studies that test the quality of translators often use BLEU as it does not need many resources and is language independent. @Post used BLEU to compare a customised statistical MT (SMT) system with a neural MT (NMT) system namely Microsoft translator Hub (MTH) and DeepL. They evaluated the results with BLEU and after that compared that to human evaluation. They found out that the NMT is better than the SMT but that while BLEU judges the NMT to be better it also underestimates the NMT.    
+Similarly a similar study examined the quality of Google Translate [@Legal]. They translate legal text from English to Croatian and evaluate the quality with BLEU with up to three references. Like the study above they confirm their results with a human evaluation. They come to the conclusion that BLEU correlates better with human judgment if it has more references. Human evaluation while more time consuming is still valued as more accurate and has despite the high subjectivity a good inter judge correlation.   
+Those are only two studies that use BLEU as late as 2018. BLEU is in fact used very frequently. Sadly the reporting of BLEU scores seems to be inconsistent as @Clarity criticizes. They present the problem that paper which use BLEU do not report how they may changed BLEU when they used it. This is problematic as it does not allow for a comparison between different papers. They suggest to better report any changes and use BLEU only to compare similar systems. This brings me to the conclusion that BLEU is still a very well used tool despite its difficulties. 
+
+
+
+All in all BLEU is not the best metric. Several aspects of the metric have room for improvement to get a score closer to human evaluations. There are several metrics that have a better correlation to human evaluation. I mentioned NIST, METEOR and TER as some of the well known alternatives. NIST is not much of an improvement compared to BLEU and METEOR as well as TER need more resources than BLEU. In the end BLEU is still a metric that is often used to compare to other metrics as a baseline, or to evaluate MT systems.
 
 \section{Method}
 
@@ -170,4 +174,6 @@ As can be seen above if the human translation is compared to all the machine tra
 only one reference
 
 bleu als metric
+
+bleu underestimates nmt [@Post]
 
