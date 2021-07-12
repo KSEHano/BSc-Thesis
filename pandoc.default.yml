@@ -5,8 +5,7 @@ from: markdown+smart+tex_math_dollars
 to: pdf
 
 input-files:
- # - for_editing.md
-  -Thesis.md
+  - Thesis.md
 output-file: output/example.pdf
 standalone: true
 
