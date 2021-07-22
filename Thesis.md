@@ -1,3 +1,5 @@
+
+
 Abstract importance of recall in Bib
 
 [@BLEU]
@@ -85,15 +87,11 @@ The first variant is the *human-targeted translation edit rate* or HTER. Additio
 The second variation of TER is TER-Plus or TERp. It works like TER with at least one reference and then calculated the optimal edits. Like METEOR it considers recall. Additionally, like METEOR, synonyms and word stems are considered in the calculation of the editing rate. Other than the basic TER algorithm it also has different costs for edits, i. e. shifts, substitutions, deletions and insertions do not have all the same cost of 1 as they have in TER [@TERp]. These parameters for cost are optimized to correlate with human judgment on a specific system with the help of a hill-climbing algorithm. The cost can be even further specified to certain word groups so that TERp can get an even higher correlation with human judgment[@TERp].    
 TER is a little bit different from the other metrics in that it calculates the edit rate and not the similarities or matches between hypothesis and reference. The variations of TER, HTER and TERp, try to improve on TER to give a more accurate editing cost. They are both more costly than TER because they rely on more resources. HTER is especially costly as it requires human labour. TER and its variants are closer to human evaluation but a little more costly than BLEU.
 
+how it is still used
 
+translators development
 
-Despite the development of arguably better metrics, BLEU is still in use. For one every metric compares itself at least to BLEU to how how they improve the score. All the metrics I mentioned above prove there merit by comparing themselves to BLEU. When studying metrics BLEU is still used as a baseline. Another use of BLEU is in studies that test the quality of MT systems. Here BLEU is used because it does not require many resources and is language independent. @Post used BLEU to compare a customized statistical MT (SMT) system with a neural MT (NMT) system Microsoft translator Hub (MTH) and DeepL respectively. They evaluated the results with BLEU and after that compared that to human evaluation. They found out that the NMT is better than the SMT but that while BLEU judges the NMT to be better it also underestimates the NMT.    
-Similarly another study examined the quality of Google Translate [@Legal]. They translated legal text from English to Croatian and evaluate the quality with BLEU with up to three references. Like the study above they confirm their results with a human evaluation. They come to the conclusion that BLEU correlates better with human judgment if it has more references. Human evaluation while more time consuming is still valued as more accurate and despite the high subjectivity has a good inter judge correlation.   
-Those are only two studies that use BLEU as late as 2018. BLEU is in fact used very frequently a feat considering it was introduced in 2002. Sadly the reporting of BLEU scores seems to be inconsistent as @Clarity criticizes. They present the problem that paper which use BLEU do not report how they may changed BLEU when they used it. This is problematic as it does not allow for a comparison between different papers. Depending on the papers it is unclear if a certain MT system is better than the other if it has different scores in different papers. They suggest to improve reports of any changes and use BLEU only to compare similar systems. This brings me to the conclusion that BLEU is still a very well used tool despite its difficulties. 
-
-
-
-All in all BLEU is not the best metric available. Several aspects of the metric have room for improvement to get a score closer to human evaluations. There are several metrics that have a better correlation to human evaluation. I mentioned NIST, METEOR and TER as some of the well known alternatives. NIST is not much of an improvement compared to BLEU and METEOR as well as TER need more resources than BLEU. In the end BLEU is still a metric that is often used to compare to other metrics as a baseline, or to evaluate MT systems.
+endabsatz
 
 \section{Method}
 
@@ -151,9 +149,120 @@ The BLEU scores are very similar between the different MTs. SIGNIFICANTS It is i
 
 TABLES
 
+CZ 1 only human
+
+| **Translators** | **Rank**         | **Bleu**          |
+| --------------- | ---------------- | ----------------- |
+| SDL Trados      | 1,63370422389541 | 0,449712335333516 |
+| google          | 1,43599318974249 | 0,50926070182708  |
+| Bing            | 1,69277475006239 | 0,44376020057208  |
+
+CZ 1 against all
+
+| **Translators** | **Rank**         | **Bleu**          |
+| --------------- | ---------------- | ----------------- |
+| SDL Trados      | 1,69531404491593 | 0,745588503113027 |
+| google          | 1,47921765070799 | 0,817891370803891 |
+| Bing            | 1,69823774643577 | 0,750642139855124 |
+
+CZ 1 against all with human
+
+| **Translators** | **Rank**         | **Bleu**          |
+| --------------- | ---------------- | ----------------- |
+| human           | 2,63542096990674 | 0,593380814267211 |
+| SDL Trados      | 1,87753115412015 | 0,745588503113027 |
+| google          | 1,61031260592745 | 0,817891370803891 |
+| Bing            | 1,91274132300345 | 0,750642139855124 |
+
+DE only human
+
+| **Translators** | **Rank**         | **Bleu**          |
+| --------------- | ---------------- | ----------------- |
+| SDL Trados      | 1,74689938225661 | 0,400760061864069 |
+| DeepL           | 1,57339165833355 | 0,431536966539037 |
+| google          | 1,64886147653545 | 0,41023100308645  |
+| Bing            | 2,00274320069657 | 0,359529067730006 |
+
+DE 1 against all
+
+| **Translators** | **average Rank** | **average Bleu**  |
+| --------------- | ---------------- | ----------------- |
+| SDL Trados      | 1,85965169510027 | 0,841083518276283 |
+| DeepL           | 1,87026099524277 | 0,838504221140673 |
+| google          | 1,56009287988958 | 0,875345696192164 |
+| Bing            | 2,02536650926966 | 0,776194522003301 |
+
+DE 1 against all and human
+
+| **Translators** | **average Rank** | **average Bleu**  |
+| --------------- | ---------------- | ----------------- |
+| human           | 3,78975306133316 | 0,494229823822362 |
+| SDL Trados      | 1,95685094270293 | 0,841083518276283 |
+| DeepL           | 1,94821572268013 | 0,838504221140673 |
+| google          | 1,64026658642061 | 0,875345696192164 |
+| Bing            | 2,20312420892262 | 0,776194522003301 |
+
 \subsection{Translators' study}
 
+CZ study results
+
+| **translator** | **Average Results** | **human** |
+| -------------- | ------------------- | --------- |
+| human          | 3,40628571428571    | 2,34      |
+| Bing           | 3,20242857142857    | 2,64      |
+| google         | 3,57047619047619    | 1,9       |
+| SDL Trados     | 3,22271428571429    | 2,62      |
+
+
+
+DE study results
+
+| **Translator** | **Average Result** | **Rank** |
+| -------------- | ------------------ | -------- |
+| human          | 2,936              | 2,96     |
+| Bing           | 2,531              | 3,42     |
+| google         | 3,164              | 2,6      |
+| DeepL          | 3,42               | 2,08     |
+| SDL Trados     | 2,944              | 2,98     |
+
 \subsection{Both in comparison}
+
+Bleu score of questions in comparison
+
+CZ
+
+| **translator** | **Human**        | Corpus Bleu       |
+| -------------- | ---------------- | ----------------- |
+| human          | 3,40628571428571 | 0,955253438946972 |
+| Bing           | 3,20242857142857 | 0,41646457025417  |
+| google         | 3,57047619047619 | 0,489190633842223 |
+| SDL Trados     | 3,22271428571429 | 0,402093725801529 |
+
+DE
+
+| **translator** | **human** |                   |
+| -------------- | --------- | ----------------- |
+| human          | 2,936     | 0,916940608649988 |
+| Bing           | 2,531     | 0,287020740822019 |
+| google         | 3,164     | 0,317018862657995 |
+| DeepL          | 3,42      | 0,329309852194899 |
+| SDL Trados     | 2,944     | 0,302815301273971 |
+
+Correlation
+
+CZ
+
+|           | **correlation**   | **p-value**          |
+| --------- | ----------------- | -------------------- |
+| **value** | 0,277402496140588 | 6,98476169643515E-05 |
+| **rank**  | 0,378830033197449 | 1,05908039034815E-28 |
+
+DE
+
+|           | **correlation**    | **p**                |
+| --------- | ------------------ | -------------------- |
+| **value** | 0,062664557894662  | 0,323731693758662    |
+| **rank**  | -0,120508591902158 | 1,93782850899268E-05 |
 
 \section{Discussion}
 
@@ -161,7 +270,7 @@ SOMETHING ABUT THE REPOTING OF BLEU SCORES
 
 With the changing of weights is the results are not directly comparable to other results. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code there is no one single BLEU score [@Clarity]. I can only compare the MT engines inside the study especially because they are all similar to each other. 
 
-gives more of a adaquacy score because of high weight for unigrams
+gives more of a adequacy score because of high weight for unigrams
 
 As can be seen above if the human translation is compared to all the machine translations as a reference the human translation as a worse result than the MT translations compared to the all other MTs and human translation. If seemed to be not as good of a translation as the others. This however is not the case. In the way BLEU works it compares a hypothesis translation to at minimum one reference translation. For that reason any result only shows how similar a translation is to the reference translation(s) with that in mind it is clear that the human translation is not worse but more different than the other translations. Even if compared to a different human translation the BLEU score should be below 1 CITE SOME OF THE BLEU PAPERS THE ONE WERE IT SAYS THAT EVEN HUMAN TRANSLATION HAS A DIFFERENT SCORE. This shows one of the shortcomings of BLEU it is only as good as the reference translation given.
 
@@ -174,6 +283,4 @@ As can be seen above if the human translation is compared to all the machine tra
 only one reference
 
 bleu als metric
-
-bleu underestimates nmt [@Post]
 
