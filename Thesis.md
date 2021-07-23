@@ -191,7 +191,7 @@ DE 1 against all
 | --------------- | --------- | --------- |
 | google          | **1,56**  | **0,875** |
 | SDL Trados      | 1,86      | 0,841     |
-| DeepL           | *1,87* *  | *0,839* * |
+| DeepL           | 1,87      | 0,839     |
 | Bing            | **2,025** | **0,776** |
 
 DE 1 against all and human
@@ -221,11 +221,11 @@ DE study results
 
 | **Translator** | **Result** | **Rank** |
 | -------------- | ---------- | -------- |
-| DeepL          | 3,42       | 2,08     |
-| google         | 3,164      | 2,6      |
-| human          | *2,936* *  | 2,96     |
-| SDL Trados     | *2,944* *  | 2,98     |
-| Bing           | **2,531**  | 3,42     |
+| DeepL          | 3,42       | **2,08** |
+| google         | 3,164      | **2,6**  |
+| human          | *2,936* *  | **2,96** |
+| SDL Trados     | *2,944* *  | **2,98** |
+| Bing           | **2,531**  | **3,42** |
 
 *significant different to DeepL
 
@@ -243,14 +243,6 @@ CZ
 | SDL Trados     | 3,222     | 0,402           |
 
 DE
-
-| **translator** | **human** | **Corpus Bleu** |
-| -------------- | --------- | --------------- |
-| human          | 2,936     | 0,917           |
-| Bing           | 2,531     | 0,287           |
-| google         | 3,164     | 0,317           |
-| DeepL          | 3,42      | 0,329           |
-| SDL Trados     | 2,944     | 0,303           |
 
 | **translator** | **human** | **Corpus Bleu** |
 | -------------- | --------- | --------------- |
