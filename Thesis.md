@@ -1,10 +1,6 @@
 
 
-Abstract importance of recall in Bib
-
-[@BLEU]
-
-[-@BLEU]
+Abstract
 
 \section{Introduction}
 
@@ -83,8 +79,10 @@ The next evaluation metric I want to introduce is METEOR. METEOR relies on a hum
 
 
 Other than the the previous two the TER score does not measure the how different a translation is from a reference translation, instead it measures how many edits have to be performed to change a MT into the closest human reference [@TER]. Hence the name *translation edit rate* or TER. Edits include deletions, insertions, substitutions and shifts. To reduce the processing time to find the minimal number of edits for a given segment the algorithm first calculates the shift, that reduces the number of edits the most with a greedy search algorithm and then the other edits [@TER]. This is the basic algorithm but there are two versions of it.   
-The first variant is the *human-targeted translation edit rate* or HTER. Additionally to the references of human translations there is a human targeted reference. This means that human annotator, that are fluent in the target language are given the MT and the references. Then edit the MT reference with minimal edits to be a fluent and adequate translation [@TER]. The edited MT translation is then used as another reference to calculate the score. This can be used when working on a MT system as the translation do not change that much with every change in the MT system. If they do change, the annotators can work on the segments that changed again. The most pressing problem here is that the annotators have to work on each sentence. This is time and cost consuming as they need 3 to 7 minutes per sentence [@TER]. So while HTER is an improvement on TER in terms of correlation between human and automatic evaluation it is quite work intensive and expensive.    
-The second variation of TER is TER-Plus or TERp. It works like TER with at least one reference and then calculated the optimal edits. Like METEOR it considers recall. Additionally, like METEOR, synonyms and word stems are considered in the calculation of the editing rate. Other than the basic TER algorithm it also has different costs for edits, i. e. shifts, substitutions, deletions and insertions do not have all the same cost of 1 as they have in TER [@TERp]. These parameters for cost are optimized to correlate with human judgment on a specific system with the help of a hill-climbing algorithm. The cost can be even further specified to certain word groups so that TERp can get an even higher correlation with human judgment[@TERp].    
+The first variant is the *human-targeted translation edit rate* or HTER. Additionally to the references of human translations there is a human targeted reference. This means that human annotator, that are fluent in the target language are given the MT and the references. Then edit the MT reference with minimal edits to be a fluent and adequate translation [@TER]. The edited MT translation is then used as another reference to calculate the score. This can be used when working on a MT system as the translation do not change that much with every change in the MT system. If they do change, the annotators can work on the segments that changed again. The most pressing problem here is that the annotators have to work on each sentence. This is time and cost consuming as they need 3 to 7 minutes per sentence [@TER]. So while HTER is an improvement on TER in terms of correlation between human and automatic evaluation it is quite work intensive and expensive.   
+
+The second variation of TER is TER-Plus or TERp. It works like TER with at least one reference and then calculated the optimal edits. Like METEOR it considers recall. Additionally, like METEOR, synonyms and word stems are considered in the calculation of the editing rate. Other than the basic TER algorithm it also has different costs for edits, i. e. shifts, substitutions, deletions and insertions do not have all the same cost of 1 as they have in TER [@TERp]. These parameters for cost are optimized to correlate with human judgment on a specific system with the help of a hill-climbing algorithm. The cost can be even further specified to certain word groups so that TERp can get an even higher correlation with human judgment[@TERp].   
+
 TER is a little bit different from the other metrics in that it calculates the edit rate and not the similarities or matches between hypothesis and reference. The variations of TER, HTER and TERp, try to improve on TER to give a more accurate editing cost. They are both more costly than TER because they rely on more resources. HTER is especially costly as it requires human labour. TER and its variants are closer to human evaluation but a little more costly than BLEU.
 
 how it is still used
@@ -145,68 +143,74 @@ In this section I will first present the results of the BLEU study, then the res
 
 \subsection{BLEU}
 
-The BLEU scores are very similar between the different MTs. SIGNIFICANTS It is interesting to see that in the one against all comparison with the inclusion of the human translation as hypothesis the human translation is worse than the MT the reason for that is not that it is in fact worse but different from the other translations. 
+For the BLEU scores a higher number is better while for the ranks a low number is. On a first look the numbers are all close together in the same area but there are some significant differences between the results.
+
+For the Czech translations all differences are significant as seen in Table 1 to three. In each version Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation it is interesting to see that the score for the human translation is the worst.
 
 TABLES
 
 CZ 1 only human
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **1,436** | **0,509** |
-| SDL Trados      | **1,634** | **0,45**  |
-| Bing            | **1,693** | **0,444** |
+| google          | **0,509** | **1,436** |
+| SDL Trados      | **0,45**  | **1,634** |
+| Bing            | **0,444** | **1,693** |
 
 CZ 1 against all
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **1,479** | **0,818** |
-| SDL Trados      | **1,695** | **0,746** |
-| Bing            | **1,698** | **0,751** |
+| google          | **0,818** | **1,479** |
+| SDL Trados      | **0,746** | **1,695** |
+| Bing            | **0,751** | **1,698** |
 
 CZ 1 against all with human
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **1,61**  | **0,818** |
-| SDL Trados      | **1,878** | **0,746** |
-| Bing            | **1,913** | **0,751** |
-| human           | **2,635** | **0,593** |
+| google          | **0,818** | **1,61**  |
+| SDL Trados      | **0,746** | **1,878** |
+| Bing            | **0,751** | **1,913** |
+| human           | **0,593** | **2,635** |
+
+In the translations to German it looks a little different Bing is still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two 1 against all versions it is Google that ranks the best while SDL Trados and DeepL follow. Thre is no significant difference between the other two.
 
 DE only human
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| DeepL           | 1,573     | 0,432     |
-| google          | 1,649     | 0,41      |
-| SDL Trados      | 1,747     | **0,401** |
-| Bing            | **2,003** | **0,36**  |
+| DeepL           | 0,432     | 1,573     |
+| google          | 0,41      | 1,649     |
+| SDL Trados      | **0,401** | 1,747     |
+| Bing            | **0,36**  | **2,003** |
 
 *kursive* significanter unterschied nur zu zwei plätze höher
 
 DE 1 against all
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **1,56**  | **0,875** |
-| SDL Trados      | 1,86      | 0,841     |
-| DeepL           | 1,87      | 0,839     |
-| Bing            | **2,025** | **0,776** |
+| google          | **0,875** | **1,56**  |
+| SDL Trados      | 0,841     | 1,86      |
+| DeepL           | 0,839     | 1,87      |
+| Bing            | **0,776** | **2,025** |
 
 DE 1 against all and human
 
-| **Translators** | **Rank**  | **Bleu**  |
+| **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **1,64**  | **0,875** |
-| SDL Trados      | 1,957     | 0,841     |
-| DeepL           | 1,948     | 0,839     |
-| Bing            | **2,203** | **0,776** |
-| human           | **3,79**  | **0,494** |
+| google          | **0,875** | **1,64**  |
+| SDL Trados      | 0,841     | 1,957     |
+| DeepL           | 0,839     | 1,948     |
+| Bing            | **0,776** | **2,203** |
+| human           | **0,494** | **3,79**  |
 
 \subsection{Translators' study}
 
 CZ study results
+
+The human judgments show that the participants judged Google and human translations into Czech to be the best. While Google is the best but there is no significant different to the human result. There is however a significant difference between Google and SDLTrados as well as Google and Bing. Considering the rank of the translators they are all significantly different to each other.
 
 | **Translator** | **Results** | **Rank** |
 | -------------- | ----------- | -------- |
@@ -219,6 +223,8 @@ CZ study results
 
 DE study results
 
+It looks a little different for the German study. The ranks again were significantly different to each other. DeepL was judged to be the best without a significance difference to the the second best Google. The human and SDL Trados translations have significantly lower scores than DeepL. Bing has the lowest score with a significant difference to all other translators.
+
 | **Translator** | **Result** | **Rank** |
 | -------------- | ---------- | -------- |
 | DeepL          | 3,42       | **2,08** |
@@ -229,9 +235,15 @@ DE study results
 
 *significant different to DeepL
 
+The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
+
 \subsection{Both in comparison}
 
 Bleu score of questions in comparison
+
+Table 7 and 8 show the results of the human scores as well as the BLEU scores done on the whole corpus of question in one with the human translation as reference. The BLEU score for the human translation is the highest with a lot of difference to the other translations.
+
+The Czech results show that the order of human and Google as well as Bing and SDL Trados are switched. For the translations ito Germanthe human translation jumps to the front with the highest BLEU score the order of the remaining translators stays the same.
 
 CZ
 
@@ -256,12 +268,16 @@ Correlation
 
 CZ
 
+The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low even for the vlaues.
+
 |           | **Correlation** |
 | --------- | --------------- |
 | **value** | **0,277**       |
 | **rank**  | **0,379**       |
 
 DE
+
+The correlation between the human judgment is even lower in the German study. The correlation between the values is not significant. Between the ranks the correlation is significant but negligible negative.
 
 |           | **correlation** |
 | --------- | --------------- |
@@ -278,9 +294,17 @@ gives more of a adequacy score because of high weight for unigrams
 
 As can be seen above if the human translation is compared to all the machine translations as a reference the human translation as a worse result than the MT translations compared to the all other MTs and human translation. If seemed to be not as good of a translation as the others. This however is not the case. In the way BLEU works it compares a hypothesis translation to at minimum one reference translation. For that reason any result only shows how similar a translation is to the reference translation(s) with that in mind it is clear that the human translation is not worse but more different than the other translations. Even if compared to a different human translation the BLEU score should be below 1 CITE SOME OF THE BLEU PAPERS THE ONE WERE IT SAYS THAT EVEN HUMAN TRANSLATION HAS A DIFFERENT SCORE. This shows one of the shortcomings of BLEU it is only as good as the reference translation given.
 
+The high BLEU score for the human translation on the study questions can be explained by the fact that reference and hypothesis were the same in that instance. It is surprising that the score is not 1 witch should be expected. When looking into the single sentence scores, the segments are mostly scored as 1 but some are a little lower than one. A reason could be a mistake in the production of the references and hypotheses or it could be influenced by the weights.
 
+Another surprising result where the sores for the human translations in the study. Other than expected the human score was not the best and even significantly worse than the best result for the human translation. I expected a significant difference in favor of the human translation that was not present. A reason for that could be that the human translations were to different from the source sentence. While they could in context could be correct translations and the way it should be formulated the translators could have judged the translation as too different from the source sentence. The results of the one against all with a human hypothesis scores suggest that the human result is rather different from the other results.
 
+ The lack of correlation is concerning. Other papers suggest that the BLEU has a rather good correlation with human judgment but the results here might be screwed by the inclusion of the inclusion of the human translation in the study and the use of the human translation as reference and hypothesis in the BLEU score. Although, the order of the MT ranking stays the same in the German translation for the study results and the BLEU score the correlation is negligible.
 
+For the MT systems Google is the best with a significant difference in nearly all cases except in German human reference scores where there is no significant difference to the best. SDL Trados are also very close to each other and often have no significant difference between them. Bing is the MT system that is continuously judged to have the lowest score the difference to the other three is often bigger than the difference between them.
+
+Most concerning is the lack of correlation between the human and BLEU scores it is clear why the BLEU score is so hight for the human translation as it was reference and hypothesis in one. What is unclear is why the translators scored all translations relatively low. On the scale where 3 is only neither god nor bad scores around that number are rather low.
+
+Improvements to the study could be made. Having at least one other human translation as reference or hypothesis could make the BLEU score more accurate and improve the correlation with the human judgment. It is also possible that despite the wide use of the BLEU score it does not correlate well with the judgment of humans when confronted with NMT, as shown in a study BLEU tends to underestimate the quality of NMTs [@Post]. Despite the flaws however it seems that BLEU can give us a somewhat accurate ranking that at least somewhat agrees with the results for the BLEU scores on the whole corpus used here.
 
 \section{Conclusion}
 
