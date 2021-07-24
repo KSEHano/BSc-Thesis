@@ -78,18 +78,21 @@ Those are only two studies that use BLEU as late as 2018. BLEU is in  fact used 
 
 All in all BLEU is not the best metric available. Several aspects of  the metric have room for improvement to get a score closer to human  evaluations. There are several metrics that have a better correlation to human evaluation. I mentioned NIST, METEOR and TER as some of the well  known alternatives. NIST is not much of an improvement compared to BLEU  and METEOR as well as TER need more resources than BLEU. In the end BLEU is still a metric that is often used to compare to other metrics as a  baseline, or to evaluate MT systems.
 
-| **Metric** | **Human Reference**         | **Synonyms and Stems** | **Tunability/ Finegrained** | **Recall** |
-| ---------- | --------------------------- | ---------------------- | --------------------------- | ---------- |
-| BLEU       | Yes                         | No                     | n-gram weights              | No         |
-| NIST       | Yes                         | No                     | information gain            | No         |
-| METEOR     | Yes                         | Yes                    | three tuning parameters     | Yes        |
-| TER        | Yes                         | No                     | -                           | No         |
-| HTER       | Yes (plus edited reference) | No                     | -                           | No         |
-| TERp       | Yes                         | Yes                    | different editing cost      | Yes        |
+| **Metric** | **Human Reference**         | **Synonyms <br />and Stems** | **Tunability/ Finegrained** | **Recall** |
+| ---------- | --------------------------- | ---------------------------- | --------------------------- | ---------- |
+| BLEU       | Yes                         | No                           | n-gram weights              | No         |
+| NIST       | Yes                         | No                           | information gain            | No         |
+| METEOR     | Yes                         | Yes                          | three tuning parameters     | Yes        |
+| TER        | Yes                         | No                           | -                           | No         |
+| HTER       | Yes (plus edited reference) | No                           | -                           | No         |
+| TERp       | Yes                         | Yes                          | different editing cost      | Yes        |
 
-: caption {#tbl:Metrics} tabele contnent
+: All metrics in comparison {#tbl:Metrics} 
 
 @Metrics some stuff
+@{#tbl:Metrics}
+
+{#tbl:Metrics}
 
 \section{Method}
 
