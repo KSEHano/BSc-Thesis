@@ -87,10 +87,10 @@ All in all BLEU is not the best metric available. Several aspects of  the metric
 | HTER       | Yes (plus edited reference) | No                           | -                           | No         |
 | TERp       | Yes                         | Yes                          | different editing cost      | Yes        |
 
-: All metrics in comparison {#tbl:Metrics} 
+: All metrics in comparison {#tbl:Metrics} [This Table shows something]
 
 @Metrics some stuff
-@{#tbl:Metrics}
+@#tbl:Metrics
 
 {#tbl:Metrics}
 
