@@ -12,9 +12,7 @@ Machine translation (MT) systems have been on the rise and seem to get better. I
 
 One of the groups most interested in the development of MT are professional translators. They question if MT will be part of the work flow in the future for professional translations. I worked with a translation company from Osnabrück that questioned how good the MTs are in specialized fields. The company often translates computer and machine manuals into many different languages. This is a specialized field with its own phrases that need to be translated in context. I wanted to work on test several MT system against each other and compare them to human translations.  I decided to use two language pairs for the comparison English-German and English-Czech. English-German is a common translation pair that is often translated and MT in this language pair could be very similar to a human translation. Czech, while still a European language with a Latin alphabet, is translated less often. My source translation for English-Czech translation was a shortened version of the same manual I used for the English-German pair. It is often the case that translations into Czech are only done on shortened versions of manuals and not on full versions. I did not work with the whole manual but with four chapters on the use of the software of a printer. In my work I want to compare the translations of different MT engines. In the end I want to see how good the translations are compared to each other and to a professional human translation.  To make this judgment I used a human and an automatic evaluation. 
 
-  
-
-In the remainder of this part I will introduce the computational metric I used for comparison. In part two I will show the current state of research. After that I will explain my experiment method, present the results, discuss them and finally I will draw a conclusion.
+The translators are were either freely available or were available due to the connection to Wiezeke. Bing translator is a freely available so is Google Translator,even the Google translator version for whole documents is freely available CITE GOOGLE SEITE. Because Google is freely available for a high number of languages it is often used in studies [@Legal]. DeepL is a freely available translator that only covers a few languages with translations of short segments but also documents, here a plug-in for the SDL Trados software is used  CITE DEEPL SEITE. SDL Trados is a Computer Assisted translation (CAT) tool that helps to ease the translation work-flow. It includes a machine translation tool which is used here CITE SDL PAGE. All of these translators are Neural MT (NMT) systems [@Post] GOOGLE WIKIPEDIA; https://www.supertext.de/de/unternehmung/machine-translation https://www.trhttps://www.trados.com/products/machine-translation/access-nmt-in-studio.html 
 
 \subsection{BLEU}
 
@@ -28,17 +26,7 @@ math for bleu
 
 The measure BLEU is mainly based on is the so called precision. $P =  m/t$ m being the number of matches and t being the number of n-grams in the hypothesis [@recall]. This however is not all. the use of  n-grams allows for an assessment of adequacy, that is if the translation has the correct words, with the use of unigram matches, as well as fluency, that is if the translation is readable as a coherent sentence, with the use of higher n-gram matches. So the basic BLEU score is based on the $p{all} = sum{i =1; N} w{i}* m{i}/t{i}$ where N is equal to 4, the biggest n-grams considered and w{i} are the weights for the n-grams and $w{i} = 1/N$ [@BLEU]. BLEU in its entirety is based on this calculation but still a little more complex especially as it is mostly done one a whole corpus.
 
-SDL Trados
 
-DeepL
-
-deepL and Microsoft translator (customized) in Schweizer post studie
-
-Google
-
-Google Translate is a freely available online MT engine. As such it is often used in studies CITE ENGLISH CROATION AND LOOK IF I HAVE A STUDY THAT LOOKS INTO GT. 
-
-Bing
 
 
 
@@ -306,7 +294,7 @@ Improvements to the study could be made. Having at least one other human transla
 
 \section{Conclusion}
 
-It can tentatively be said that Google and DeepL are the best MTSystems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document. However despite the low ranking of the human translation it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the 1 against all with human hypothesis show that the human translation is quite different from the MT and it could be that that was the reason for the low score in the study.
+It can tentatively be said that Google and DeepL are the best MT systems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document. However despite the low ranking of the human translation it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the 1 against all with human hypothesis show that the human translation is quite different from the MT and it could be that that was the reason for the low score in the study.
 
 only one reference
 
