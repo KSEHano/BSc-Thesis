@@ -87,7 +87,7 @@ All in all BLEU is not the best metric available. Several aspects of  the metric
 | HTER       | Yes (plus edited reference) | No                           | -                           | No         |
 | TERp       | Yes                         | Yes                          | different editing cost      | Yes        |
 
-: All metrics in comparison {#tbl:Metrics} [This Table shows something]
+: All metrics in comparison {#tbl:Metrics}
 
 @Metrics some stuff
 @#tbl:Metrics
@@ -152,9 +152,7 @@ For the BLEU scores a higher number is better while for the ranks a low number i
 
 For the Czech translations all differences are significant as seen in Table 1 to three. In each version Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation it is interesting to see that the score for the human translation is the worst.
 
-TABLES
 
-CZ 1 only human
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -162,7 +160,7 @@ CZ 1 only human
 | SDL Trados      | **0,45**  | **1,634** |
 | Bing            | **0,444** | **1,693** |
 
-CZ 1 against all
+: **Czech reference is human**: {#tbl:Cz_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -170,7 +168,7 @@ CZ 1 against all
 | SDL Trados      | **0,746** | **1,695** |
 | Bing            | **0,751** | **1,698** |
 
-CZ 1 against all with human
+: **Czech 1 against all**: {#tbl:Cz_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are the human translation and all other translations
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -179,9 +177,11 @@ CZ 1 against all with human
 | Bing            | **0,751** | **1,913** |
 | human           | **0,593** | **2,635** |
 
+: **Czech 1 against all with human hypothesis** : {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
+
 In the translations to German it looks a little different Bing is still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two 1 against all versions it is Google that ranks the best while SDL Trados and DeepL follow. Thre is no significant difference between the other two.
 
-DE only human
+
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -190,9 +190,7 @@ DE only human
 | SDL Trados      | **0,401** | 1,747     |
 | Bing            | **0,36**  | **2,003** |
 
-*kursive* significanter unterschied nur zu zwei plätze höher
-
-DE 1 against all
+: **German human reference** : {#tbl:De_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -201,7 +199,7 @@ DE 1 against all
 | DeepL           | 0,839     | 1,87      |
 | Bing            | **0,776** | **2,025** |
 
-DE 1 against all and human
+: **German 1 against all** : {#tbl:DE_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations including the human translation
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -210,6 +208,8 @@ DE 1 against all and human
 | DeepL           | 0,839     | 1,948     |
 | Bing            | **0,776** | **2,203** |
 | human           | **0,494** | **3,79**  |
+
+: **German 1 against all with human hypothesis** : {#tbl:De_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
 \subsection{Translators' study}
 
@@ -224,7 +224,7 @@ The human judgments show that the participants judged Google and human translati
 | SDL Trados     | *3,223* *   | **2,62** |
 | Bing           | *3,202* *   | **2,64** |
 
-*significant difference only to google 5 is best for result
+: **Study results Czech** : {#tbl:Cz_study} significant differences are bold, * are only significantly different to first place
 
 DE study results
 
@@ -238,7 +238,7 @@ It looks a little different for the German study. The ranks again were significa
 | SDL Trados     | *2,944* *  | **2,98** |
 | Bing           | **2,531**  | **3,42** |
 
-*significant different to DeepL
+: **Study results German** : {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
@@ -250,14 +250,14 @@ Table 7 and 8 show the results of the human scores as well as the BLEU scores do
 
 The Czech results show that the order of human and Google as well as Bing and SDL Trados are switched. For the translations ito Germanthe human translation jumps to the front with the highest BLEU score the order of the remaining translators stays the same.
 
-CZ
-
 | **Translator** | **Human** | **Corpus Bleu** |
 | -------------- | --------- | --------------- |
 | human          | 3,406     | 0,955           |
 | google         | 3,570     | 0,489           |
 | Bing           | 3,202     | 0,416           |
 | SDL Trados     | 3,222     | 0,402           |
+
+: **Study results Czech in comparison to BLEU scores on all study questions**  : {#tbl:Cz_comparison}
 
 DE
 
@@ -269,9 +269,9 @@ DE
 | SDL Trados     | 2,944     | 0,303           |
 | Bing           | 2,531     | 0,287           |
 
-Correlation
+: **Study results German in comparison to BLEU scores on all study questions**  : {#tbl:De_comparison}
 
-CZ
+\subsubsection{Correlation}
 
 The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low even for the vlaues.
 
@@ -280,7 +280,7 @@ The spearman correlation between the human score and the BLEU score is rather sm
 | **value** | **0,277**       |
 | **rank**  | **0,379**       |
 
-DE
+: **Correlation between study results and BLEU scores for Czech**  : {#tbl:Cz_corr}
 
 The correlation between the human judgment is even lower in the German study. The correlation between the values is not significant. Between the ranks the correlation is significant but negligible negative.
 
@@ -289,31 +289,31 @@ The correlation between the human judgment is even lower in the German study. Th
 | **value** | 0,063           |
 | **rank**  | **-0,121**      |
 
+: **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
+
 \section{Discussion}
 
 SOMETHING ABUT THE REPOTING OF BLEU SCORES
 
-With the changing of weights is the results are not directly comparable to other results. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code there is no one single BLEU score [@Clarity]. I can only compare the MT engines inside the study especially because they are all similar to each other. 
+With the changing of weights is the results are not directly comparable to other results. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code there is no one single BLEU score [@Clarity]. The results can only give a ranking of the translations not a comparable result. Further, because of the changed weights there is heavier weight on the uni-grams this leads to a heavier emphasis on adequacy but less on fluency which BLEU accounts for by using the longer n-grams. That means that the words might be translated correct but not in the right order. 
 
-gives more of a adequacy score because of high weight for unigrams
+In the results for 1 against all with the human as a hypothesis the score for the human translation is significantly worse than the other translations. It seems to be not as good of a translation as the others. This however is not the case. In the way BLEU works it compares a hypothesis translation to at minimum one reference translation. For that reason any result only shows how similar a translation is to the reference translation(s). Each translation has all other translations as references so the human translatio has only the MT as references and the result shows that the human translation is not as close to its references as the other translations. Even if compared to a different human translation the BLEU score would be below 1 if it is not identical [@BLEU]. This shows one of the shortcomings of BLEU it is only as good as the reference translation given.
 
-As can be seen above if the human translation is compared to all the machine translations as a reference the human translation as a worse result than the MT translations compared to the all other MTs and human translation. If seemed to be not as good of a translation as the others. This however is not the case. In the way BLEU works it compares a hypothesis translation to at minimum one reference translation. For that reason any result only shows how similar a translation is to the reference translation(s) with that in mind it is clear that the human translation is not worse but more different than the other translations. Even if compared to a different human translation the BLEU score should be below 1 CITE SOME OF THE BLEU PAPERS THE ONE WERE IT SAYS THAT EVEN HUMAN TRANSLATION HAS A DIFFERENT SCORE. This shows one of the shortcomings of BLEU it is only as good as the reference translation given.
+For the BLEU score the sentences the translations were scored against the human translations as references, that means that for the human translational reference and hypothesis were the same. That is the reason that the score is so high. It is surprising that the score is not 1 witch should be expected. When looking into the single sentence scores, the segments are mostly scored as 1 but some are a little lower than 1. A reason could be a mistake in the production of the references and hypotheses or it could be influenced by the weights.
 
-The high BLEU score for the human translation on the study questions can be explained by the fact that reference and hypothesis were the same in that instance. It is surprising that the score is not 1 witch should be expected. When looking into the single sentence scores, the segments are mostly scored as 1 but some are a little lower than one. A reason could be a mistake in the production of the references and hypotheses or it could be influenced by the weights.
+The result for the study were surprising especially the sores for the human translations in the study. Other than expected the human score was not the best and even significantly worse than the best result for the study. It was expected that the human translation as the gold standard would be significantly better than the the MTs. A reason for that could be that the human translations were too different from the source sentence. While they could in context be correct translations and the way it should be translated the translators could have judged the translation as too different from the source sentence. Other than the MTs that are more of word for word translations. The results of the 1 against all with a human hypothesis scores suggest that the human translation is rather different from the other translations.
 
-Another surprising result where the sores for the human translations in the study. Other than expected the human score was not the best and even significantly worse than the best result for the human translation. I expected a significant difference in favor of the human translation that was not present. A reason for that could be that the human translations were to different from the source sentence. While they could in context could be correct translations and the way it should be formulated the translators could have judged the translation as too different from the source sentence. The results of the one against all with a human hypothesis scores suggest that the human result is rather different from the other results.
+ The lack of correlation is concerning. Other papers suggest that the BLEU has a correlation with human judgment [@BLEU]. The results here might be screwed by the use of the human translation as reference and hypothesis in the BLEU score. @BLEU for example uses three MT systems and two human translations in their study with human participants. Although, the order of the MT ranking stays the same disregarding the human translation in the German translation for the study results and the BLEU score the correlation is negligible. The over all score for all translation is with under 4 on a 1 to 5 scale is rather low.
 
- The lack of correlation is concerning. Other papers suggest that the BLEU has a rather good correlation with human judgment but the results here might be screwed by the inclusion of the inclusion of the human translation in the study and the use of the human translation as reference and hypothesis in the BLEU score. Although, the order of the MT ranking stays the same in the German translation for the study results and the BLEU score the correlation is negligible.
+Despite the lack of correlation between the study and the BLEU scores of the study segments the MT engines are at least orderd the same for the study results and the results for the BLEU scores on everything with the BLEU score on the whole corpus with only the human reference. This lends some credibility to the BLEU scores even if the results of the study have less significant differences.
 
-For the MT systems Google is the best with a significant difference in nearly all cases except in German human reference scores where there is no significant difference to the best. SDL Trados are also very close to each other and often have no significant difference between them. Bing is the MT system that is continuously judged to have the lowest score the difference to the other three is often bigger than the difference between them.
+For the MT systems Google is the best with a significant difference in nearly all cases. Except in German in some cases. In the BLEU score with only a human reference as well as the German study DeepL is ranked the best but without a significant difference to the Google. SDL Trados and DeepL are often close to each other with no significant difference between them except in the cases were DeepL is the best translator. This could indicate that those two translators are similar to each other. Bing is the MT system that is continuously judged to have the lowest score the difference to the other three is often bigger than the difference between them. Except for the BLEU score of the Czech study questions where SDL Trados has the lowest score.
 
-Most concerning is the lack of correlation between the human and BLEU scores it is clear why the BLEU score is so hight for the human translation as it was reference and hypothesis in one. What is unclear is why the translators scored all translations relatively low. On the scale where 3 is only neither god nor bad scores around that number are rather low.
-
-Improvements to the study could be made. Having at least one other human translation as reference or hypothesis could make the BLEU score more accurate and improve the correlation with the human judgment. It is also possible that despite the wide use of the BLEU score it does not correlate well with the judgment of humans when confronted with NMT, as shown in a study BLEU tends to underestimate the quality of NMTs [@Post]. Despite the flaws however it seems that BLEU can give us a somewhat accurate ranking that at least somewhat agrees with the results for the BLEU scores on the whole corpus used here.
+Improvements to the study could be made. Having at least one other human translation as reference or hypothesis could make the BLEU score more accurate and improve the correlation with the human judgment. It is also possible that despite the wide use of the BLEU score it does not correlate well with the judgment of humans when confronted with NMT, as shown in a study BLEU tends to underestimate the quality of NMTs [@Post].
 
 \section{Conclusion}
 
-It can tentativly be said that Google is the best translator, although, SDL Trados and DeepL are not bad translators either. Bing seems to be a bad choice as a translator. However despite the low ranking of the human translation it seems that at the moment a translation has to augmented at least by a professional translator the BLEU scores of the 1 against all with human hypothesis shows that the human translation is quite different from the MT and it could be that that was the reason for the low score. 
+It can tentatively be said that Google and DeepL are the best MTSystems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document. However despite the low ranking of the human translation it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the 1 against all with human hypothesis show that the human translation is quite different from the MT and it could be that that was the reason for the low score in the study.
 
 only one reference
 
