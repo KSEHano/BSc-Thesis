@@ -78,21 +78,16 @@ Those are only two studies that use BLEU as late as 2018. BLEU is in  fact used 
 
 All in all BLEU is not the best metric available. Several aspects of  the metric have room for improvement to get a score closer to human  evaluations. There are several metrics that have a better correlation to human evaluation. I mentioned NIST, METEOR and TER as some of the well  known alternatives. NIST is not much of an improvement compared to BLEU  and METEOR as well as TER need more resources than BLEU. In the end BLEU is still a metric that is often used to compare to other metrics as a  baseline, or to evaluate MT systems.
 
-| **Metric** | **Human Reference**         | **Synonyms <br />and Stems** | **Tunability/ Finegrained** | **Recall** |
-| ---------- | --------------------------- | ---------------------------- | --------------------------- | ---------- |
-| BLEU       | Yes                         | No                           | n-gram weights              | No         |
-| NIST       | Yes                         | No                           | information gain            | No         |
-| METEOR     | Yes                         | Yes                          | three tuning parameters     | Yes        |
-| TER        | Yes                         | No                           | -                           | No         |
-| HTER       | Yes (plus edited reference) | No                           | -                           | No         |
-| TERp       | Yes                         | Yes                          | different editing cost      | Yes        |
+| **Metric<br />** | **Human Reference<br />**   | **Synonyms <br />and Stems** | **Tunability/ <br />Preciseness** | **Recall<br />** |
+| ---------------- | --------------------------- | ---------------------------- | --------------------------------- | ---------------- |
+| BLEU             | Yes                         | No                           | n-gram weights                    | No               |
+| NIST             | Yes                         | No                           | information gain                  | No               |
+| METEOR           | Yes                         | Yes                          | three tuning parameters           | Yes              |
+| TER              | Yes                         | No                           | -                                 | No               |
+| HTER             | Yes (plus edited reference) | No                           | -                                 | No               |
+| TERp             | Yes                         | Yes                          | different editing cost            | Yes              |
 
-: All metrics in comparison {#tbl:Metrics}
-
-@Metrics some stuff
-@#tbl:Metrics
-
-{#tbl:Metrics}
+: **All metrics in comparison** {#tbl:Metrics}
 
 \section{Method}
 
@@ -177,7 +172,7 @@ For the Czech translations all differences are significant as seen in Table 1 to
 | Bing            | **0,751** | **1,913** |
 | human           | **0,593** | **2,635** |
 
-: **Czech 1 against all with human hypothesis** : {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
+: **Czech 1 against all with human hypothesis**: {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
 In the translations to German it looks a little different Bing is still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two 1 against all versions it is Google that ranks the best while SDL Trados and DeepL follow. Thre is no significant difference between the other two.
 
@@ -190,7 +185,7 @@ In the translations to German it looks a little different Bing is still has the 
 | SDL Trados      | **0,401** | 1,747     |
 | Bing            | **0,36**  | **2,003** |
 
-: **German human reference** : {#tbl:De_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
+: **German human reference**: {#tbl:De_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -199,7 +194,7 @@ In the translations to German it looks a little different Bing is still has the 
 | DeepL           | 0,839     | 1,87      |
 | Bing            | **0,776** | **2,025** |
 
-: **German 1 against all** : {#tbl:DE_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations including the human translation
+: **German 1 against all**: {#tbl:DE_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations including the human translation
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -209,7 +204,7 @@ In the translations to German it looks a little different Bing is still has the 
 | Bing            | **0,776** | **2,203** |
 | human           | **0,494** | **3,79**  |
 
-: **German 1 against all with human hypothesis** : {#tbl:De_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
+: **German 1 against all with human hypothesis**: {#tbl:De_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
 \subsection{Translators' study}
 
@@ -224,7 +219,7 @@ The human judgments show that the participants judged Google and human translati
 | SDL Trados     | *3,223* *   | **2,62** |
 | Bing           | *3,202* *   | **2,64** |
 
-: **Study results Czech** : {#tbl:Cz_study} significant differences are bold, * are only significantly different to first place
+: **Study results Czech**: {#tbl:Cz_study} significant differences are bold, * are only significantly different to first place
 
 DE study results
 
@@ -238,7 +233,7 @@ It looks a little different for the German study. The ranks again were significa
 | SDL Trados     | *2,944* *  | **2,98** |
 | Bing           | **2,531**  | **3,42** |
 
-: **Study results German** : {#tbl:De_study} significant differences are bold, * are only significantly different to first place
+: **Study results German**: {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
@@ -257,7 +252,7 @@ The Czech results show that the order of human and Google as well as Bing and SD
 | Bing           | 3,202     | 0,416           |
 | SDL Trados     | 3,222     | 0,402           |
 
-: **Study results Czech in comparison to BLEU scores on all study questions**  : {#tbl:Cz_comparison}
+: **Study results Czech in comparison to BLEU scores on all study questions**: {#tbl:Cz_comparison}
 
 DE
 
@@ -269,7 +264,7 @@ DE
 | SDL Trados     | 2,944     | 0,303           |
 | Bing           | 2,531     | 0,287           |
 
-: **Study results German in comparison to BLEU scores on all study questions**  : {#tbl:De_comparison}
+: **Study results German in comparison to BLEU scores on all study questions**: {#tbl:De_comparison}
 
 \subsubsection{Correlation}
 
@@ -280,7 +275,7 @@ The spearman correlation between the human score and the BLEU score is rather sm
 | **value** | **0,277**       |
 | **rank**  | **0,379**       |
 
-: **Correlation between study results and BLEU scores for Czech**  : {#tbl:Cz_corr}
+: **Correlation between study results and BLEU scores for Czech**: {#tbl:Cz_corr}
 
 The correlation between the human judgment is even lower in the German study. The correlation between the values is not significant. Between the ranks the correlation is significant but negligible negative.
 
@@ -292,8 +287,6 @@ The correlation between the human judgment is even lower in the German study. Th
 : **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
 
 \section{Discussion}
-
-SOMETHING ABUT THE REPOTING OF BLEU SCORES
 
 With the changing of weights is the results are not directly comparable to other results. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code there is no one single BLEU score [@Clarity]. The results can only give a ranking of the translations not a comparable result. Further, because of the changed weights there is heavier weight on the uni-grams this leads to a heavier emphasis on adequacy but less on fluency which BLEU accounts for by using the longer n-grams. That means that the words might be translated correct but not in the right order. 
 
