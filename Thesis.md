@@ -39,7 +39,7 @@ To avoid that a translation is entirely made out of high frequency words like "t
 
 The final definition of BLEU is then
 
-$BLEU = BP * \exp(\diplaystyle\sum_{n=1}^{N}w_n \log{p_n})$
+$BLEU = BP * \exp(\displaystyle\sum_{n=1}^{N}w_n \log{p_n})$
 
 $w_n = w_i$ as shown above and n is always the length of the n-gram. Because all the weights are the same this is the same as using a geometric mean [@BLEU]. This leads to a BLEU score of zero if one of the n-grams is not present.
 
