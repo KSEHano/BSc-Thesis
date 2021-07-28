@@ -4,8 +4,6 @@ Abstract
 
 \section{Introduction}
 
-what I want to do
-
 Machine translation (MT) systems have been on the rise and seem to get better. In everyday lives an MT is already often used privately or by corporations to translate the fast changing content like social media feeds [@book]. The quality of them is still questionable but they are improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done  [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT when integrated in the development or learning process of an MT system. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Additionally an automatic evaluation seemingly is more objective than human evaluation [@book pp. 24-27]. Despite the advantages of an automatic evaluation they are still lacking and a human evaluation remains the gold standard to judge a translation FIND CITATION. For that reason automatic evaluation strives to have high correlation with human evaluation [@BLEU; @TER].  Automated evaluation is an important tool for the improvement and the translation quality assessment of MT system.
 
 
@@ -24,17 +22,13 @@ The BLEU score does not give an indication of an objectively good translation bu
 
 The measure BLEU is mainly based on is the so called precision $p =  \frac{m}{t}$ m being the number of matches and t being the number of n-grams in the hypothesis [@recall]. This however is not all. The use of  unigrams allows for an assessment of adequacy, that is that the words are correct. The use of higher number n-grams for fluency, that is if the translation is readable as a coherent sentence. So the basic BLEU score is based on the $p_{all} = sum{i =1; N} w_i* \frac{m_i}{t_i}$ where N is equal to 4, the biggest n-grams considered and w_i are the weights for the n-grams and $w_i = \frac{1}{N}$ [@BLEU]. On a corpus or several sentences the modified precision is then the sum of the the clipped n-gram matches of all sentences divided by the number of candidate n-grams.
 
-$p_n = \frac{\sum_{C \in Candidates} \sum_{n-gram \in C} Count_clip (n-gram)}{\sum_{C' \in Candidates} \sum_{n-gram' \in C'} Count(n-gram')}$
+$p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in C} Count_clip (n-gram)}{\displaystyle\sum_{C' \in Candidates} \displaystyle\sum_{n-gram' \in C'} Count(n-gram')}$
 
 To avoid that a translation is entirely made out of high frequency words like "the" in English a the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest referenve.
 
-```latex
-\[ BP =
-  \begin{cases}
-    1       & \quad \text{if } c < r\\
-    \euler^(1-r/c)  & \quad \text{if } r > c
-  \end{cases}
-\]
+```
+$BP = 1       & \text{if } c < r\\
+    \e^(1-r/c)&\text{if } r > c$
 ```
 
 The final definition of BLEU is then
