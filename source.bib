@@ -87,20 +87,10 @@ year = {2011}
 }
 
 @article{Clarity,
-abstract = {The field of machine translation faces an under-recognized problem because of inconsistency in the reporting of scores from its dominant metric. Although people refer to "the" BLEU score, BLEU is in fact a parameterized metric whose values can vary wildly with changes to these parameters. These parameters are often not reported or are hard to find, and consequently, BLEU scores between papers cannot be directly compared. I quantify this variation, finding differences as high as 1.8 between commonly used configurations. The main culprit is different tokenization and normalization schemes applied to the reference. Pointing to the success of the parsing community, I suggest machine translation researchers settle upon the BLEU scheme used by the annual Conference on Machine Translation (WMT), which does not allow for user-supplied reference processing, and provide a new tool, SacreBLEU, to facilitate this.},
-annote = {variation in bleu scores
-comparison betweenstudies dificult
-mention not comparison between german and czech because different translation sets},
-archivePrefix = {arXiv},
-arxivId = {1804.08771},
-author = {Post, Matt},
-doi = {10.18653/v1/w18-6319},
-eprint = {1804.08771},
-file = {:C\:/Users/Allgemein/Bachelor/7.Semester/Thesis/paper/1804.08771.pdf:pdf},
-mendeley-groups = {Thesis2},
-pages = {186--191},
-title = {{A Call for Clarity in Reporting BLEU Scores}},
-year = {2018}
+  title={A call for clarity in reporting BLEU scores},
+  author={Post, Matt},
+  journal={arXiv preprint arXiv:1804.08771},
+  year={2018}
 }
 
 @article{TER,
@@ -117,20 +107,12 @@ title = {{A study of translation edit rate with targeted human annotation}},
 year = {2006}
 }
 
-@article{NIST,
-abstract = {Abstract Evaluation is recognized as an extremely helpful forcing function in Human Language Technology R&D. Unfortunately, evaluation has not been a very powerful tool in machine translation (MT) research because it requires human judgments and is thus ... \n},
-annote = {NIST:Reference translation, scoring how many words occure in the MT and reference
-case insensitive
-different value for informaton gain
-number of reference only moderate iprovement},
-author = {Doddington, George},
-doi = {10.3115/1289189.1289273},
-file = {:C\:/Users/kaja/AppData/Local/Mendeley Ltd./Mendeley Desktop/Downloaded/Doddington - 2002 - Automatic evaluation of machine translation quality using n-gram co-occurrence statistics.pdf:pdf},
-keywords = {rc22176},
-mendeley-groups = {Thesis2},
-pages = {138},
-title = {{Automatic evaluation of machine translation quality using n-gram co-occurrence statistics}},
-year = {2002}
+@inproceedings{NIST,
+  title={Automatic evaluation of machine translation quality using n-gram co-occurrence statistics},
+  author={Doddington, George},
+  booktitle={Proceedings of the second international conference on Human Language Technology Research},
+  pages={138--145},
+  year={2002}
 }
 
 @article{METEOR,
@@ -222,6 +204,58 @@ mendeley-groups = {Thesis2},
 pages = {2143--2148},
 title = {{BLEU evaluation of machine-translated english-croatian legislation}},
 year = {2012}
+}
+@misc{Google_NMT,
+	title = {Zero-{Shot} {Translation} with {Google}’s {Multilingual} {Neural} {Machine} {Translation} {System}},
+	url = {http://ai.googleblog.com/2016/11/zero-shot-translation-with-googles.html},
+	abstract = {Posted by Mike Schuster (Google Brain Team), Melvin Johnson (Google Translate) and Nikhil Thorat (Google Brain Team) In the last 10 years, G...},
+	language = {en},
+	urldate = {2021-07-28},
+	journal = {Google AI Blog},
+	file = {Snapshot:C\:\\Users\\Allgemein\\Zotero\\storage\\JIG3DBGU\\zero-shot-translation-with-googles.html:text/html},
+}
+
+@misc{diffNMT,
+	title = {Neural {Machine} {Translation} mit menschlichem {Touch}},
+	url = {https://www.supertext.de/de/unternehmung/machine-translation},
+	abstract = {Künstliche Intelligenz. Und menschliche Eloquenz. Was immer Sie brauchen, Supertext liefert die Lösung.},
+	language = {de-DE},
+	urldate = {2021-07-28},
+	journal = {Supertext},
+	file = {Snapshot:C\:\\Users\\Allgemein\\Zotero\\storage\\N75JXKE3\\machine-translation.html:text/html},
+}le
+
+@misc{SDL_NMT,
+	title = {Neural {Machine} {Translation} in {Trados} {Studio}},
+	url = {https://www.trados.com/products/machine-translation/access-nmt-in-studio.html},
+	abstract = {Neural Machine Translation is the perfect solution for translators looking to use the latest in neural machine translation to automatically translate content.},
+	language = {en},
+	urldate = {2021-07-28},
+	journal = {SDL},
+	file = {Snapshot:C\:\\Users\\Allgemein\\Zotero\\storage\\N3EVSMLX\\access-nmt-in-studio.html:text/html},
+}
+
+@misc{DeepL,
+	title = {{DeepL} {Translate} – {Der} präziseste Übersetzer der {Welt}},
+	url = {https://www.DeepL.com/translator},
+	abstract = {Schnell, präzise und sicher: Erfahren Sie, warum Millionen von Menschen täglich DeepL nutzen. Übersetzen Sie Texte und komplette Dateien im Handumdrehen. Derzeit werden die Sprachen Bulgarisch, Chinesisch, Dänisch, Deutsch, Niederländisch, Englisch, Estnisch, Finnisch, Französisch, Griechisch, Italienisch, Japanisch, Lettisch, Litauisch, Polnisch, Portugiesisch, Rumänisch, Russisch, Schwedisch, Slowakisch, Slowenisch, Spanisch, Tschechisch und Ungarisch unterstützt.},
+	language = {de},
+	urldate = {2021-07-28},
+	file = {Snapshot:C\:\\Users\\Allgemein\\Zotero\\storage\\CJVIYWVJ\\translator.html:text/html},
+}
+
+@misc{Google,
+	title = {Google Übersetzer},
+	url = {https://translate.google.com/},
+	urldate = {2021-07-28},
+	file = {Google Übersetzer:C\:\\Users\\Allgemein\\Zotero\\storage\\5EMKS2QR\\translate.google.com.html:text/html},
+}
+@misc{Bing_NMT,
+	title = {Translator {Text} {API} - {Microsoft} {Translator} for {Business}},
+	url = {https://web.archive.org/web/20190902184414/https://www.microsoft.com/en-us/translator/business/translator-api/},
+	urldate = {2021-07-28},
+	month = sep,
+	year = {2019},
 }
 
 
