@@ -26,7 +26,7 @@ math for bleu
 
 The measure BLEU is mainly based on is the so called precision. $P =  m/t$ m being the number of matches and t being the number of n-grams in the hypothesis [@recall]. This however is not all. The use of  unigrams allows for an assessment of adequacy, that is that the words are correct. The use of higher number n-grams for fluency, that is if the translation is readable as a coherent sentence. So the basic BLEU score is based on the $p_all = sum{i =1; N} w_i* \frac{m_i}{t_i}$ where N is equal to 4, the biggest n-grams considered and w{i} are the weights for the n-grams and $w_i = 1/N$ [@BLEU]. To avoid that a translation is entirely made out of high frequency words like "the" in English a the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. On a corpus or several sentences the BLEU score is then the sum of the the clipped n-gram matches of all sentences divided by the number of candidate n-grams.
 
-$p_n = \frac{\sum{C \in Candidates} \sum{n-gram \in C} Count_clip (n-gram)}{\sum{C' \in Candidates} \sum{n-gram' \in C'} Count(n-gram')}
+$p_n = \frac{\sum{C \in Candidates} \sum{n-gram \in C} Count_clip (n-gram)}{\sum{C' \in Candidates} \sum{n-gram' \in C'} Count(n-gram')}$
 
 
 
