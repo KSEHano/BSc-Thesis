@@ -28,7 +28,7 @@ $p_n = \frac{\sum_{C \in Candidates} \sum_{n-gram \in C} Count_clip (n-gram)}{\s
 
 To avoid that a translation is entirely made out of high frequency words like "the" in English a the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest referenve.
 
-```
+```latex
 \[ BP =
   \begin{cases}
     1       & \quad \text{if } c < r\\
