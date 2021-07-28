@@ -30,7 +30,7 @@ $p_n = \frac{\sum_{C \in Candidates} \sum_{n-gram \in C} Count_clip (n-gram)}{\s
 
 The brevity penalty is there to avoid short sentences having an inadequately high score and is defined as follows. C is the candidate length and r the closest reference length.
 
-```latex
+```
 $\[ BP =
   \begin{cases}
     1       & \quad \text{if } c < r\\
