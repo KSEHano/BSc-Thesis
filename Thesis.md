@@ -6,13 +6,13 @@ Abstract
 
 Machine translation (MT) systems have been on the rise and seem to get better. In everyday lives an MT is already often used privately or professional to adapt to the sheer volume of content and translation pairs needed [@book pp.1-6]. The quality of them is still questionable but they seem to be improving. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation which is already done  [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT when integrated in the development or learning process of an MT system. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Additionally an automatic evaluation is seemingly more objective than human evaluation [@book pp. 24-27]. Despite the advantages of an automatic evaluation they are still lacking as they strive to get more similar to human evaluation [@BLEU]. Automated evaluation is an important tool for the improvement and the quality assessment of MT system.
 
-
-
 One of the groups most interested in the development of MT are professional translators. They question if MT will be part of the work flow in the future for professional translations. I worked with a translation company from Osnabrück, Wietzke Consulting that questioned how good the MTs are in specialized fields. The company often translates computer and machine manuals into many different languages. This is a specialized field with its own phrases that need to be translated in context. I wanted to test several MT systems against each other and compare them to a professional human translation.  I decided to use two language pairs for the comparison English-German and English-Czech. English-German is a common translation pair that is often translated and MT in this language pair could be very similar to a human translation. Czech, while still a European language with a Latin alphabet, is translated less often. My source translation for English-Czech translation was a shortened version of the same manual I used for the English-German pair. I did not work with the whole manual but with four chapters on the use of the software of a printer. In my work I want to compare the translations of different MT engines. In the end I want to see how good the translations are compared to each other and to a professional human translation.  To make this judgment I used a human and an automatic evaluation. 
 
 The translators are were either freely available or were available due to the connection to Wietzke. Bing translator is a freely available so is Google Translator for shorter text and whole documents [@Google]. Because Google is freely available and supports a high number of languages it is often used in studies [@legal]. DeepL is a freely available translator that only covers a few languages with translations of short segments but also documents, here a plug-in for the SDL Trados software is used  [@DeepL]. SDL Trados is a Computer Assisted translation (CAT) tool that helps to ease the translation work-flow. It includes a machine translation tool the SDL Language Cloud [@SDL_NMT]. All of these translators are Neural MT (NMT) systems [@Post; @Google; @diffNMT; @SDL_NMT; @Bing_NMT].
 
 In the following I will explain BLEU in detail, then I will present the state of the research, that will be followed by the Method and finally the discussion and conclusion.
+
+
 
 \section{BLEU}
 
@@ -44,7 +44,9 @@ $BLEU = BP * \exp(\displaystyle\sum_{n=1}^{N}w_n \log{p_n})$
 
 $w_n = w_i$ as shown above and n is always the length of the n-gram. Because all the weights are the same this is the same as using a geometric mean [@BLEU]. This leads to a BLEU score of zero if one of the n-grams is not present.
 
-- end paragraph
+The BLEU score calculates the precision of a translation. With the use of the modified precision and the brevity penalty it strives to be similar to human evaluation. One of the main advantages is that BLEU needs only reference translation and the hypothesis to work and thus does not need many resources. Regardless of the existence of better the better metrics the few resources needed and simplicity of the calculation are reasons for the continued use of the metric.
+
+
 
 \section{State of the Research}
 
@@ -72,6 +74,8 @@ The second variation of TER is TER-Plus or TERp. It works like TER with  at leas
 
 TER is a little bit different from the other metrics in that it  calculates the edit rate and not the similarities or matches between  hypothesis and reference. The variations of TER, HTER and TERp, try to  improve on TER to give a more accurate editing cost. They are both more  costly than TER because they rely on more resources. HTER is especially  costly as it requires human labour. TER and its variants are closer to  human evaluation but a little more costly than BLEU.
 
+Beside these different quality evaluation metrics there is another field for translation quality control that is *quality estimation*. Quality estimation has to goal to give an estimation of any given sentence without a reference translation [@QE]. Other than the metrics it is supposed to have a more accurate estimation on a sentence level than quality evaluation matrices. It needs of course some way to compare a translation to. Most quality estimation is done as a supervised learning task that need to be trained on a high number of sentence pairs in different languages with an human evaluation of there quality [@QE]. One of the more well known quality estimation tools is QuEst [@Quest]. Some of the important uses of QuEst are: Giving an estimation of the editing time, selecting the best translation of some alternatives, deciding if a segment need revising and estimating if the segment can be used for the training of a segment [@Quest]. QuEst needs a lot of different resources, other than the metrics that need only the reference translations and some other resources. Most notable a big training corpus and language models for each language. There are two parts of the QuEst algorithm the feature extractor that finds relevant features for the quality estimation and the machine learning part. The feature extractor finds MT system independent "black-box" features that try to measure complexity, fluency and adequacy. "Glass-box" models show the confidence of a certain MT system. The machine learning part of the algorithm then uses the extracted features to build the quality estimation by tuning hyper-parameters and selecting relevant features. Quality estimation like QuEst can provide better correlation to human judgment than the metrics [@QE]. The biggest problem of quality estimation seems to be the need for many resources and a complicated code. Other than the metrics that provide a result fast and with minimal resources QuEst and other quality estimation algorithms that have to extract the features and train the model.
+
 Despite the development of arguably better metrics, BLEU is still in  use. For one every metric compares itself at least to BLEU to how how  they improve the score. All the metrics I mentioned above prove there  merit by comparing themselves to BLEU. When studying metrics BLEU is  still used as a baseline. Another use of BLEU is in studies that test  the quality of MT systems. Here BLEU is used because it does not require many resources and is language independent. @Post used BLEU to compare a customized statistical MT (SMT) system with a neural MT (NMT) system  Microsoft translator Hub (MTH) and DeepL respectively. They evaluated  the results with BLEU and after that compared that to human evaluation.  They found out that the NMT is better than the SMT but that while BLEU  judges the NMT to be better it also underestimates the NMT.
 
 Similarly another study examined the quality of Google Translate  [@legal]. They translated legal text from English to Croatian and  evaluate the quality with BLEU with up to three references. Like the  study above they confirm their results with a human evaluation. They  come to the conclusion that BLEU correlates better with human judgment  if it has more references. Human evaluation while more time consuming is still valued as more accurate and despite the high subjectivity has a  good inter judge correlation.
@@ -91,13 +95,21 @@ All in all BLEU is not the best metric available. Several aspects of  the metric
 
 : **All metrics in comparison** {#tbl:Metrics}
 
+
+
 \section{Method}
 
 For the evaluation of the quality of several MT engines, I set up a two part study. The first part of the study was fully computational. Source sentences in English were translated into the target language German or Czech with different MT engines. Then I calculated the BLEU score for those translations and compared the different translations to each other. The second part of the study brought in a human component. I asked several professional translators to evaluate a selection of the translations. The data and the studies are further explained in this part.
 
+
+
 \subsection{Data}
 
 The data consisted of the translations of four chapters from a printer manual. The original English as well as the professional translation into German, as well as the source and translation of a shorter manual into Czech. To protect the customers data all references to the company and their products were made anonymous and formatting tags in the data were removed. The data was separated into sentences or words as it came directly from the manual. In the end there were 3,767 segments including double translations and one word segments. The German translation was separated into four parts of different length according to the original chapters, 1,606, 401, 378, and 1,382 segments respectively. There were less Czech segments as there was only a shortened translation available. In total the Czech translation contained 2,165 segments separated again into parts with 1,273, 127, 215, and 550 segments. The parts were originally each one chapter the same chapters for both languages. The English original was then used as a source for the MT and the human translation was used as a reference to compare the MT to.
+
+- examples sentences
+
+
 
 \subsection{Machine Translators}
 
@@ -115,13 +127,19 @@ One of the tuning parameters for BLEU are the weights. The weights influence the
 
 The data was compared in different steps. Each sentence of each MT had a BLEU score calculated and was ranked against the other BLEU scores of the other MT. Additionally a corpus BLEU score, a commutative score of all sentences of one chapter was calculated. Different sets of references were also compared. First, only the human translation was a reference but for comparison I also used a one against all approach for the references, in two versions. First I used all MT and the Human translation as a reference and each time left out one MT which I used as a hypothesis. Secondly I included all translations even the human one as possible hypotheses so that for the calculation of the BLEU score for the human translation all the MT were used as a reference. I calculated the BLEU score for each segment and MT several times and changed the references between trails. The results will be discussed later.
 
+
+
 \subsection{Translator study}
 
 BLEU gave us a first impression of the quality of the MT but as it compares the translations to reference translations and I had only one verified good reference translation, the human translation. It was important to see if translators rate the MT similarly to the results from the BLEU score. Especially considering that BLEUs correlation with human judgment could be better. In the following I describe the experiment with the translators.
 
+
+
 \subsubsection{Data}
 
 The number of sentences was very high, to keep the length of the study to an acceptable length for the participants this number had to be reduced. First it was necessary to filter out the interesting sentences for the study. The source sentences had to have a length between 6 and 15 words. The lower bound allowed to filter out most non sentences. @SentenceLength showed that 17 to 18 year olds could pass sentences with up to 15 words with ease, it also suggested that better readers could parse even longer sentences with relative ease but it seemed like a good cut of point to keep the length of the sentences manageable and time per sentence shorter. In the next step sentences that had identical translation in different translators were excluded. The sentence also had to have at least one score that differed from the others to guarantee diverse sentences. From that set of sentences 60 sentences were randomly sampled. Sentences with missing words and repeated sentences were manually excluded. Finally the first 50 sentences of that final set were used in the study. All these steps reduced the sentences to a good sample of all the sentences.
+
+
 
 \subsubsection{Participants}
 
@@ -129,15 +147,23 @@ The participants were all professional translators, most of them have worked for
 
 - Demographics some more
 
+
+
 \subsubsection{Experiment}
 
-The experiment was done by the participants remotely and without supervision. Each participant received an e-mail with a link to the study. They were then given 50 source sentences with 5 translations for German and 4 four Czech this included all MT as well as the human translation. In each question they were given the source sentence and all translations. They were then asked to rate the quality of the translation on a 5 point Likert scale from "strongly agree" to "strongly disagree". At the beginning of the study they were instructed to select "strongly agree" if the translation was perfect and "strongly disagree" if the sentence needed a complete new translation. These sentences were presented to the participants in a random order different for each participant the order of the translators was randomised as well. Following these questions were the general questions about demographics and the personal use of MT in their normal translation process. Such as the frequency and extend of use of MTs. The expected time for answering the questions was about 40 Minutes in both languages. 
+The experiment was done by the participants remotely and without supervision. Each participant received an e-mail with a link to the study. They were then given 50 source sentences with 5 translations for German and 4 four Czech this included all MT as well as the human translation. In each question they were given the source sentence and all translations. They were then asked to rate the quality of the translation on a 5 point Likert scale from "strongly agree" to "strongly disagree". At the beginning of the study they were instructed to select "strongly agree" if the translation was perfect and "strongly disagree" if the sentence needed a complete new translation. These sentences were presented to the participants in a random order different for each participant the order of the translators was randomized as well. Following these questions were the general questions about demographics and the personal use of MT in their normal translation process. Such as the frequency and extend of use of MTs. The expected time for answering the questions was about 40 Minutes in both languages. 
 
-- How the evaluation was done
+- examples study
+
+For the evaluation the average was calculated over all candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the correlation between the human and machine evaluation.
+
+
 
 \section{Results}
 
 In this section I will first present the results of the BLEU study, then the results of the Translator study and finally compare the results to each other.
+
+
 
 \subsection{BLEU}
 
@@ -231,6 +257,8 @@ It looks a little different for the German study. The ranks again were significa
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
+
+
 \subsection{Both in comparison}
 
 Table 7 and 8 show the results of the human scores as well as the BLEU scores done on the whole corpus of question in one with the human translation as reference. The BLEU score for the human translation is the highest with a lot of difference to the other translations.
@@ -256,6 +284,8 @@ The Czech results show that the order of human and Google as well as Bing and SD
 
 : **Study results German in comparison to BLEU scores on all study questions**: {#tbl:De_comparison}
 
+
+
 \subsubsection{Correlation}
 
 The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low even for the vlaues.
@@ -275,6 +305,8 @@ The correlation between the human judgment is even lower in the German study. Th
 | **rank**  | **-0,121**      |
 
 : **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
+
+
 
 \section{Discussion}
 
