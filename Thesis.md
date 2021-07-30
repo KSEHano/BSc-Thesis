@@ -31,11 +31,11 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 To avoid that a translation is entirely made out of high frequency the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest referenve.
 
 ```latex
-$BP = 
-\begin{cases}
-1       & \text{if } c < r\\
-e^(1-r/c)&\text{if } r > c
-\end{cases}$ this needs to be fixed
+$$BP = \frac{\begin{cases}
+1       & \mbox{if } c < r\\
+e^(1-r/c)&\mbox{if } r > c
+\end{cases}
+}$$ this needs to be fixed
 ```
 
 The final definition of BLEU is then
@@ -107,7 +107,7 @@ For the evaluation of the quality of several MT engines, I set up a two part exp
 
 The data consisted of the translations of four chapters from a printer manual. The original English as well as the professional translation into German, as well as the source and translation of a shorter manual into Czech. To protect the customers data all references to the company and their products were made anonymous and formatting tags in the data were removed. The data was separated into sentences or words as it came directly from the manual. In the end there were 3,767 segments including double translations and one word segments. The German translation was separated into four parts of different length according to the original chapters, 1,606, 401, 378, and 1,382 segments respectively. There were less Czech segments as there was only a shortened translation available. In total the Czech translation contained 2,165 segments separated again into parts with 1,273, 127, 215, and 550 segments. The parts were originally each one chapter the same chapters for both languages. The English original was then used as a source for the MT and the human translation was used as a reference to compare the MT to.
 
-The example in @#tbl:Dataexampl_DE and @#tbl:Dataexampl_DE show two examples of the data used in the experiment. The first example in both is one of many segments that were only one or two words long. Here it is apparent that the MT systems translated the segment literally and did not with the right term that should be used in this context. It is questionable if the context of a whole sentence would have sufficed to give a correct translation. In the second example are the translations of the same sentence into German and Czech. Here it is again apparent that the translations by the MT systems are similar or even identical to each other while the Human translation is quite different. While the English source and the more word for word translations are passive the human translations into German and Czech talk explicitly to the reader. This is possibly a convention for the writing of manuals that differs in different languages and possibly even countries. MT systems have translations that are similar to each other but differ from a Human translation because they seem to translate more literally.
+The example in @Dataexampl_DE and @Dataexampl_DE show two examples of the data used in the experiment. The first example in both is one of many segments that were only one or two words long. Here it is apparent that the MT systems translated the segment literally and did not with the right term that should be used in this context. It is questionable if the context of a whole sentence would have sufficed to give a correct translation. In the second example are the translations of the same sentence into German and Czech. Here it is again apparent that the translations by the MT systems are similar or even identical to each other while the Human translation is quite different. While the English source and the more word for word translations are passive the human translations into German and Czech talk explicitly to the reader. This is possibly a convention for the writing of manuals that differs in different languages and possibly even countries. MT systems have translations that are similar to each other but differ from a Human translation because they seem to translate more literally.
 
 | **Source**                                                   | **Human**                                                    | **SDL Trados**                                               | **Google**                                                   | **DeepL**                                                    | **Bing**                                                     |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -121,7 +121,7 @@ The example in @#tbl:Dataexampl_DE and @#tbl:Dataexampl_DE show two examples of 
 | Slit Glass                                                   | Skenovací štěrbina                                           | Proříznuté sklo                                              | Štěrbinové sklo                                              | Štěrbina Sklo                                                |
 | It is possible to check the status of the system and network, the status of consumables such as toner and paper and the situation of the options being used. | Můžete zde zkontrolovat stav systému a sítě, stav spotřebního materiálu jako toner a papír a přehled o požívaném volitelném příslušenství. | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a stav použitých doplňků. | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. |
 
-: **Example Sentences German** {#tbl:Dataexample_CZ}
+: **Example Sentences Czech** {#tbl:Dataexample_CZ}
 
 \subsection{Machine Translators}
 
@@ -340,9 +340,9 @@ Improvements to the study could be made. Having at least one other human transla
 
 \section{Conclusion}
 
-It can tentatively be said that Google and DeepL are the best MT systems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document. However despite the low ranking of the human translation it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the one agains all with human hypothesis show that the human translation is quite different from the MT and it could be that that was the reason for the low score in the study.
+It can tentatively be said that Google and DeepL are the best MT systems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document. However despite the low ranking of the human translation it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the one against all with human hypothesis show that the human translation is quite different from the MT and it could be that that was the reason for the low score in the study. In the examples above it obvious that the translation by professionals are quite different. For one they use the appropriate terminology, for another they use the right style of writing if a literal or a word for word translation is not the right choice. This is a reason why the translation has to be edited by a translator. It is unclear if a pre translation by one of the better MT systems would be helpful. While the translations are judged to be reasonably good, they are quite different to the professional translations. The editing cost to get from a MT to a finished good translation could be higher than the cost for translating everything. It could be helpful in this case to have a quality estimation to give translators an overview if the sentences translated by an MT need editing and if they do how much.
 
-need human because of lakalisation different writing conventions like passive or talking to the reader
+
 
 need some more
 
