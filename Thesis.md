@@ -31,7 +31,7 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 To avoid that a translation is entirely made out of high frequency the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest referenve.
 
 ```
-$$ BP = \begin{cases}1 & \mbox{if } c < r \ e^(1-r/c)&\mbox{if } r > c \end{cases}$$ this needs to be fixed
+$$ BP = \frac{\begin{cases}1 & \mbox{if } c < r \ e^(1-r/c)&\mbox{if } r > c \end{cases}}{\ln{i}}$$ this needs to be fixed
 ```
 
 The final definition of BLEU is then
