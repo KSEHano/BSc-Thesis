@@ -34,13 +34,7 @@ To avoid that a translation is entirely made out of high frequency the n-gram co
 
 hello
 
-$$ BP = \begin{cases}
-
-1 & \mbox{if } c<r \
-
-e^(1-r/c) & \mbox{if } c>r
-
-\end{cases} $$
+$ BP = \begin{cases} 1 & \mbox{if } c<r \ e^(1-r/c) & \mbox{if } c>r \end{cases} $
 
 
 
