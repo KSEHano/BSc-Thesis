@@ -38,6 +38,8 @@ W_{-1}(\ln(i)i) & \mbox {if } \frac{1}{e}<y<1
 
 \end{cases}}{\ln(i)} $$
 
+hello
+
 $$ BP = \begin{cases}
 
 1 & \mbox{if } c<r \
