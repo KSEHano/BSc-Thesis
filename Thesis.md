@@ -30,9 +30,7 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 
 To avoid that a translation is entirely made out of high frequency the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest reference, it is calculated on the whole corpus.
 
-$$BP = \begin{cases} 1 & \text{if } c<r \ e^(1-r/c) & \text{if } c>r \end{cases}$$
-
-The final definition of BLEU is then
+BP = \begin{cases} 1 & \text{if } c<r \ e^(1-r/c) & \text{if } c>r \end{cases}The final definition of BLEU is then
 
 $BLEU = BP * \exp(\displaystyle\sum_{n=1}^{N}w_n \log{p_n})$
 
@@ -114,7 +112,7 @@ The example in TABLE and TABLE show two examples of the data used in the experim
 | **DeepL**      | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 | **Bing**       | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 
-: **Example Sentences German** {#tbl:Dataexample_DE}
+: **Example Sentences German** {#tbl:Dataexample_DE} CHECK TRANSLATIONS!
 
 | **Translator** | **Example 1**      | **Example 2**                                                |
 | -------------- | ------------------ | ------------------------------------------------------------ |
@@ -343,7 +341,7 @@ Improvements to the study could be made. Having at least one other human transla
 
 Quality estimation tools like QuEst could also be an interesting avenue to explore. One of their main advantages are that they do not need reference translations. A problem is that they need a lot of resources for the training before they can be used and are language and domain specific after they are trained. Other than all the metrics that only need the reference translations and in some cases resources to recognizer synonyms and stems. The code for QuEst is freely available but the versions are not directly usable and need considerable work. So while QuEst could even be used to be integrated into a translation work flow it should only be considered if there is a lot of training data available and translations are done on the same domain and the same language pairs.
 
-
+@Re-examining used an algorithm based on MT metrics to detect paraphrases. They discover some common mistakes that lead to the misclassification of pairs of sentences. As metrics work with reference translation detecting if something is a paraphrase is the same as detecting if the sentence is a similar enough to the the reference translation to be a good translation, some of the mistakes are relevant for translation evaluation. The first source for mistakes is *misleading lexical overlap* as some sentences have a big overlap but some words are changed leading to a completely different meaning [@Re-examining]. This is problematic because for example BLEU would give two translation that differ only in one word from the reference translation the same score even if one is correct because it uses a synonym while the other uses a word with a different meaning. It gets even harder to distinguish if both words are correct translations or synonyms but only one of them is appropriate in that domain as the examples above show. *"EXAMPLE"* and *"EXAMPLE"*  are both correct translations for SOURCE but only HUMAN is an appropriate translation in the domain. The next source of mistakes stems from a *lack of world knowledge* if not given the appropriate knowledge MT systems can not know if something is the same like a professional position and the name of the person filling it [@Re-examining]. This is not much of a problems for MT systems in general as they seem to translate very close to the source. More of a problem are synonyms especially BLEU does not considers synonyms, this source of mistakes gets alleviated by TERp and METEOR with the use of a word net. Those can lead to systematic errors in the translation evaluation and in the cases above to decreased scores.
 
 \section{Conclusion}
 
