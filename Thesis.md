@@ -107,17 +107,9 @@ All in all BLEU is not the best metric available. Several aspects of  the metric
 
 : **All metrics in comparison** {#tbl:Metrics}
 
-@#tbl:Metrics
+[@tbl:Metrics]
 
-@{#tbl:Metrics}
 
-@Metrics
-
-{#tbl:Metrics}
-
-#tbl:Metrics
-
-[#tbl:Metrics]
 
 \section{Method}
 
@@ -129,7 +121,7 @@ For the evaluation of the quality of several MT engines, I set up a two part exp
 
 The data consisted of the translations of four chapters from a printer manual. The original English as well as the professional translation into German, as well as the source and translation of a shorter manual into Czech. To protect the customers data all references to the company and their products were made anonymous and formatting tags in the data were removed. The data was separated into sentences or words as it came directly from the manual. In the end there were 3,767 segments including double translations and one word segments. The German translation was separated into four parts of different length according to the original chapters, 1,606, 401, 378, and 1,382 segments respectively. There were less Czech segments as there was only a shortened translation available. In total the Czech translation contained 2,165 segments separated again into parts with 1,273, 127, 215, and 550 segments. The parts were originally each one chapter the same chapters for both languages. The English original was then used as a source for the MT and the human translation was used as a reference to compare the MT to.
 
-The example in @Dataexampl_DE and @Dataexampl_CZ show two examples of the data used in the experiment. The first example in both is one of many segments that were only one or two words long. Here it is apparent that the MT systems translated the segment literally and did not with the right term that should be used in this context. It is questionable if the context of a whole sentence would have sufficed to give a correct translation. In the second example are the translations of the same sentence into German and Czech. Here it is again apparent that the translations by the MT systems are similar or even identical to each other while the Human translation is quite different. While the English source and the more word for word translations are passive the human translations into German and Czech talk explicitly to the reader. This is possibly a convention for the writing of manuals that differs in different languages and possibly even countries. MT systems have translations that are similar to each other but differ from a Human translation because they seem to translate more literally.
+The example in TABLE and TABLE show two examples of the data used in the experiment. The first example in both is one of many segments that were only one or two words long. Here it is apparent that the MT systems translated the segment literally and did not with the right term that should be used in this context. It is questionable if the context of a whole sentence would have sufficed to give a correct translation. In the second example are the translations of the same sentence into German and Czech. Here it is again apparent that the translations by the MT systems are similar or even identical to each other while the Human translation is quite different. While the English source and the more word for word translations are passive the human translations into German and Czech talk explicitly to the reader. This is possibly a convention for the writing of manuals that differs in different languages and possibly even countries. MT systems have translations that are similar to each other but differ from a Human translation because they seem to translate more literally.
 
 | **Translator** | **Example 1**   | **Example 2**                                                |
 | -------------- | --------------- | ------------------------------------------------------------ |
