@@ -30,13 +30,7 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 
 To avoid that a translation is entirely made out of high frequency the n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count. This is the brevity penalty with c is th length of the candidate or hypothesis and r is the length of the closest reference, it is calculated on the whole corpus.
 
-$$$ d(i) = \frac{ \begin{cases}
 
-W_0(\ln(i)i) & \mbox{if } 0<y<\frac{1}{e} \
-
-W_{-1}(\ln(i)i) & \mbox {if } \frac{1}{e}<y<1
-
-\end{cases}}{\ln(i)} $$$
 
 hello
 
