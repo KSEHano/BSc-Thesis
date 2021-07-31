@@ -36,7 +36,7 @@ W_0(\ln(i)i) & \mbox{if } 0<y<\frac{1}{e} \
 
 W_{-1}(\ln(i)i) & \mbox {if } \frac{1}{e}<y<1
 
-\end{cases}}{\ln(i)}$$
+\end{cases}}{\ln(i)} $$
 
 $$ BP = \begin{cases}
 
@@ -44,11 +44,9 @@ $$ BP = \begin{cases}
 
 e^(1-r/c) & \mbox{if } c>r
 
-\end{cases}$$
+\end{cases} $$
 
-```
-$$ BP = \frac{\begin{cases}1 & \mbox{if } c < r \ e^(1-r/c)&\mbox{if } r > c \end{cases}}{\ln{i}}$$ this needs to be fixed
-```
+
 
 The final definition of BLEU is then
 
