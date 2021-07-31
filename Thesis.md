@@ -40,7 +40,11 @@ W_{-1}(\ln(i)i) & \mbox {if } \frac{1}{e}<y<1
 
 $$ BP = \begin{cases}
 
-1 \$$
+1 & \mbox{if } c<r \
+
+e^(1-r/c) & \mbox{if } c>r
+
+\end{cases}$$
 
 ```
 $$ BP = \frac{\begin{cases}1 & \mbox{if } c < r \ e^(1-r/c)&\mbox{if } r > c \end{cases}}{\ln{i}}$$ this needs to be fixed
