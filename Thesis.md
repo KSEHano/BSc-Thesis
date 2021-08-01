@@ -30,7 +30,7 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 
 The brevity is done so that shorter sentences do not get an inflates score. If the length of the candidate c is longer than the length of the reference r that is closest to the candidate the the brevity penalty is 1 in other cases it is $e^(1-r/c)$ [@BLEU].
 
-$$BP = \begin{cases} 1 & \text{if } c>r \\ e^(1-r/c) & \text{if } c<=r \end{cases}$$
+$$BP = \begin{cases} 1 & \text{if } c>r \\ e^(1-r/c) & \text{if } c\leq r \end{cases}$$
 
 The final definition of BLEU is then
 
