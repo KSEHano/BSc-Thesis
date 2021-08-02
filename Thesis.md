@@ -113,7 +113,7 @@ The example in table @tbl:Dataexample_DE  and table @tbl:Dataexample_CZ show two
 | **Human**      | Belichtungsglas | So können Sie den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier sowie den Zustand der verwendeten Optionen überprüfen. |
 | **SDL Trados** | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 | **Google**     | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier sowie die Situation der verwendeten Optionen zu überprüfen. |
-| **DeepL**      | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
+| **DeepL**      | Spaltglas       | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 | **Bing**       | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 
 : **Example Sentences German** {#tbl:Dataexample_DE} CHECK TRANSLATIONS!
@@ -160,9 +160,7 @@ The number of sentences was very high, to keep the length of the study to an acc
 
 \subsubsection{Participants}
 
-The participants were all professional translators, most of them have worked for Wiezeke Consulting in the past. Wiezeke consulting also recruited them from all available translators they now for those language pairs. There were five translators per language pair. I had to exclude three datasets from the Czech study because they were only partly done.
-
-- Demographics some more
+The participants were all professional translators, most of them have worked for Wiezeke Consulting in the past. Wiezeke consulting also recruited them from all available translators they now for those language pairs. There were five translators per language pair. The translators were all women for German ages 51 to 60 and three women and two men for Czech ages 31 to 40 except for one person who was 18 to 30 years old. I had to exclude three datasets from the Czech study because they were only partly done. One German participant did not answer the demographics questions but was still included because they answered all the translation questions. All translators were native in the target languages and translatied from English to German or English to Czech.
 
 
 
@@ -170,7 +168,7 @@ The participants were all professional translators, most of them have worked for
 
 The experiment was done by the participants remotely and without supervision. Each participant received an e-mail with a link to the study. They were then given 50 source sentences with 5 translations for German and 4 four Czech this included all MT as well as the human translation. In each question they were given the source sentence and all translations. They were then asked to rate the quality of the translation on a 5 point Likert scale from "strongly agree" to "strongly disagree". At the beginning of the study they were instructed to select "strongly agree" if the translation was perfect and "strongly disagree" if the sentence needed a complete new translation. These sentences were presented to the participants in a random order different for each participant the order of the translators was randomized as well. Following these questions were the general questions about demographics and the personal use of MT in their normal translation process. Such as the frequency and extend of use of MTs. The expected time for answering the questions was about 40 Minutes in both languages. 
 
-- examples study
+The demographic questions asked for the typical age and gender and specific to the study also native language and language pairs they translate. They were also questioned on there personal use of MT systems. They were asked what kind of translators they used, generic, like the ones used for the translations, adaptive, that can change with new input, customizable, that are changed to a specific language pair and domain, other or no MT system at all. The next question was then they use it in the translation process, in pre or post-editing, during the translation or never. Another question was what kind of CAT tools were used, the most used ones according to Wietzke were mentioned, SDL Trados, memoQ, Wordfast, others, or none. The second to last question was how often they use MT systems to translate words, phrases, sentences or documents on a scale from never to always. The final question asked how they would rate the quality of MT they normally encounter.
 
 For the evaluation the average was calculated over all candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the correlation between the human and machine evaluation.
 
@@ -249,16 +247,16 @@ In the translations to German it looks a little different Bing is still has the 
 
 \subsection{Translators' study}
 
-The human judgments show that the participants judged Google and human translations into Czech to be the best. However there is no significant different to the result for the human translation. There is however a significant difference between Google and SDLTrados as well as Google and Bing. Considering the rank of the translators they are all significantly different to each other.
+The human judgments show that the participants judged Google and human translations into Czech to be the best. However there is no significant different to the result for the human translation. There is however no significant difference when considering the results. Considering the rank of the translators they are all significantly different to each other.
 
 | **Translator** | **Results** | **Rank** |
 | -------------- | ----------- | -------- |
 | google         | 3,57        | **1,9**  |
 | human          | 3,406       | **2,34** |
-| SDL Trados     | *3,223* *   | **2,62** |
-| Bing           | *3,202* *   | **2,64** |
+| SDL Trados     | 3,223       | **2,62** |
+| Bing           | 3,202       | **2,64** |
 
-: **Study results Czech**: {#tbl:Cz_study} significant differences are bold, * are only significantly different to first place
+: **Study results Czech**: {#tbl:Cz_study} significant differences are bold
 
 It looks a little different for the German study. The ranks again were significantly different to each other. DeepL was judged to be the best without a significance difference to the the second best Google. The human and SDL Trados translations have significantly lower scores than DeepL. Bing has the lowest score with a significant difference to all other translators.
 
@@ -305,7 +303,7 @@ The Czech results show that the order of human and Google as well as Bing and SD
 
 \subsubsection{Correlation}
 
-The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low even for the vlaues.
+The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low for the vlaues.
 
 |           | **Correlation** |
 | --------- | --------------- |
@@ -323,7 +321,9 @@ The correlation between the human judgment is even lower in the German study. Th
 
 : **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
 
+\subsection{Translator Use}
 
+The questions in the study following the questions on translation were on the personal use of MT systems.
 
 \section{Discussion}
 
