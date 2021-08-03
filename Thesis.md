@@ -26,9 +26,9 @@ The BLEU score does not give an indication of an objectively good translation bu
 
 Mathematical BLEU is mainly based on is the so called precision $p =  \frac{m}{t}$, m being the number of matches and t being the number of n-grams in the hypothesis [@recall]. This however is not all. The use of  unigrams allows for an assessment of adequacy, that is that the words are correct. The use of higher number n-grams for fluency, that is if the translation is readable as a coherent sentence. So the basic BLEU score is based on the
 
- $p_{all} = \displaystyle\sum_{i =1}^{N} w_i* \frac{m_i}{t_i}$
+ $p_{all} = \displaystyle\sum_{n =1}^{N} w_n* \frac{m_n}{t_n}$
 
-where N is equal to 4, the biggest n-grams considered and $w_i$ are the weights for the n-grams and $w_i = \frac{1}{N}$ [@BLEU]. On a corpus or several sentences the modified precision is then the sum of the the clipped n-gram matches of all sentences divided by the number of candidate n-grams. This is done to avoid that a translation is entirely made out of high frequency words. The n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count.
+where N is equal to 4, the biggest n-grams considered and $w_n$ are the weights for the n-grams and $w_n = \frac{1}{N}$ [@BLEU]. On a corpus or several sentences the modified precision is then the sum of the the clipped n-gram matches of all sentences divided by the number of candidate n-grams. This is done to avoid that a translation is entirely made out of high frequency words. The n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences and all matches are added together to give the modifies n-gram count.
 
 $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in C} Count_clip (n-gram)}{\displaystyle\sum_{C' \in Candidates} \displaystyle\sum_{n-gram' \in C'} Count(n-gram')}$
 
@@ -40,7 +40,7 @@ The final definition of BLEU is then
 
 $BLEU = BP * \exp(\displaystyle\sum_{n=1}^{N}w_n \log{p_n})$
 
-$w_n = w_i$ as shown above and n is always the length of the n-gram. Because all the weights are the same this is the same as using a geometric mean [@BLEU]. This leads to a BLEU score of zero if one of the n-grams is not present.
+Because all the weights are the same this is the same as using a geometric mean [@BLEU]. This leads to a BLEU score of zero if one of the n-grams is not present.
 
 The BLEU score calculates the precision of a translation. With the use of the modified precision and the brevity penalty it strives to be similar to human evaluation. One of the main advantages is that BLEU needs only reference translation and the hypothesis to work and thus does not need many resources. Regardless of the existence of better metrics the few resources needed and simplicity of the calculation are reasons for the use of BLEU.
 
