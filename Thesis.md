@@ -4,12 +4,6 @@ Machine translation (MT) is a wide field. Many MT systems exist but professional
 
 \end{abstract}
 
-\newpage
-
-\tableofcontents
-
-\newpage
-
 \section{Introduction}
 
 Machine translation (MT) systems have been on the rise and seem to become more accurate. In everyday lives an MT is already often privately or professionally used to adapt to the sheer volume of content and language pairs to be translated [@book pp.1-6]. The quality of them is still not as good as a human translation but they seem to become more similar. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT when integrated in the development or learning process of a MT system. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Additionally an automatic evaluation seems to be more objective than human evaluation [@book pp. 24-27]. Despite the advantages of an automatic evaluation they are still lacking, they strive to get more similar to human evaluation but are still not there yet [@BLEU]. Automated evaluation is an important tool for the improvement and the quality assessment of MT system.
