@@ -21,6 +21,15 @@ metadata:
 bibliography:
 - source.bib
 
+format:
+- fontsize: 12pt
+
+geometry:
+- top: 2cm,
+- bottom: 2cm,
+- left: 2.2cm,
+- right: 2.2cm,
+
 
 filters:
 - type: json
