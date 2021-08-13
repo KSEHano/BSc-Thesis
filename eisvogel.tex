@@ -55,7 +55,9 @@ $endif$
 %
 \documentclass[
 $if(fontsize)$
-  $fontsize = 50pt$,
+  $fontsize$font,
+$else$
+  font = 50pt,
 $endif$
 $if(lang)$
   $babel-lang$,
