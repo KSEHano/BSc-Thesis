@@ -1,22 +1,30 @@
-begin{abstract}
+\begin{abstract}
 
 Machine translation (MT) is a wide field. Many MT systems exist but professional translators do not necessarily know how good the different systems are. In this work several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. In the end only a tentative recommendation for Google, DeepL and SDL Trados can be given but only as additional help to a human translation which is quite different from MT.
 
-end{abstract}
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
 
 \section{Introduction}
 
-Machine translation (MT) systems have been on the rise and seem to become more accurate. In everyday lives an MT is already often privately or professionally used to adapt to the sheer volume of content and language pairs to be translated [@book pp.1-6]. The quality of them is still not as good as a human translation but they seem to become more similar. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT when integrated in the development or learning process of a MT system. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Additionally an automatic evaluation seems to be more objective than human evaluation [@book pp. 24-27]. Despite the advantages of an automatic evaluation they are still lacking, they strive to get more similar to human evaluation but are still not there yet [@BLEU]. Automated evaluation is an important tool for the improvement and the quality assessment of MT system.
+Machine translation (MT) systems have been on the rise and seem to become more accurate. They are used privately and professional to translate text. Professional translations are still sought after. This presents the question if MT systems can compete with professional translations especially in specialised domains.
+
+In everyday lives an MT is already often privately or professionally used to adapt to the sheer volume of content and language pairs to be translated [@book pp.1-6]. The quality of them is still not as good as a human translation but they seem to become more similar. When evaluating the quality of a translation human evaluation is still the standard. While it is more accurate it is time consuming and expensive. For that reason an automatic evaluation could possible augment human evaluation [@book pp. 24-27; @BetterTrans] . @BetterTrans showed that automatic evaluation can help improve MT when integrated in the development or learning process of a MT system. An automatic evaluation is very useful during the optimization process of a MT system. It is faster and less expensive than a human evaluation and can therefore be repeatedly used during the development of a MT system. Additionally an automatic evaluation seems to be more objective than human evaluation [@book pp. 24-27]. Despite the advantages of an automatic evaluation they are still lacking, they strive to get more similar to human evaluation but are still not there yet [@BLEU]. Automated evaluation is an important tool for the improvement and the quality assessment of MT system.
 
 One of the groups most interested in the development of MT are professional translators. As MT systems improve they can become part of the translation workflow. In specialised fields MT systems have the added difficulty to translate the right technical terms [@legal; @Post]. Some of often translated texts are manuals for machines, here a correct translations is very important for the correct use of the machine. These manual texts are a specialized field with its own phrases that need to be translated in context. It would be important to test several MT systems in comparison to each other and a professional human translation to see how good they are. The two language pairs for the comparison were English-German and English-Czech. English-German is a common translation pair that is often translated and MT for this language pair could be very similar to a human translation. Czech, while still a European language with a Latin alphabet, is translated less often and can show if there is a difference between frequently and less frequently translated languages. I did not work with the entire manual but with four chapters on the use of the software of a printer. In this work several MT systems are compared to each other and to a professional translation manually and computational. 
 
-In the following I will explain BLEU in detail, then I will present related work, that will be followed by the Method and finally the discussion and conclusion.
+In the following I will present related work, followed by the description of the experiment and finally the discussion and conclusion.
 
 
 
 \section{Related Work}
 
-Automatic translation is a useful tool that is used to evaluate the  quality of translations fast and cheap. BLEU is still widely used but  beside that many other metrics have emerged. The goal is to create a  metric which gives results that correlate better with human judgment  than BLEU. In the following I will present BLEU, some of the challenges that  BLEU does not address, some other metrics and their function, and an alternative to automatic ecaluation.
+Automatic translation is a useful tool that is used to evaluate the  quality of translations fast and cheap. BLEU is well established but has some challenges that other metrics try to solve. Additional to evaluation metrics there is a another approach to test the quality of a translation, quality estimation. In the following I will present BLEU, some of the challenges that  BLEU does not address, some other metrics and their function, and the alternative to quality evaluation, quality estimation.
 
 \subsection{BLEU}
 
