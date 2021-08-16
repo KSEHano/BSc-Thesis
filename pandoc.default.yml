@@ -32,8 +32,8 @@ filters:
 - type: json
   path: pandoc-citeproc-preamble
 
-
-fontsize: 12pt
+variables:
+  fontsize: 12pt
 
 #geometry:
  # - top=30mm
