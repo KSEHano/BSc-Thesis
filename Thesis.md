@@ -1,3 +1,15 @@
+\begin{abstract}
+
+Machine translation (MT) is a wide field. Many MT systems exist but professional translators do not necessarily know how good the different systems are. In this work several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. In the end only a tentative recommendation for Google, DeepL and SDL Trados can be given but only as additional help to a human translation which is quite different from MT.
+
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
 \section{Introduction}
 
 Machine translation (MT) systems have been on the rise and seem to become more accurate. They are used privately and professional to translate text. Professional translations are still sought after. This presents the question if MT systems can compete with professional translations especially in specialised domains.
