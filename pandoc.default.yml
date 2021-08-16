@@ -22,7 +22,7 @@ bibliography:
 - source.bib
 
 #formatting
-#table-of-contents: true
+table-of-contents: true
 number-sections: true
 
 filters:
