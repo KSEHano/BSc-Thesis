@@ -24,6 +24,7 @@ bibliography:
 #formatting
 #table-of-contents: true
 number-sections: true
+fontsize: 12pt
 
 #geometry:
  # - top=30mm
