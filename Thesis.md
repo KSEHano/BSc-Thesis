@@ -208,7 +208,7 @@ For the BLEU score, a higher number is better while for the ranks a low number i
 
 For the Czech translations, all differences are significant as seen in table @tbl:Cz_h to @tbl:Cz_1aa_h. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
 
-! [BLEU score for Czech](images/CZ_BLEU.png) : {#fig:CZ_BLEU}
+![BLEU score for Czech](images/CZ_BLEU.png) : {#fig:CZ_BLEU}
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -238,6 +238,8 @@ For the Czech translations, all differences are significant as seen in table @tb
 
 
 In the translations to German, it looks a little different Bing still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two one against all versions, it is Google that ranks the highest with a significant difference to SDL Trados and DeepL that have no significant difference to each other. There is no significant difference between the other two. Bing has always a significantly lower score than the other MT systems.
+
+![BLEU score for German](images/DE_BLEU.png)
 
 | **Translators** | **Bleu** | **Rank**  |
 | --------------- | -------- | --------- |
@@ -293,6 +295,8 @@ It looks a little different for the German study. The ranks again were all signi
 : **Study results German**: {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
+
+![Study results](images/StudyResults.png)
 
 \subsection{Comparison between Computational and Human Evaluation}
 
