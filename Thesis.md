@@ -208,28 +208,30 @@ For the BLEU score, a higher number is better while for the ranks a low number i
 
 For the Czech translations, all differences are significant as seen in table @tbl:Cz_h to @tbl:Cz_1aa_h. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
 
+{#fig:CZ_BLEU}
+
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **0,509** | **1,436** |
-| SDL Trados      | **0,45**  | **1,634** |
-| Bing            | **0,444** | **1,693** |
+| google          | **0.509** | **1.436** |
+| SDL Trados      | **0.45**  | **1.634** |
+| Bing            | **0.444** | **1.693** |
 
 : **Czech reference is human**: {#tbl:Cz_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **0,818** | **1,479** |
-| SDL Trados      | **0,746** | **1,695** |
-| Bing            | **0,751** | **1,698** |
+| google          | **0.818** | **1.479** |
+| SDL Trados      | **0.746** | **1.695** |
+| Bing            | **0.751** | **1.698** |
 
 : **Czech one against all**: {#tbl:Cz_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are the human translation and all other translations
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **0,818** | **1,61**  |
-| SDL Trados      | **0,746** | **1,878** |
-| Bing            | **0,751** | **1,913** |
-| human           | **0,593** | **2,635** |
+| google          | **0.818** | **1.61**  |
+| SDL Trados      | **0.746** | **1.878** |
+| Bing            | **0.751** | **1.913** |
+| human           | **0.593** | **2.635** |
 
 : **Czech one agains all with human hypothesis**: {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
@@ -239,29 +241,29 @@ In the translations to German, it looks a little different Bing still has the wo
 
 | **Translators** | **Bleu** | **Rank**  |
 | --------------- | -------- | --------- |
-| DeepL           | 0,432    | 1,573     |
-| google          | 0,41     | 1,649     |
-| SDL Trados      | 0,401    | **1,747** |
-| Bing            | **0,36** | **2,003** |
+| DeepL           | 0.432    | 1.573     |
+| google          | 0.41     | 1.649     |
+| SDL Trados      | 0.401    | **1.747** |
+| Bing            | **0.36** | **2.003** |
 
 : **German human reference**: {#tbl:De_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **0,875** | **1,56**  |
-| SDL Trados      | 0,841     | 1,86      |
-| DeepL           | 0,839     | 1,87      |
-| Bing            | **0,776** | **2,025** |
+| google          | **0.875** | **1.56**  |
+| SDL Trados      | 0.841     | 1.86      |
+| DeepL           | 0.839     | 1.87      |
+| Bing            | **0.776** | **2.025** |
 
 : **German one against all**: {#tbl:DE_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations including the human translation
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
-| google          | **0,875** | **1,64**  |
-| SDL Trados      | 0,841     | 1,957     |
-| DeepL           | 0,839     | 1,948     |
-| Bing            | **0,776** | **2,203** |
-| human           | **0,494** | **3,79**  |
+| google          | **0.875** | **1.64**  |
+| SDL Trados      | 0.841     | 1.957     |
+| DeepL           | 0.839     | 1.948     |
+| Bing            | **0.776** | **2.203** |
+| human           | **0.494** | **3.79**  |
 
 : **German one against all with human hypothesis**: {#tbl:De_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
@@ -271,10 +273,10 @@ The human judgments show that the participants judged Google and human translati
 
 | **Translator** | **Results** | **Rank** |
 | -------------- | ----------- | -------- |
-| google         | 3,57        | **1,9**  |
-| human          | 3,406       | **2,34** |
-| SDL Trados     | 3,223       | **2,62** |
-| Bing           | 3,202       | **2,64** |
+| google         | 3.57        | **1.9**  |
+| human          | 3.406       | **2.34** |
+| SDL Trados     | 3.223       | **2.62** |
+| Bing           | 3.202       | **2.64** |
 
 : **Study results Czech**: {#tbl:Cz_study} significant differences are bold
 
@@ -282,11 +284,11 @@ It looks a little different for the German study. The ranks again were all signi
 
 | **Translator** | **Result** | **Rank** |
 | -------------- | ---------- | -------- |
-| DeepL          | 3,42       | **2,08** |
-| google         | 3,164      | **2,6**  |
-| human          | *2,936* *  | **2,96** |
-| SDL Trados     | *2,944* *  | **2,98** |
-| Bing           | **2,531**  | **3,42** |
+| DeepL          | 3.42       | **2.08** |
+| google         | 3.164      | **2.6**  |
+| human          | *2.936* *  | **2.96** |
+| SDL Trados     | *2.944* *  | **2.98** |
+| Bing           | **2.531**  | **3.42** |
 
 : **Study results German**: {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
@@ -300,20 +302,20 @@ The Czech results show that the order of human and Google, as well as Bing and S
 
 | **Translator** | **Human** | **Corpus Bleu** |
 | -------------- | --------- | --------------- |
-| human          | 3,406     | 0,955           |
-| google         | 3,570     | 0,489           |
-| Bing           | 3,202     | 0,416           |
-| SDL Trados     | 3,222     | 0,402           |
+| human          | 3.406     | 0.955           |
+| google         | 3.570     | 0.489           |
+| Bing           | 3.202     | 0.416           |
+| SDL Trados     | 3.222     | 0.402           |
 
 : **Study results Czech in comparison to BLEU scores on all study questions**: {#tbl:Cz_comparison}
 
 | **translator** | **human** | **Corpus Bleu** |
 | -------------- | --------- | --------------- |
-| human          | 2,936     | 0,917           |
-| DeepL          | 3,42      | 0,329           |
-| google         | 3,164     | 0,317           |
-| SDL Trados     | 2,944     | 0,303           |
-| Bing           | 2,531     | 0,287           |
+| human          | 2.936     | 0.917           |
+| DeepL          | 3.42      | 0.329           |
+| google         | 3.164     | 0.317           |
+| SDL Trados     | 2.944     | 0.303           |
+| Bing           | 2.531     | 0.287           |
 
 : **Study results German in comparison to BLEU scores on all study questions**: {#tbl:De_comparison}
 
@@ -323,8 +325,8 @@ The Spearman correlation between the human score and the BLEU score is rather sm
 
 |           | **Correlation** |
 | --------- | --------------- |
-| **value** | **0,277**       |
-| **rank**  | **0,379**       |
+| **value** | **0.277**       |
+| **rank**  | **0.379**       |
 
 : **Correlation between study results and BLEU scores for Czech**: {#tbl:Cz_corr}
 
@@ -332,8 +334,8 @@ The correlation between the human judgment is even lower in the German study. Th
 
 |           | **correlation** |
 | --------- | --------------- |
-| **value** | 0,063           |
-| **rank**  | **-0,121**      |
+| **value** | 0.063           |
+| **rank**  | **-0.121**      |
 
 : **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
 
