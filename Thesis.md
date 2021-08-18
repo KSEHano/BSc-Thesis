@@ -208,7 +208,7 @@ For the BLEU score, a higher number is better while for the ranks a low number i
 
 For the Czech translations, all differences are significant as seen in table @tbl:Cz_h to @tbl:Cz_1aa_h. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
 
-! (images/CZ_BLEU.png) {#fig:CZ_BLEU}
+! (images/CZ_BLEU.png){#fig:CZ_BLEU}
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
