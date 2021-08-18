@@ -58,7 +58,7 @@ Similarly, another study examined the quality of Google Translate [@legal]. They
 
 BLEU is used very frequently a feat considering it was introduced in 2002. Sadly the reporting of BLEU scores seems to be inconsistent as @Clarity criticizes. They present the problem that papers which use BLEU do not report any changes to BLEU. This is problematic as it does not allow for a comparison between different papers, a BLEU score of 0.5 may not mean the same in different studies. They suggest improving reports of any changes and use BLEU only to compare similar systems. This brings me to the conclusion that BLEU is still a very well-used tool despite its difficulties.
 
-\subsection{Challenges}
+\subsection{Challenges for BLEU}
 
 BLEU is an old metric, especially in the fast-changing field of computer science. It is still relevant because it is fast and easy to use. This ease of use and speed however comes at the price of its quality. BLEU has several flaws that other publications try to address in their metrics. The problems that appear in BLEU are inaccurate scores for single sentences or segments, a reliance on exact word matches, and no recall.
 
@@ -70,9 +70,9 @@ Finally, BLEU has no recall. *Recall* is the number of matches divided by the nu
 
 The factor of missing recall and the need for exact matches lead to the problem of a score that has no accurate single sentence scores. On the whole corpus, they are a little less important but can still lead to an inaccurate score. An improvement in these areas can ultimately lead to a score that is closer to human evaluation.
 
-\subsection{Alternatives}
+\subsection{Alternatives to BLEU}
 
-Considering the problems with BLEU, several alternative metrics have emerged to tackle the problems of BLEU. Here I include three other well-established metrics that are very similar to BLEU, NIST [@NIST], METEOR [@METEOR], and TER [@TER] including the two variants of TER HTER and TER-Plus [@TERp]. NIST is most similar to BLEU, METEOR includes several measures to improve on BLEU and TER is the most distinct of the three.
+Considering the problems with BLEU, several alternative metrics have emerged to tackle the problems of BLEU. Here I include three other well-established metrics that are very similar to BLEU and often used and compared to it [@book, p. 26; @QE, p. 44]. NIST [@NIST], METEOR [@METEOR], and TER [@TER] including the two variants of TER HTER and TER-Plus [@TERp] are further explained here. NIST is most similar to BLEU, METEOR includes several measures to improve on BLEU and TER is the most distinct of the three.
 
 @NIST have developed the evaluation metric that resembles BLEU the most, it is called NIST. Like all the automatic evaluation methods NIST requires at least one reference translation. Further, it compares the different n-grams of the reference or references to the hypothesis and gives the whole segment a score. NIST improves on BLEU by including information weights, i. e. that n-grams with a lower chance of co-occurrence are weighted more heavily than those with a high chance of co-occurrence [@NIST]. With those improvements, NIST has a slightly higher positive correlation with human judgment in terms of recognizing adequacy but not fluency [@NIST]. NIST is very similar to BLEU and improves slightly on it in terms of correlation with human judgment.
 
@@ -88,21 +88,28 @@ TER is a little bit different from the other metrics in that it calculates the e
 
 Several aspects of BLEU have room for improvement to get a score closer to human evaluations and the metrics above tackle those. This leads to a higher positive correlation with human evaluation. I mentioned NIST, METEOR, and TER as some of the well-known alternatives. NIST is not much of an improvement compared to BLEU, and METEOR, as well as TER, need more resources than BLEU. In the end, BLEU is still a metric that is often used to compare to other metrics as a baseline, or to evaluate MT systems. Furthermore is quality estimation is a possible alternative to quality evaluation metrics if it gets easier to handle.
 
-**Metric Human Reference Synonyms  and StemsTunability/  PrecisenessRecall** 
-
-BLEU	Yes	No	n-gram weights	No
-
-NIST	Yes	No	information gain	No
-
-METEOR	Yes	Yes	three tuning parameters	Yes
-
-TER	Yes	No	-	No
-
-HTER	Yes (plus edited reference)	No	-	No
-
-TERp	Yes	Yes	different editing cost	Yes
+| **Metric<br />** | **Human Reference<br />**   | **Synonyms <br />and Stems** | **Tunability/ <br />Preciseness** | **Recall<br />** |
+| ---------------- | --------------------------- | ---------------------------- | --------------------------------- | ---------------- |
+| BLEU             | Yes                         | No                           | n-gram weights                    | No               |
+| NIST             | Yes                         | No                           | information gain                  | No               |
+| METEOR           | Yes                         | Yes                          | three tuning parameters           | Yes              |
+| TER              | Yes                         | No                           | -                                 | No               |
+| HTER             | Yes (plus edited reference) | No                           | -                                 | No               |
+| TERp             | Yes                         | Yes                          | different editing cost            | Yes              |
 
 : **All metrics in comparison** {#tbl:Metrics}
+
+\subsection{Challenges for Metrics}
+
+Metrics like BLEU and its alternatives can have systematic errors. @Re-examining used an algorithm based on MT metrics to detect paraphrases. They discover some common mistakes that lead to the misclassification of pairs of sentences as paraphrases. This is similar to evaluating the quality of a translation with a reference.
+
+The first source for mistakes is *misleading lexical overlap* as some sentences have a big overlap but some words are changed leading to a completely different meaning [@Re-examining]. This is problematic because, for example, BLEU would give two translations that differ only in one word from the reference translation the same score even if the word difference changes the meaning of the whole sentence. A different word choice can be scored the same as a wrong translation especially if there is no resource for stemming or synonyms like in BLEU, NIST or TER and synonyms and different word forms are not matched.
+
+The next source of mistakes stems from a *lack of world knowledge* if not given the appropriate knowledge MT systems can not know if something is the same like a professional position and the name of the person filling it [@Re-examining]. This is not much of a problem for MT systems in general as they seem to translate very closely to the source. More of a problem are synonyms especially again, this source of mistakes is reduced by TERp and METEOR, which consider synonyms. In those cases it would be important to have a domain specific resource, because not all synonyms are appropriate in every domain.
+
+The mistakes above can lead to systematic errors and an inappropriate scoring for different sentences, qualitative different sentences can be scored the same and sentences that have the same quality could be scored different.
+
+
 
 \subsection{Quality Estimation}
 
@@ -120,33 +127,24 @@ The data consisted of the translations of four chapters from a printer manual. I
 
 Table @tbl:Dataexample_DE and table @tbl:Dataexample_CZ show two examples of the data used in the experiment. The first example in both is one of many segments that were only one or two words long. Here it is apparent that the MT systems translated the segment literally and not with the right technical term for this context. It is questionable, if the context of a whole sentence would have sufficed to give a correct translation. The translations of whole sentences show that the MT systems translate very literally. In the second example are the translations of the same sentence into German and Czech. Here it is again apparent that the translations by the MT systems are similar or even identical to each other while the Human translation is quite different. While the English source and the more word-for-word translations are passive the human translations into German and Czech talk explicitly to the reader. This is possibly a convention for the writing of manuals that differs in different languages and possibly even localisations. MT systems have translations that are similar to each other but differ from human translation because they seem to translate more literally. This gives the translators two challenges, to use the appropriate terms and to translate in an appropriate style for the language and localisation and kind of text.
 
-**TranslatorExample 1Example 2**
-
-**Source**	Slit Glass	It is possible to check the status of the system and network, the status of consumables such as toner and paper and the situation of the options being used.
-
-**Human**	Belichtungsglas	So können Sie den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier sowie den Zustand der verwendeten Optionen überprüfen.
-
-**SDL Trados**	Schlitzglas	Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen.
-
-**Google**	Schlitzglas	Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier sowie die Situation der verwendeten Optionen zu überprüfen.
-
-**DeepL**	Spaltglas	Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen.
-
-**Bing**	Schlitzglas	Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen.
+| **Translator** | **Example 1**   | **Example 2**                                                |
+| -------------- | --------------- | ------------------------------------------------------------ |
+| **Source**     | Slit Glass      | It is possible to check the status of the system and network, the status of consumables such as toner and paper and the situation of the options being used. |
+| **Human**      | Belichtungsglas | So können Sie den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier sowie den Zustand der verwendeten Optionen überprüfen. |
+| **SDL Trados** | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
+| **Google**     | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzwerks, den Status von Verbrauchsmaterialien wie Toner und Papier sowie die Situation der verwendeten Optionen zu überprüfen. |
+| **DeepL**      | Spaltglas       | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
+| **Bing**       | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 
 : **Example Sentences German** {#tbl:Dataexample_DE}
 
-**TranslatorExample 1Example 2**
-
-**Source**	Slit Glass	It is possible to check the status of the system and network, the status of consumables such as toner and paper and the situation of the options being used.
-
-**Human**	Skenovací štěrbina	Můžete zde zkontrolovat stav systému a sítě, stav spotřebního materiálu jako toner a papír a přehled o požívaném volitelném příslušenství.
-
-**SDL Trados**	Proříznuté sklo	Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností.
-
-**Google**	Štěrbinové sklo	Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a stav použitých doplňků.
-
-**DeepL**	Štěrbina Sklo	Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností.
+| **Translator** | **Example 1**      | **Example 2**                                                |
+| -------------- | ------------------ | ------------------------------------------------------------ |
+| **Source**     | Slit Glass         | It is possible to check the status of the system and network, the status of consumables such as toner and paper and the situation of the options being used. |
+| **Human**      | Skenovací štěrbina | Můžete zde zkontrolovat stav systému a sítě, stav spotřebního materiálu jako toner a papír a přehled o požívaném volitelném příslušenství. |
+| **SDL Trados** | Proříznuté sklo    | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. |
+| **Google**     | Štěrbinové sklo    | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a stav použitých doplňků. |
+| **DeepL**      | Štěrbina Sklo      | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. |
 
 : **Example Sentences Czech** {#tbl:Dataexample_CZ}
 
@@ -166,29 +164,41 @@ First I replaced every "-" with a space as that was not a significant translatio
 
 The main tuning parameters for BLEU are the weights. The weights influence the importance of the n-grams. Usually the n-grams from n = 1 to n = 4 are considered. Without tuning the n-grams are weighted equally and result in a geometric mean. This did not lead to any satisfactory results, shorter segments of one or two words were scored as 0 even if the translation was identical to the reference, this was especially problematic as there is a high number of single or two-word translations. Using a geometric mean could lead to an inaccurate segment and overall score because short segments are not counted correctly. To get a more adequate result the weights were changed. A high weight for unigrams was most important but other n-grams had some weight so that they would be considered. In the end, the weights were as follows (0.7, 0.15, 0.075, 0.075) in order from unigram to 4-gram. The new weights ensure that it is not a geometric mean anymore and scores are calculated even if segments are shorter. The high weight for unigrams gives more importance to adequacy than to fluency, the use of the right words was weighted stronger as opposed to whether they are in the right order. With this, I had usable results even for the segments with less than four words. In the end, the weights were so even short segments got a score.
 
-The data were compared in different steps. Each sentence of each MT had a BLEU score calculated and was ranked against the BLEU scores of the other MT. Additionally, a corpus BLEU score, a commutative score of all sentences of one chapter was calculated. Different sets of references were also compared. First, only the human translation was a reference but for comparison, I also used a one against all approach for the references, in two versions. First I used all MT and the Human translation as a reference and each time left out the MT that was the hypothesis. Secondly, I included all translations even the human one as a possible hypothesis so that for the calculation of the BLEU score for the human translation all the MT were used as references. I calculated the BLEU score for each segment and MT in three different ways and changed the references between trails.
+The BLEU score was calculated with different sets of references. Once with only the human translation as a reference. Twice with all translations as reference excluding the translation that was the reference. One version where the human translation was included as a hypothesis and one were it was exclusively used as a reference. There was a score calculated for every segment of every translation and one for each chapter. It was also calculated which translation ranked best on each segment and on average. The results show the BLEU score the different MT systems and the human translation achieve depending on the references.
 
-\subsection{Translator Study}
+\subsection{Human Evaluation}
 
-BLEU gave a first impression of the quality of the MT but it compares the translations to reference translations and I had only one verified reference translation, the human translation. It was important to see if translators rate the MT similarly to the BLEU score. Especially considering that BLEU's correlation with human judgment could be better. In the following, I describe the study with the translators.
+BLEU gave a first impression of the quality of the MT but it compares the translations to reference translations and I had only one verified reference translation, the human translation. It was important to see if translators rate the MT similarly to the BLEU score and test what kind of correlation the BLEU score has with human evaluation. In the following, I describe the study with the translators.
 
 \subsubsection{Data}
 
-The number of sentences was very high, to keep the time to do the study to an acceptable length for the participants this number had to be reduced. First, it was necessary to filter out the interesting sentences for the study. The source sentences had to have a length between 6 and 15 words. The lower bound allowed to filter out most nonsentences. @SentenceLength showed that 17 to 18-year-olds could pass sentences with up to 15 words with ease, it also suggested that better readers could parse even longer sentences with relative ease but it seemed like a good cut of point to keep the length of the sentences manageable and time per sentence shorter. In the next step sentences that had identical translations in different translators were excluded. The sentence also had to have at least one score that differed from the others to guarantee diverse sentences. From that set of sentences, 60 sentences were randomly sampled. Sentences with missing words and repeated sentences were manually excluded. Finally, the first 50 sentences of that final set were used in the study. All these steps reduced the sentences to a good sample of all the sentences.
-
-\subsubsection{Participants}
-
-The participants were all professional translators, most of them have worked for Wiezeke Consulting in the past. Wiezeke Consulting recruited them from all available translators they know for those language pairs. There were five translators per language pair. The translators were all women for German, plus one unidentified person, ages 51 to 60, and three women and two men for Czech ages 31 to 40 except for one person who was 18 to 30 years old. I had to exclude three datasets from the Czech study because they were only partly done. One German participant did not answer the demographic questions but was still included because they answered all the translation questions. All translators were native in the target languages and translated professionally from English to German or English to Czech.
+The number of sentences was very high, to keep the time to do the study to an acceptable length for the participants this number had to be reduced. First, it was necessary to filter out adequate sentences for the study. They had to be actually complete sentences, different for each MT system, and there should not be any source sentence more than once. The source sentences had to have a length between 6 and 15 words. The lower bound allowed to filter out most nonsentences. @SentenceLength showed that 17 to 18-year-olds could pass sentences with up to 15 words with ease, it also suggested that better readers could parse even longer sentences with relative ease but it seemed like a good cut of point to keep the length of the sentences manageable and time per sentence shorter. In the next step sentences that had identical translations in different translators were excluded. The sentence also had to have at least one score that differed from the others to guarantee diverse sentences. From that set of sentences, 60 sentences were randomly sampled. Sentences with missing words and repeated sentences were manually excluded. Finally, the first 50 sentences of that final set were used in the study. All these steps reduced the sentences to a diverse and adequate sample of all the sentences.
 
 \subsubsection{Experiment}
 
 The experiment was done by the participants remotely and without supervision. Each participant received an e-mail with a link to the study. They were then given 50 source sentences with five translations for German and four for Czech this included all MT as well as the human translation. In each question, they were given the source sentence and all translations. They were then asked to rate the quality of the translation on a 5 point Likert scale from "strongly agree" to "strongly disagree". At the beginning of the study, they were instructed to select "strongly agree" if the translation was perfect and "strongly disagree" if the sentence needed a complete new translation. These sentences were presented to the participants in a random order different for each participant the order of the translators was randomized for each question and participant. Following these questions were the general questions, about demographics and the personal use of MT in their normal translation process. Such as the frequency and extent of use of MTs. The expected time for answering the questions was about 40 Minutes in both languages. 
 
-The general questions asked for the typical age and gender and specific to the study also native language and language pairs they translate. They were also questioned on their personal use of MT systems. They were asked what kind of systems they used, generic, ones that translate text without any further information and do not change, adaptive, that can change with new input, customizable, that are changed to a specific language pair and domain, other or no MT system at all. The next question was when they use it in the translation process, in pre or post-editing, during the translation, or never. Another question was what kind of CAT tools were used, the most used ones according to Wietzke were mentioned, SDL Trados, memoQ, Wordfast, others, or none. The second to last question was how often they use MT systems to translate words, phrases, sentences, or documents on a scale from never to always. The final question asked how they would rate the quality of MT they normally encounter.
+The general questions asked for the typical age and gender and specific to the study also native language and language pairs they translate. They were also questioned on their personal use of MT systems. They were asked what kind of systems they used. Generic, ones that translate text without any further information and do not change, adaptive, that can change with new input, customizable, that are changed to a specific language pair and domain, other or no MT system at all. The next question was when they use it in the translation process, in pre or post-editing, during the translation, or never. Another question was what kind of CAT tools were used, SDL Trados, memoQ, Wordfast, others, or none. The second to last question was how often they use MT systems to translate words, phrases, sentences, or documents on a scale from never to always. The final question asked how they would rate the quality of MT they normally encounter.
 
-For the evaluation of the main part, the average was calculated overall candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the correlation between the human and machine evaluation.
+For the evaluation of the main part, the average was calculated overall candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the Spearman correlation between the human and machine evaluation.
+
+\subsubsection{Participants}
+
+The participants were all professional translators, most of them have worked for Wiezeke Consulting in the past. Wiezeke Consulting recruited them from all available translators they know for those language pairs. There were five translators per language pair. The translators were all women for German, plus one unidentified person, ages 51 to 60, and three women and two men for Czech ages 31 to 40 except for one person who was 18 to 30 years old. I had to exclude three datasets from the Czech study because they were only partly done. One German participant did not answer the demographic questions but was still included because they answered all the translation questions. All translators were native in the target languages and translated professionally from English to German or English to Czech.
+
+\subsubsection{Usage of MT Systems}
+
+The questions in the study following the questions on translations were on the personal use of MT systems. For the participants of the Czech study, only one responded to not use any MT engine but later responded that they translate words, phrases, and sentences with MT systems. The others all use an adaptable MT system and two use also a customizable MT and one of them uses additionally a generic MT system. The MT is used during the translation process and/or during the post-editing. They all use some MT systems not listed but SDL Trados and memoQ are also used by four and three people respectively, at least four of them use more than one CAT tool. The MT systems were used to translate words either never, three participants, rarely, one, or sometimes, one. To translate phrases they were used never, two, rarely one, and sometimes, two. Sentences were translated with an MT system rarely, two, sometimes, often, and always, each one. Whole documents were never translated with an MT system, except for one participant who used it always. The quality of MT systems was judged by three people to be good or better while one person judged it as neither good nor bad and one judged it as bad.
+
+For the German version of the study, the results to these questions were only given by four people the participant was still included for the other questions as they answered all other 50 questions. MT systems were only used by one participant and she used a generic one. This time the answers agree with the other answers on what they translate with the MT system. MT systems are used by two people for post-editing and never by the other two. SDL Trados and at least one other tool are used by all participants, memoQ by two and Wordfast by one person. Only phrases and sentences are sometimes translated but only one person does that all others never translate anything with an MT system, no one translates words or whole documents with an MT system. The quality of MT is mostly judged as neither good nor bad and one person judges it as bad.
 
 \section{Results}
+
+Bellow the BLEU scores, results of the study and correlation are presented the results are all tested for significance with pair wise t-test. To be significant the p-value had to be below 0.5. Significant values are marked as bold. For all cases bold means that the results are significantly different to all other results.
+
+For the computational part, the different MT systems and human results were compared to each other with a pairwise t-test, comparing every result for the translation to every other translation. The data for the t-test were the results for each segment for the BLEU score or rank. The results presented for the computational part are the average ranks and the average of the chapter BLEU score.
+
+For the study the results were first averaged over the participants for each translator and question and a pairwise t-test was calculated on those results. The results presented are the average rank for each translator and the BLEU score calculated on the whole set of sentences. The Spearman correlation was calculated with all the average response of all the participants to each translation and the BLEU score for each translation. 
 
 In this section, I will first present the results of the BLEU study, then the results of the Translator study, and finally, compare the results to each other.
 
@@ -198,175 +208,140 @@ For the BLEU score, a higher number is better while for the ranks a low number i
 
 For the Czech translations, all differences are significant as seen in table @tbl:Cz_h to @tbl:Cz_1aa_h. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
 
-**TranslatorsBleuRank**
-
-google	**0,509**	**1,436**
-
-SDL Trados	**0,45**	**1,634**
-
-Bing	**0,444**	**1,693**
+| **Translators** | **Bleu**  | **Rank**  |
+| --------------- | --------- | --------- |
+| google          | **0,509** | **1,436** |
+| SDL Trados      | **0,45**  | **1,634** |
+| Bing            | **0,444** | **1,693** |
 
 : **Czech reference is human**: {#tbl:Cz_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
-**TranslatorsBleuRank**
-
-google	**0,818**	**1,479**
-
-SDL Trados	**0,746**	**1,695**
-
-Bing	**0,751**	**1,698**
+| **Translators** | **Bleu**  | **Rank**  |
+| --------------- | --------- | --------- |
+| google          | **0,818** | **1,479** |
+| SDL Trados      | **0,746** | **1,695** |
+| Bing            | **0,751** | **1,698** |
 
 : **Czech one against all**: {#tbl:Cz_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are the human translation and all other translations
 
-**TranslatorsBleuRank**
-
-google	**0,818**	**1,61**
-
-SDL Trados	**0,746**	**1,878**
-
-Bing	**0,751**	**1,913**
-
-human	**0,593**	**2,635**
+| **Translators** | **Bleu**  | **Rank**  |
+| --------------- | --------- | --------- |
+| google          | **0,818** | **1,61**  |
+| SDL Trados      | **0,746** | **1,878** |
+| Bing            | **0,751** | **1,913** |
+| human           | **0,593** | **2,635** |
 
 : **Czech one agains all with human hypothesis**: {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
+
+
 In the translations to German, it looks a little different Bing still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two one against all versions, it is Google that ranks the highest with a significant difference to SDL Trados and DeepL that have no significant difference to each other. There is no significant difference between the other two. Bing has always a significantly lower score than the other MT systems.
 
-**TranslatorsBleuRank**
-
-DeepL	0,432	1,573
-
-google	0,41	1,649
-
-SDL Trados	0,401	**1,747**
-
-Bing	**0,36**	**2,003**
+| **Translators** | **Bleu** | **Rank**  |
+| --------------- | -------- | --------- |
+| DeepL           | 0,432    | 1,573     |
+| google          | 0,41     | 1,649     |
+| SDL Trados      | 0,401    | **1,747** |
+| Bing            | **0,36** | **2,003** |
 
 : **German human reference**: {#tbl:De_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
-**TranslatorsBleuRank**
-
-google	**0,875**	**1,56**
-
-SDL Trados	0,841	1,86
-
-DeepL	0,839	1,87
-
-Bing	**0,776**	**2,025**
+| **Translators** | **Bleu**  | **Rank**  |
+| --------------- | --------- | --------- |
+| google          | **0,875** | **1,56**  |
+| SDL Trados      | 0,841     | 1,86      |
+| DeepL           | 0,839     | 1,87      |
+| Bing            | **0,776** | **2,025** |
 
 : **German one against all**: {#tbl:DE_1aa} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations including the human translation
 
-**TranslatorsBleuRank**
-
-google	**0,875**	**1,64**
-
-SDL Trados	0,841	1,957
-
-DeepL	0,839	1,948
-
-Bing	**0,776**	**2,203**
-
-human	**0,494**	**3,79**
+| **Translators** | **Bleu**  | **Rank**  |
+| --------------- | --------- | --------- |
+| google          | **0,875** | **1,64**  |
+| SDL Trados      | 0,841     | 1,957     |
+| DeepL           | 0,839     | 1,948     |
+| Bing            | **0,776** | **2,203** |
+| human           | **0,494** | **3,79**  |
 
 : **German one against all with human hypothesis**: {#tbl:De_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
 
-\subsection{Translator Study}
+\subsection{Evaluation Study}
 
 The human judgments show that the participants judged Google and human translations into Czech to be the best. However, there is no significant difference between any of the translators. They are significantly different in terms of ranks.
 
-**TranslatorResultsRank**
-
-google	3,57	**1,9**
-
-human	3,406	**2,34**
-
-SDL Trados	3,223	**2,62**
-
-Bing	3,202	**2,64**
+| **Translator** | **Results** | **Rank** |
+| -------------- | ----------- | -------- |
+| google         | 3,57        | **1,9**  |
+| human          | 3,406       | **2,34** |
+| SDL Trados     | 3,223       | **2,62** |
+| Bing           | 3,202       | **2,64** |
 
 : **Study results Czech**: {#tbl:Cz_study} significant differences are bold
 
 It looks a little different for the German study. The ranks again were all significantly different from each other. DeepL was judged to be the best without a significant difference to the second best Google. The human and SDL Trados translations have significantly lower scores than DeepL. Bing has the lowest score with a significant difference from all other translators.
 
-**TranslatorResultRank**
-
-DeepL	3,42	**2,08**
-
-google	3,164	**2,6**
-
-human	*2,936* *	**2,96**
-
-SDL Trados	*2,944* *	**2,98**
-
-Bing	**2,531**	**3,42**
+| **Translator** | **Result** | **Rank** |
+| -------------- | ---------- | -------- |
+| DeepL          | 3,42       | **2,08** |
+| google         | 3,164      | **2,6**  |
+| human          | *2,936* *  | **2,96** |
+| SDL Trados     | *2,944* *  | **2,98** |
+| Bing           | **2,531**  | **3,42** |
 
 : **Study results German**: {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
-\subsection{Both in Comparison}
+\subsection{Comparison between Computational and Human Evaluation}
 
 Table @tbl:Cz_comparison and @tbl:De_comparison show the results of the human scores as well as the BLEU scores done on the whole corpus of question in one with the human translation as reference. The BLEU score for the human translation is the highest with a lot of difference from the other translations.
 
 The Czech results show that the order of human and Google, as well as Bing and SDL Trados, are switched. For the translations into German, the human translation jumps to the front with the highest BLEU score the order of the remaining translators stays the same.
 
-**TranslatorHumanCorpus Bleu**
-
-human	3,406	0,955
-
-google	3,570	0,489
-
-Bing	3,202	0,416
-
-SDL Trados	3,222	0,402
+| **Translator** | **Human** | **Corpus Bleu** |
+| -------------- | --------- | --------------- |
+| human          | 3,406     | 0,955           |
+| google         | 3,570     | 0,489           |
+| Bing           | 3,202     | 0,416           |
+| SDL Trados     | 3,222     | 0,402           |
 
 : **Study results Czech in comparison to BLEU scores on all study questions**: {#tbl:Cz_comparison}
 
-**translatorhumanCorpus Bleu**
-
-human	2,936	0,917
-
-DeepL	3,42	0,329
-
-google	3,164	0,317
-
-SDL Trados	2,944	0,303
-
-Bing	2,531	0,287
+| **translator** | **human** | **Corpus Bleu** |
+| -------------- | --------- | --------------- |
+| human          | 2,936     | 0,917           |
+| DeepL          | 3,42      | 0,329           |
+| google         | 3,164     | 0,317           |
+| SDL Trados     | 2,944     | 0,303           |
+| Bing           | 2,531     | 0,287           |
 
 : **Study results German in comparison to BLEU scores on all study questions**: {#tbl:De_comparison}
 
 \subsubsection{Correlation}
 
-The spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low for the values.
+The Spearman correlation between the human score and the BLEU score is rather small for Czech and German. Czech has a significant result for the correlation between the values of the study and BLEU as well as of the rankings but the correlation is very low positive, negligible low for the values.
 
-**Correlation**
-
-**value**	**0,277**
-
-**rank**	**0,379**
+|           | **Correlation** |
+| --------- | --------------- |
+| **value** | **0,277**       |
+| **rank**  | **0,379**       |
 
 : **Correlation between study results and BLEU scores for Czech**: {#tbl:Cz_corr}
 
 The correlation between the human judgment is even lower in the German study. The correlation between the values is not significant. Between the ranks the correlation is significant but negligible negative.
 
-**correlation**
+|           | **correlation** |
+| --------- | --------------- |
+| **value** | 0,063           |
+| **rank**  | **-0,121**      |
 
-**value**	0,063
+: **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
 
-**rank**	**-0,121**
 
-: **Correlation between study results and BLEU scores for German**: {#tbl:De_corr}
-
-\subsection{Translator Use}
-
-The questions in the study following the questions on translations were on the personal use of MT systems. For the participants of the Czech study, only one responded to not use any MT engine but later responded that they translate words, phrases, and sentences with MT systems. The others all use an adaptable MT system and two use also a customizable MT and one of them uses additionally a generic MT system. The MT is used during the translation process and/or during the post-editing. They all use some MT systems not listed but SDL Trados and memoQ are also used by four and three people respectively, at least four of them use more than one CAT tool. The MT systems were used to translate words either never, three participants, rarely, one, or sometimes, one. To translate phrases they were used never, two, rarely one, and sometimes, two. Sentences were translated with an MT system rarely, two, sometimes, often, and always, each one. Whole documents were never translated with an MT system, except for one participant who used it always. The quality of MT systems was judged by three people to be good or better while one person judged it as neither good nor bad and one judged it as bad.
-
-For the German version of the study, the results to these questions were only given by four people the participant was still included for the other questions as they answered all other 50 questions. MT systems were only used by one participant and she used a generic one. This time the answers agree with the other answers on what they translate with the MT system. MT systems are used by two people for post-editing and never by the other two. SDL Trados and at least one other tool are used by all participants, memoQ by two and Wordfast by one person. Only phrases and sentences are sometimes translated but only one person does that all others never translate anything with an MT system, no one translates words or whole documents with an MT system. The quality of MT is mostly judged as neither good nor bad and one person judges it as bad.
 
 \section{Discussion}
 
-For the small group of translators, it seems that the Czech translators use MT systems more often in their work and rate the quality as better than compared to their German counterparts. This is surprising in so far as that German is the more commonly translated language by MT systems. The reason for that could be the frequency of use. The Czech participants used MT systems with a lot more frequency than the German participants and could be more used to an MT. It could also be that the translation into Czech is better than into German. To find out if there is a causal relationship between translator use and quality or perceived quality, a completely different study would be needed. Despite the German translator's bad opinion, they did not judge the human translation to be the best and significantly lower than DeepL.
+For the small group of translators, it seems that the Czech translators use MT systems more often in their work and rate the quality as better than compared to their German counterparts. This is surprising in so far as that German is the more commonly translated language by MT systems. The reason for that could be the frequency of use by the translators. The Czech participants used MT systems with a lot more frequency than the German participants and could be more used to an MT. It could also be that the translation into Czech is better than into German, or the differences between the translators could have an influence on the results. To find out if there is a causal relationship between translator use and quality or perceived quality, a completely different study would be needed. Despite the German translator's bad opinion, they did not judge the human translation to be the best and significantly lower than DeepL.
 
 The results are not directly comparable to other studies because the weights were changed. That is a common problem in the reporting of the BLEU results. Sometimes it is not clear which changes have been made to the code which leads to the problem that there is no one single BLEU score and results can be misleading [@Clarity]. The results can only give a ranking of the translations, not a comparable result. Further, because of the changed weights, unigrams have more influence on the score. This leads to a heavier emphasis on adequacy but less on fluency which BLEU accounts for by using the longer n-grams. That means that the words might be translated correctly but not in the right order.
 
@@ -376,7 +351,7 @@ For the BLEU score of the study sentences, the translations were scored against 
 
 The result of the study was surprising especially the sores for the human translations. Other than expected the human score was not the best and even significantly worse than the best result in the German study. It was expected that the human translation as the gold standard would be significantly better than the MTs. A reason for the surprisingly bad result for the human translation could be that it was too different from the source. While they could in context be correct translations and the way it should be translated, the translators could have judged the translation as too different from the source. Other than the MTs that are more word-for-word translations. The results of the one against all with a human hypothesis scores suggest that the human translation is rather different from the other translations.
 
- The lack of correlation is concerning because the human judgment should be similar to the BLEU score. After all human evaluation is still the defining factor when judging the quality of an MT system. Other papers suggest that the BLEU correlates with human judgment [@BLEU]. The results here might be screwed by the use of the human translation as a reference and hypothesis in the BLEU score. @BLEU for example uses three MT systems and two human translations in their study with human participants. Although, the order of the MT ranking stays the same disregarding the human translation in the German translation for the study results and the BLEU score the correlation is negligible. The overall score for all translations is, with under 4 on a 1 to 5 scale, rather low.
+ There is not much correlation, it is unclear why that is the case. There are not enough data for a definite result even if the results are significant a bigger sample set could give better results. After all human evaluation is still the defining factor when judging the quality of an MT system. Other papers suggest that the BLEU correlates with human judgment [@BLEU]. The results here might be screwed by the use of the human translation as a reference and hypothesis in the BLEU score. @BLEU for example uses three MT systems and two human translations in their study with human participants. Although, the order of the MT ranking stays the same disregarding the human translation in the German translation for the study results and the BLEU score the correlation is negligible. The overall score for all translations is, with under 4 on a 1 to 5 scale, rather low.
 
 For the Czech translation, the ranking order of the two worst is swapped between the BLEU score and the study results disregarding the human translation, however, there is no significant difference between the two. Considering the BLEU score with only a human reference, table @#tbl:Cz_h and table @#tbl:De_h, the order of the MT systems is the same as in the study, not counting the study results for the human translation. This lends some credibility to the BLEU scores even if the results of the study have less significant differences.
 
@@ -388,15 +363,15 @@ A further interesting question to consider is a change to the study. Firstly it 
 
 Quality estimation tools like QuEst could also be an interesting avenue to explore. One of their main advantages is that they do not need reference translations. A problem is that they need a lot of resources for the training before they can be used and are language and domain-specific after they are trained. Other than all the metrics that only need the reference translations and in some cases resources to recognizer synonyms and stems. The code for QuEst is freely available but the versions are not directly usable and need considerable work. So while QuEst could even be used to be integrated into a translation work-flow it should only be considered if there is a lot of training data available and translations are done on the same domain and the same language pairs.
 
-Metrics like BLEU can have systematic errors. @Re-examining used an algorithm based on MT metrics to detect paraphrases. They discover some common mistakes that lead to the misclassification of pairs of sentences as paraphrases. This is similar to evaluating the quality of a translation with a reference.
-
-The first source for mistakes is *misleading lexical overlap* as some sentences have a big overlap but some words are changed leading to a completely different meaning [@Re-examining]. This is problematic because, for example, BLEU would give two translations that differ only in one word from the reference translation the same score even if one is correct because it uses a synonym while the other uses a word with a different meaning. It gets even harder to distinguish if both words are correct translations or synonyms but only one of them is appropriate in that domain as the examples above show. *"Entfernen Sie das Papier aus den Kassetten, und verschließen Sie es in der* ***Papieraufbewahren-Tasche\****, um es vor Feuchtigkeit zu schützen."* and *"Entfernen Sie das Papier aus den Kassetten und verschließen Sie es im* ***Papieraufbewahrungsbeutel\****, um es vor Feuchtigkeit zu schützen."* are both correct translations for *"Remove paper from the cassettes and seal it in the* ***paper storage bag\*** *to protect it from humidity."* but *"Entnehmen Sie das Papier aus der Kassette und verstauen Sie es in der* ***Originalverpackung\****."* is an appropriate human translation in the domain. The point here is the different bold words that show again that the MT translations are more word-for-word translations and do not necessarily use the correct technical terms.
-
-The next source of mistakes stems from a *lack of world knowledge* if not given the appropriate knowledge MT systems can not know if something is the same like a professional position and the name of the person filling it [@Re-examining]. This is not much of a problem for MT systems in general as they seem to translate very closely to the source. More of a problem are synonyms especially BLEU does not consider synonyms, this source of mistakes is reduced by TERp and METEOR with the use of a wordnet. Those can lead to systematic errors in the translation evaluation and in the cases above to decreased scores.
-
-end absatz
-
 \section{Conclusion}
+
+In the field of translation evaluation there are several different translation evaluation metrics. The well-established ones are: BLEU, NIST, METEOR and TER. They all compare a hypothesis, a translation, to at least one reference translation and give score that shows how similar the hypothesis is to the reference. They all have different advantages and disadvantages. One important aspect is how they calculate the score and if the calculation is based on precision, matching n-grams per n-grams of the hypothesis, or recall, matching n-grams per n-grams in one of the references. Another important aspect is the recognition of synonyms, most metrics can not match synonyms but instead require exact matches. Only METEOR and TERp a variant of TER can recognise and match synonyms but require additional resources. In general the metrics do not require many resources, mainly a reference translation, and are therefore fast and language independent. BLEU is very well-established and a very fast and easy to use metric.
+
+The computational experiment showed that there are differences between most of the MT systems, sometimes there was no significant difference between the translation. The comparison between the MT systems and human translation showed that the BLEU score is a similarity measure and shows only how similar a translation is to another one. Shown in the low score for the human translation when the references are MT and the increase of the scores for the MT when other MTs were included in the references.
+
+The human evaluation showed not many significant differences between the different translations. The sample size for the data was relatively small and no definite answer to which the best MT system is or how good the correlation between BLEU score and human evaluation can be given. Other than expected, the human translation is not significantly better than the other translations. The reasons for that are unclear.
+
+
 
 It can tentatively be said that Google and DeepL are the best MT systems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document at once. However, despite the low ranking of the human translation, it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the one against all with human hypothesis show that the human translation is quite different from the MT and it could be that this was the reason for the low score in the study. In the examples above it is obvious that the translations by professionals are quite different. For one they use the appropriate terminology, for another they use another style of writing if a literal or a word-for-word translation is not the right choice. This is a reason why an MT has to be edited by a translator. It is unclear if a pre-translation by one of the better MT systems would be helpful. While the translations are judged to be reasonably good, the difference between MT and human translation means that they have to be changed. The editing cost to get from an MT to a finished good translation could be higher than the cost for translating everything by hand. It could be helpful in this case to have a quality estimation to give translators an overview if the sentences translated by an MT need no change, some editing, or a new translation.
 
