@@ -97,7 +97,7 @@ Several aspects of BLEU have room for improvement to get a score closer to human
 | HTER             | Yes (plus edited reference) | No                           | -                                 | No               |
 | TERp             | Yes                         | Yes                          | different editing cost            | Yes              |
 
-**All metrics in comparison** {#tbl:Metrics}
+Table: **All metrics in comparison** {#tbl:Metrics}
 
 \subsection{Challenges for Metrics}
 
@@ -136,7 +136,7 @@ Table @tbl:Dataexample_DE and table @tbl:Dataexample_CZ show two examples of the
 | **DeepL**      | Spaltglas       | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 | **Bing**       | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 
-**Example Sentences German** {#tbl:Dataexample_DE}
+Table: **Example Sentences German** {#tbl:Dataexample_DE}
 
 | **Translator** | **Example 1**      | **Example 2**                                                |
 | -------------- | ------------------ | ------------------------------------------------------------ |
@@ -146,7 +146,7 @@ Table @tbl:Dataexample_DE and table @tbl:Dataexample_CZ show two examples of the
 | **Google**     | Štěrbinové sklo    | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a stav použitých doplňků. |
 | **DeepL**      | Štěrbina Sklo      | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. |
 
-**Example Sentences Czech** {#tbl:Dataexample_CZ}
+Table: **Example Sentences Czech** {#tbl:Dataexample_CZ}
 
 \subsection{Machine Translators}
 
