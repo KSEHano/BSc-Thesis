@@ -24,6 +24,8 @@ bibliography:
 #formatting
 #table-of-contents: true
 number-sections: true
+top-level-devision: section
+table-of-contents: true
 
 filters:
 - type: json
@@ -41,7 +43,8 @@ variables:
   - left=30mm
   - right=30mm
   linestretch: 1.25
-  tirtlepage: true
+  titlepage: true
+  book: true
   
 
 

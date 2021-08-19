@@ -1,8 +1,40 @@
-\begin{abstract}
+---
+
+title: "Comparison of different Machine Translation Engines with BLEU"
+
+author:
+
+​	name: Kaja Hano
+
+​	email: khano@medionauten.de
+
+date: 22nd of August 2021
+
+city: Osnabrück
+
+degree: Bachelor of Sience
+
+area: Cognitive Science
+
+supervisors:
+
+ - name: Dr. phil. Tobias Thelen
+
+   email: tobias.thelen@uni-osnabrueck.de
+
+   title: First supervisor
+
+ - name: Dr. Elia Bruni
+
+   email: elia.bruni@uni-osnabrueck.de
+
+   title: Second supervisor
+
+abstract: |
 
 Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
 
-\end{abstract}
+---
 
 \newpage
 
@@ -32,7 +64,7 @@ The BLEU score does not give an indication of an objectively good translation bu
 
 Mathematical BLEU is mainly based on the so-called precision $p = \frac{m}{t}$, *m* being the number of matches and *t* being the number of n-grams in the hypothesis [@recall]. The use of unigrams allows for an assessment of adequacy, that is that the words are correct. Higher number n-grams account for fluency, that is if the translation is readable as a coherent sentence. So the basic BLEU score is based on the
 
- $p*{all} = \displaystyle\sum*{n =1}^{N} w_n* \frac{m_n}{t_n}$
+ $p_{all} = \displaystyle\sum_{n =1}^{N} w_n* \frac{m_n}{t_n}$
 
 where N is equal to 4, the biggest n-grams considered and $w_n$ are the weights for the n-grams and $w_n = \frac{1}{N}$ [@BLEU]. Going with $p_{all}$ means that words can be counted several times, i.e a sentence consisting of a word with high frequency like "the" could lead to an inflated score. To avoid the overuse of high-frequency words the maximum number of occurrences of a word in one reference is counted and the n-gram count is clipped, this is the modified precision [@BLEU]. On a corpus or several sentences, the modified precision is then the sum of the clipped n-gram matches of all sentences divided by the number of candidate n-grams. This is done to avoid that a translation is entirely made out of high-frequency words. The n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences, and all matches are added together to give the modified n-gram count:
 
@@ -395,5 +427,5 @@ MT systems are good but not good enough to compete with professional translators
 
 \section{Acknowledgments}
 
-I thank Wietzke Consulting for providing the data and recruiting the participants.
+Throughout the process of the thesis I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants. I also thank my family and friends for help with the study preparations and for their insights during the editing process.
 
