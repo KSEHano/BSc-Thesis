@@ -208,9 +208,19 @@ In this section, I will first present the results of the BLEU study, then the re
 
 For the BLEU score, a higher number is better while for the ranks a low number is. On a first look, the numbers are all close together in the same area but there are some significant differences between the results. The score presented for BLEU is the average of the corpus scores for all chapters.
 
-For the Czech translations, all differences are significant as seen in table @tbl:Cz_h to @tbl:Cz_1aa_h. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
+For the Czech translations, all differences are significant as seen in figure @fig:CZ_BLEU. In each version, Google gives the best translation followed by SDL Trados and finally Bing. It is obvious to see that difference between SDL Trados and Bing is smaller than the one between SDL Trados and Google. In the comparison between all the MTs and the human translation, in table @tbl:Cz_1aa_h, it is interesting to see that the score for the human translation is the lowest.
 
-![BLEU score for Czech](images/CZ_BLEU.png){#fig:CZ_BLEU}
+![BLEU score for Czech (significant differences are marked with a *)](images/CZ_BLEU.png){#fig:CZ_BLEU}
+
+
+
+
+
+In the translations to German, @fig:DE_score, it looks a little different Bing still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two one against all versions, it is Google that ranks the highest with a significant difference to SDL Trados and DeepL that have no significant difference to each other. There is no significant difference between the other two. Bing has always a significantly lower score than the other MT systems.
+
+![BLEU score for German (significant differences are marked with a *)](images/DE_BLEU.png){#fig:DE_score}
+
+
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -218,7 +228,7 @@ For the Czech translations, all differences are significant as seen in table @tb
 | SDL Trados      | **0.45**  | **1.634** |
 | Bing            | **0.444** | **1.693** |
 
-:{#tbl:Cz_h} **Czech reference is human**:  Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
+: **Czech reference is human**: {#tbl:Cz_h}  Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
@@ -236,12 +246,6 @@ For the Czech translations, all differences are significant as seen in table @tb
 | human           | **0.593** | **2.635** |
 
 : **Czech one agains all with human hypothesis**: {#tbl:Cz_1aa_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold, the references are all other translations
-
-
-
-In the translations to German, it looks a little different Bing still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two one against all versions, it is Google that ranks the highest with a significant difference to SDL Trados and DeepL that have no significant difference to each other. There is no significant difference between the other two. Bing has always a significantly lower score than the other MT systems.
-
-![BLEU score for German](images/DE_BLEU.png){#fig:DE_score}
 
 | **Translators** | **Bleu** | **Rank**  |
 | --------------- | -------- | --------- |
@@ -273,7 +277,15 @@ In the translations to German, it looks a little different Bing still has the wo
 
 \subsection{Evaluation Study}
 
-The human judgments show that the participants judged Google and human translations into Czech to be the best. However, there is no significant difference between any of the translators. They are significantly different in terms of ranks.
+The human judgments, @#fig:study, show that the participants judged Google and human translations into Czech to be the best. However, there is no significant difference between any of the translators. They are significantly different in terms of ranks.
+
+It looks a little different for the German study. The ranks again were all significantly different from each other. DeepL was judged to be the best without a significant difference to the second best Google. The human and SDL Trados translations have significantly lower scores than DeepL. Bing has the lowest score with a significant difference from all other translators.
+
+The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
+
+![Study Results (significant differences are marked with a *, lines indicate that there are only significant differences between the marked values)](images/StudyResults.png){#fig:study}
+
+
 
 | **Translator** | **Results** | **Rank** |
 | -------------- | ----------- | -------- |
@@ -284,7 +296,7 @@ The human judgments show that the participants judged Google and human translati
 
 : **Study results Czech**: {#tbl:Cz_study} significant differences are bold
 
-It looks a little different for the German study. The ranks again were all significantly different from each other. DeepL was judged to be the best without a significant difference to the second best Google. The human and SDL Trados translations have significantly lower scores than DeepL. Bing has the lowest score with a significant difference from all other translators.
+
 
 | **Translator** | **Result** | **Rank** |
 | -------------- | ---------- | -------- |
@@ -296,15 +308,13 @@ It looks a little different for the German study. The ranks again were all signi
 
 : **Study results German**: {#tbl:De_study} significant differences are bold, * are only significantly different to first place
 
-The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
-
-![Study results](images/StudyResults.png){#fig:study}
-
 \subsection{Comparison between Computational and Human Evaluation}
 
 Table @tbl:Cz_comparison and @tbl:De_comparison show the results of the human scores as well as the BLEU scores done on the whole corpus of question in one with the human translation as reference. The BLEU score for the human translation is the highest with a lot of difference from the other translations.
 
 The Czech results show that the order of human and Google, as well as Bing and SDL Trados, are switched. For the translations into German, the human translation jumps to the front with the highest BLEU score the order of the remaining translators stays the same.
+
+
 
 | **Translator** | **Human** | **Corpus Bleu** |
 | -------------- | --------- | --------------- |
