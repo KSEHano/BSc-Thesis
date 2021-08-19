@@ -24,7 +24,7 @@ bibliography:
 #formatting
 #table-of-contents: true
 number-sections: true
-top-level-devision: section
+top-level-division: section
 table-of-contents: true
 
 filters:
