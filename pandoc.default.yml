@@ -41,6 +41,7 @@ variables:
   - left=30mm
   - right=30mm
   linestretch: 1.25
+  tirtlepage: true
   
 
 
