@@ -16,16 +16,13 @@ metadata:
   citeproc-preamble: bibliography_preamble.latex
   template: eisvogel.tex
   title: Comparison of different Machine Translation Engines with BLEU
+  titlepage: true
+  book: true
+  linestretch: 1.25
 
-# Settings for the bibliography
-bibliography:
-- source.bib
 
-#formatting
-#table-of-contents: true
-number-sections: true
-top-level-division: section
-table-of-contents: true
+
+
 
 filters:
 - type: json
@@ -42,11 +39,17 @@ variables:
   - bottom=30mm
   - left=30mm
   - right=30mm
-  linestretch: 1.25
-  titlepage: true
-  book: true
+  
   
 
+# Settings for the bibliography
+bibliography:
+- source.bib 
+#formatting
+#table-of-contents: true
+number-sections: true
+top-level-division: section
+table-of-contents: true
 
 
 # Add log files to the output
