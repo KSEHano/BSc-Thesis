@@ -46,7 +46,7 @@ bibliography:
 #formatting
 #table-of-contents: true
 number-sections: true
-#top-level-division: chapter
+top-level-division: chapter
 table-of-contents: true
 
 
