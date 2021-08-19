@@ -6,7 +6,7 @@ to: pdf
 
 input-files:
   - Thesis.md
-output-file: output/example.pdf
+output-file: output/khano_BA.pdf
 standalone: true
 template: eisvogel.tex
 # Specify meta data not added in the Markdown file
@@ -46,7 +46,7 @@ bibliography:
 #formatting
 #table-of-contents: true
 number-sections: true
-top-level-division: chapter
+#top-level-division: chapter
 table-of-contents: true
 
 
