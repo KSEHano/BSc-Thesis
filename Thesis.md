@@ -216,7 +216,7 @@ For the Czech translations, all differences are significant as seen in table @tb
 | SDL Trados      | **0.45**  | **1.634** |
 | Bing            | **0.444** | **1.693** |
 
-: **Czech reference is human**: {#tbl:Cz_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
+{#tbl:Cz_h} **Czech reference is human**:  Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
