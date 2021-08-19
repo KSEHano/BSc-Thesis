@@ -97,7 +97,7 @@ Several aspects of BLEU have room for improvement to get a score closer to human
 | HTER             | Yes (plus edited reference) | No                           | -                                 | No               |
 | TERp             | Yes                         | Yes                          | different editing cost            | Yes              |
 
-: **All metrics in comparison** {#tbl:Metrics}
+**All metrics in comparison** {#tbl:Metrics}
 
 \subsection{Challenges for Metrics}
 
@@ -136,7 +136,7 @@ Table @tbl:Dataexample_DE and table @tbl:Dataexample_CZ show two examples of the
 | **DeepL**      | Spaltglas       | Es ist möglich, den Status des Systems und des Netzwerks, den Status der Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 | **Bing**       | Schlitzglas     | Es ist möglich, den Status des Systems und des Netzes, den Status von Verbrauchsmaterialien wie Toner und Papier und die Situation der verwendeten Optionen zu überprüfen. |
 
-: **Example Sentences German** {#tbl:Dataexample_DE}
+**Example Sentences German** {#tbl:Dataexample_DE}
 
 | **Translator** | **Example 1**      | **Example 2**                                                |
 | -------------- | ------------------ | ------------------------------------------------------------ |
@@ -146,7 +146,7 @@ Table @tbl:Dataexample_DE and table @tbl:Dataexample_CZ show two examples of the
 | **Google**     | Štěrbinové sklo    | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a stav použitých doplňků. |
 | **DeepL**      | Štěrbina Sklo      | Je možné zkontrolovat stav systému a sítě, stav spotřebního materiálu, jako je toner a papír, a situaci používaných možností. |
 
-: **Example Sentences Czech** {#tbl:Dataexample_CZ}
+**Example Sentences Czech** {#tbl:Dataexample_CZ}
 
 \subsection{Machine Translators}
 
@@ -180,7 +180,7 @@ The experiment was done by the participants remotely and without supervision. Ea
 
 The general questions asked for the typical age and gender and specific to the study also native language and language pairs they translate. They were also questioned on their personal use of MT systems. They were asked what kind of systems they used. Generic, ones that translate text without any further information and do not change, adaptive, that can change with new input, customizable, that are changed to a specific language pair and domain, other or no MT system at all. The next question was when they use it in the translation process, in pre or post-editing, during the translation, or never. Another question was what kind of CAT tools were used, SDL Trados, memoQ, Wordfast, others, or none. The second to last question was how often they use MT systems to translate words, phrases, sentences, or documents on a scale from never to always. The final question asked how they would rate the quality of MT they normally encounter.
 
-For the evaluation of the main part, the average was calculated overall candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the Spearman correlation between the human and machine evaluation.
+For the evaluation of the main part, the average was calculated overall candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the Spearman correlation between the human and machine evaluation. The Spearman correlation coefficient was chosen as a measure because this correlation shows a monotonous correlation between two variables that are not necessarily bivariate nor have a normal distribution as the data were in this experiment [@Spearman].
 
 ![Screenshot of study](images\screenshot.png){#fig:scrennshot}
 
