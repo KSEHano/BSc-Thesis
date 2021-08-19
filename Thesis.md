@@ -109,7 +109,7 @@ Several aspects of BLEU have room for improvement to get a score closer to human
 
 Table: **All metrics in comparison** {#tbl:Metrics}
 
-# Challenges for Metrics
+## Challenges for Metrics
 
 Metrics like BLEU and its alternatives can have systematic errors. @Re-examining used an algorithm based on MT metrics to detect paraphrases. They discover some common mistakes that lead to the misclassification of pairs of sentences as paraphrases. This is similar to evaluating the quality of a translation with a reference.
 
@@ -118,8 +118,6 @@ The first source for mistakes is *misleading lexical overlap* as some sentences 
 The next source of mistakes stems from a *lack of world knowledge* if not given the appropriate knowledge MT systems can not know if something is the same like a professional position and the name of the person filling it [@Re-examining]. This is not much of a problem for MT systems in general as they seem to translate very closely to the source. More of a problem are synonyms especially again, this source of mistakes is reduced by TERp and METEOR, which consider synonyms. In those cases it would be important to have a domain specific resource, because not all synonyms are appropriate in every domain.
 
 The mistakes above can lead to systematic errors and an inappropriate scoring for different sentences, qualitative different sentences can be scored the same and sentences that have the same quality could be scored different.
-
-
 
 ## Quality Estimation
 
@@ -364,8 +362,6 @@ The correlation between the human judgment is even lower in the German study. Th
 | **rank**  | **-0.121**      |
 
 : **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
-
-
 
 # Discussion
 
