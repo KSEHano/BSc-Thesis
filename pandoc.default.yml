@@ -8,7 +8,7 @@ input-files:
   - Thesis.md
 output-file: output/khano_BA.pdf
 standalone: true
-template: eisvogel.tex
+template: newtemplate.tex
 # Specify meta data not added in the Markdown file
 metadata:
   xnos-number-by-section: false
@@ -17,10 +17,18 @@ metadata:
   titlepage: true
   book: true
   linestretch: 1.25
+  float-placement-figure: h
 
 
 
+# Settings for the bibliography
+bibliography:
+- source.bib 
 
+#formatting
+number-sections: true
+top-level-division: chapter
+table-of-contents: true
 
 filters:
 - type: json
@@ -40,14 +48,8 @@ filters:
   
   
 
-# Settings for the bibliography
-bibliography:
-- source.bib 
-#formatting
-#table-of-contents: true
-number-sections: true
-top-level-division: chapter
-table-of-contents: true
+
+
 
 
 # Add log files to the output
