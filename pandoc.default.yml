@@ -8,14 +8,12 @@ input-files:
   - Thesis.md
 output-file: output/example.pdf
 standalone: true
-
+template: eisvogel.tex
 # Specify meta data not added in the Markdown file
 metadata:
-  author:
-  - Kaja Hano
+  xnos-number-by-section: false
   citeproc-preamble: bibliography_preamble.latex
-  template: eisvogel.tex
-  title: Comparison of different Machine Translation Engines with BLEU
+  toc-own-page: true
   titlepage: true
   book: true
   linestretch: 1.25
@@ -31,14 +29,14 @@ filters:
 - type: json
   path: pandoc-citeproc-preamble
 
-variables:
-  fontsize: 12pt
+#variables:
+#  fontsize: 12pt
 
-  geometry:
-  - top=30mm
-  - bottom=30mm
-  - left=30mm
-  - right=30mm
+#  geometry:
+#  - top=30mm
+#  - bottom=30mm
+#  - left=30mm
+#  - right=30mm
   
   
 
