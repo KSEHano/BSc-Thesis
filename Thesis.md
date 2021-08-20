@@ -1,4 +1,5 @@
 ---
+​---
 title: "Comparison of different Machine Translation Engines with BLEU"
 author:
   name: Kaja Hano
@@ -22,6 +23,7 @@ acknowledgments: |
 I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
 
 I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
+...
 ---
 
 
@@ -48,7 +50,7 @@ The BLEU score does not give an indication of an objectively good translation bu
 
 Mathematical BLEU is mainly based on the so-called precision $p = \frac{m}{t}$, *m* being the number of matches and *t* being the number of n-grams in the hypothesis [@recall]. The use of unigrams allows for an assessment of adequacy, that is that the words are correct. Higher number n-grams account for fluency, that is if the translation is readable as a coherent sentence. So the basic BLEU score is based on
 
- $p*{all} = \displaystyle\sum_{n =1}^{N} w_n* \frac{m_n}{t_n}$
+ $p_{all} = \displaystyle\sum_{n =1}^{N} w_n \frac{m_n}{t_n}$
 
 where N is equal to 4, the biggest n-grams considered and $w_n$ are the weights for the n-grams and $w_n = \frac{1}{N}$ [@BLEU]. Using $p_{all}$ means that words can be counted several times, i.e a sentence consisting of a word with high frequency like "the" could lead to an inflated score. To avoid the overuse of high-frequency, words the maximum number of occurrences of a word in one reference is counted and the n-gram count is clipped, this is the modified precision [@BLEU]. On a corpus or several sentences, the modified precision is then the sum of the clipped n-gram matches of all sentences divided by the number of candidate n-grams. The n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences, and all matches are added together to give the modified n-gram count:
 
@@ -367,7 +369,7 @@ The correlation between the human judgment is even lower in the German study, ta
 | **value** | 0,063           |
 | **rank**  | **-0,121**      |
 
-: **Correlation between study results and BLEU scores for German**  : {#tbl:De_corr}
+: **Correlation between study results and BLEU scores for German**: {#tbl:De_corr}
 
 # Discussion
 
