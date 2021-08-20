@@ -16,8 +16,8 @@ supervisors:
     title: Second supervisor
 abstract: |
     Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
-acknowledgments:|
-Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
+acknowledgments: |
+  Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
 
 I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
 
@@ -50,7 +50,7 @@ Mathematical BLEU is mainly based on the so-called precision $p = \frac{m}{t}$, 
 
 where N is equal to 4, the biggest n-grams considered and $w_n$ are the weights for the n-grams and $w_n = \frac{1}{N}$ [@BLEU]. Using $p_{all}$ means that words can be counted several times, i.e a sentence consisting of a word with high frequency like "the" could lead to an inflated score. To avoid the overuse of high-frequency, words the maximum number of occurrences of a word in one reference is counted and the n-gram count is clipped, this is the modified precision [@BLEU]. On a corpus or several sentences, the modified precision is then the sum of the clipped n-gram matches of all sentences divided by the number of candidate n-grams. The n-gram counts are modified, i.e. the maximum number of occurrences is counted in the reference sentences, and all matches are added together to give the modified n-gram count:
 
-$p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in C} Count*{clip} (n-gram)}{\displaystyle\sum_{C' \in Candidates} \displaystyle\sum_{n-gram' \in C'} Count(n-gram')}$
+$p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in C} Count_{clip} (n-gram)}{\displaystyle\sum_{C' \in Candidates} \displaystyle\sum_{n-gram' \in C'} Count(n-gram')}$
 
 The brevity penalty is done so that shorter sentences do not get an inflated score. If the length of the candidate c is longer than the length of the reference r that is closest to the candidate the brevity penalty is 1 in other cases it is $e^{(1-r/c)}$ [@BLEU].
 
