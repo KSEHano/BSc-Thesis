@@ -33,9 +33,10 @@ table-of-contents: true
 toc-depth: 2
 
 filters:
-- citeproc
 - type: bib
   path: pandoc-citeproc-preamble
+- citeproc
+
 
 
 
