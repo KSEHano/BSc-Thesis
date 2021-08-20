@@ -35,8 +35,8 @@ filters:
 - type: json
   path: pandoc-xnos
 - citeproc
-- type: json
-  path: pandoc-citeproc-preamble
+#- type: json
+#  path: pandoc-citeproc-preamble
 
 #variables:
 #  fontsize: 12pt
