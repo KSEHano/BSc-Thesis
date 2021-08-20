@@ -18,15 +18,9 @@ description: |
   Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
 acknowledgements: |
   Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
-  I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis
+  I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
   I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
 ---
-
-\begin{abstract}
-
-Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation
-
-\end{abstract}
 
 # Introduction
 
@@ -230,11 +224,11 @@ For the Czech translations, all differences are significant as seen in figure @f
 
 In the translations to German, figure @fig:DE_BLEU, it looks a little different Bing still has the worst results with a significant difference to the other results. When I only used a human reference DeepL was the best translator but had no significant difference to Google or SDL Trados. In the two one against all versions, it is Google that ranks the highest with a significant difference to SDL Trados and DeepL that have no significant difference to each other. Bing has always a significantly lower score than the other MT systems.
 
-![**Czech BLEU scores**](images/CZ_BLEU.png){#fig:CZ_BLEU}
+![**Czech BLEU scores**: "*" mark significance](images/CZ_BLEU.png){#fig:CZ_BLEU}
 
 
 
-![**German BLEU scores**](images/DE_BLEU.png){#fig:DE_BLEU}
+![**German BLEU scores**: "*" mark significance](images/DE_BLEU.png){#fig:DE_BLEU}
 
 
 
@@ -299,7 +293,7 @@ It looks a little different for the German study. The ranks again were all signi
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
-![Study Results](images/StudyResults.png){#fig:studyresults}
+![**Study Results**: "*" mark significance, lines indicate if they are only significantly different to one other result](images/StudyResults.png){#fig:studyresults}
 
 
 
