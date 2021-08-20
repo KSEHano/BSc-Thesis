@@ -407,4 +407,3 @@ MT systems are good but not good enough to compete with professional translators
 
 # References
 
-::: {#refs} :::
