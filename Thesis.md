@@ -1,11 +1,16 @@
----
+| title                                                        | author                              | date                | city      | degree              | area              | supervisor                                                   | abstract                                                     | acknowledgments                                              |
+| ------------------------------------------------------------ | ----------------------------------- | ------------------- | --------- | ------------------- | ----------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Comparison of different Machine Translation Engines with BLEU | name: Kaja Hano email: khano@uos.de | 22nd of August 2021 | Osnabrück | Bachelor of Science | Cognitive Science | - name: Dr. phil. Tobias Thelen<br/>    email: tobias.thelen@uni-osnabrueck.de<br/>    title: First supervisor<br/>  - name: Dr. Elia Bruni<br/>    email: elia.bruni@uni-osnabrueck.de<br/>    title: Second supervisor | Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation. | Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.<br/><br/>I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.<br/><br/>I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis. |
+
+
+
 title: "Comparison of different Machine Translation Engines with BLEU"
 author:
   name: Kaja Hano
-  email: khano@medionauten.de
+  email: khano@uos.de
 date: 22nd of August 2021
 city: Osnabrück
-degree: Bachelor of Sience
+degree: Bachelor of Science
 area: Cognitive Science
 supervisors:
   - name: Dr. phil. Tobias Thelen
@@ -14,15 +19,14 @@ supervisors:
   - name: Dr. Elia Bruni
     email: elia.bruni@uni-osnabrueck.de
     title: Second supervisor
-abstract: |
+  abstract: |
     Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
-acknowledgments: |
-  Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
+  acknowledgments: |
+    Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
 
 I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
 
 I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
----
 
 # Introduction
 
@@ -403,3 +407,6 @@ It can tentatively be said that Google and DeepL are the best MT systems, althou
 
 MT systems are good but not good enough to compete with professional translators. They can augment their work but in the translation of important documents or more complicated and domain-specific texts, a professional translation is still needed. It remains to be seen how MT systems develop in the next few years and how the evaluation of them can improve. There has been continuous improvement in the last few years and there are always new metrics published. For the near future, the job of a translator does not seem to be in danger but might be subject to changes.
 
+# References
+
+::: {#refs} :::

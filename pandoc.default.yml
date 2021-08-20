@@ -27,7 +27,7 @@ bibliography:
 
 #formatting
 number-sections: true
-top-level-division: section
+top-level-division: chapter
 table-of-contents: true
 toc-depth: 2
 
