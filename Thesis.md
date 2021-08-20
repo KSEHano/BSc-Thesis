@@ -14,8 +14,14 @@ supervisors:
   - name: Dr. Elia Bruni
     email: elia.bruni@uni-osnabrueck.de
     title: Second supervisor
-    abstract: |
+abstract: |
     Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
+acknowledgments:|
+Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
+
+I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
+
+I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
 ---
 
 # Introduction
@@ -396,12 +402,4 @@ The human evaluation showed not many significant differences between the differe
 It can tentatively be said that Google and DeepL are the best MT systems, although, SDL Trados is close behind. Bing seems to be a bad choice as a translator, although it should be said that it had the disadvantage to not be able to translate the whole document at once. However, despite the low ranking of the human translation, it seems that at the moment a translation has to be augmented by a professional translator. The BLEU scores of the one against all with human hypothesis show that the human translation is quite different from the MT and it could be that this was the reason for the low score in the study. In the examples above it is obvious that the translations by professionals are quite different. For one they use the appropriate terminology, for another they use another style of writing if a literal or a word-for-word translation is not the right choice. This is a reason why an MT has to be edited by a translator. It is unclear if a pre-translation by one of the better MT systems would be helpful. While the translations are judged to be reasonably good, the difference between MT and human translation means that they have to be changed. The editing cost to get from an MT to a finished good translation could be higher than the cost for translating everything by hand. It could be helpful in this case to have a quality estimation to give translators an overview if the sentences translated by an MT need no change, some editing, or a new translation.
 
 MT systems are good but not good enough to compete with professional translators. They can augment their work but in the translation of important documents or more complicated and domain-specific texts, a professional translation is still needed. It remains to be seen how MT systems develop in the next few years and how the evaluation of them can improve. There has been continuous improvement in the last few years and there are always new metrics published. For the near future, the job of a translator does not seem to be in danger but might be subject to changes.
-
-# Acknowledgments
-
-Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
-
-I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
-
-I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
 
