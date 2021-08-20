@@ -30,13 +30,13 @@ number-sections: true
 top-level-division: chapter
 table-of-contents: true
 toc-depth: 2
-citeproc: true
-#filters:
-#- type: json
-#  path: pandoc-xnos
-#- citeproc
-#- type: json
-#  path: pandoc-citeproc-preamble
+#citeproc: true
+filters:
+- type: json
+  path: pandoc-xnos
+- citeproc
+- type: json
+  path: pandoc-citeproc-preamble
 
 #variables:
 #  fontsize: 12pt
