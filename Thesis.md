@@ -1,7 +1,4 @@
-| title                                                        | author                                       | date                | city      | degree              | area              | titlepage-rule-color | supervisors                                                  | acknowledgements                                             | abstract                                                     |
-| ------------------------------------------------------------ | -------------------------------------------- | ------------------- | --------- | ------------------- | ----------------- | -------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Comparison of different Machine Translation Engines with BLEU | name  email          Kaja Hano  khano@uos.de | 22nd of August 2021 | Osnabrück | Bachelor of Science | Cognitive Science | AC0634               | name  email  title          Dr. phil. Tobias Thelen  tobias.thelen@uni-osnabrueck.de  First supervisor             name  email  title          Dr. Elia Brun  elia.bruni@uni-osnabrueck.de  Second supervisor | Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.<br/><br/>I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.<br/><br/>I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis. | Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation. |
-
+---
 title: "Comparison of different Machine Translation Engines with BLEU"
 author:
   name: Kaja Hano
@@ -11,20 +8,23 @@ city: Osnabrück
 degree: Bachelor of Science
 area: Cognitive Science
 supervisors:
-  - name: Dr. phil. Tobias Thelen
-    email: tobias.thelen@uni-osnabrueck.de
-    title: First supervisor
-  - name: Dr. Elia Bruni
-    email: elia.bruni@uni-osnabrueck.de
-    title: Second supervisor
-  abstract: |
-    Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
-  acknowledgments: |
-    Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
+- name: Dr. phil. Tobias Thelen
+  email: tobias.thelen@uni-osnabrueck.de
+  title: First supervisor
+- name: Dr. Elia Bruni
+  email: elia.bruni@uni-osnabrueck.de
+  title: Second supervisor
+abstract: |
+  Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
+acknowledgments: |
+  Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
 
 I thank my supervisor Dr. Tobias Thelen for regularly providing feedback and help during the duration of the Bachelor thesis.
 
 I also thank my family and friends for their help with the study preparations and their insights during the editing process. Especially Christopher Gundler for editing and providing me with panwiz to write and format this thesis.
+---
+
+
 
 # Introduction
 
