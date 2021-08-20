@@ -30,7 +30,7 @@ number-sections: true
 top-level-division: chapter
 table-of-contents: true
 toc-depth: 2
-biblatex: true
+citeproc: true
 #filters:
 #- type: json
 #  path: pandoc-xnos
