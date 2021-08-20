@@ -14,7 +14,7 @@ supervisors:
 - name: Dr. Elia Bruni
   email: elia.bruni@uni-osnabrueck.de
   title: Second supervisor
-abstract: |
+description: |
   Many Machine translation (MT) systems exist but professional translators do not necessarily know how accurate the different systems translate. In this work, several MT systems, SDL Trados, Google, Bing, and DeepL are compared to each other. The quality of the translations from English to German and Czech are used for that. They are compared with the metric BLEU and professional translators. Google and DeepL achieve the highest scores followed by SDL Trados, Bing had the lowest scores. It is surprising that in the study with the professional translators the human translations do not get the best results. On these grounds, only a tentative recommendation for Google, DeepL, and SDL Trados can be given but only as additional help to a human translation.
 acknowledgements: |
   Throughout the process of the thesis, I received great support. I thank Wietzke Consulting for providing the data and recruiting the participants.
