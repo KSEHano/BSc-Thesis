@@ -17,7 +17,7 @@ metadata:
   titlepage: true
   book: true
   linestretch: 1.25
-  float-placement-figure: !hbtp
+  float-placement-figure: !hb
 
 
 

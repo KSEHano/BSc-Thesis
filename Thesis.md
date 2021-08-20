@@ -240,6 +240,8 @@ In the translations to German, figure @fig:DE_BLEU, it looks a little different 
 
 : **Czech reference is human**: {#tbl:Cz_h} Average of the corpus BLEU calculated on each chapter and average rank, significant differences are bold
 
+\newpage
+
 | **Translators** | **Bleu**  | **Rank**  |
 | --------------- | --------- | --------- |
 | google          | **0,818** | **1,479** |
