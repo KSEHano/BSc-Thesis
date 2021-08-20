@@ -48,7 +48,7 @@ $p_n = \frac{\displaystyle\sum_{C \in Candidates} \displaystyle\sum_{n-gram \in 
 
 The brevity penalty is done so that shorter sentences do not get an inflated score. If the length of the candidate c is longer than the length of the reference r that is closest to the candidate the brevity penalty is 1 in other cases it is $e^{(1-r/c)}$ [@BLEU].
 
-$$BP = \begin{cases} 1 & \text{if } c>r \ e^{(1-r/c)} & \text{if } c\leq r \end{cases}$$
+$$BP = \begin{cases} 1 & \text{if } c>r \\ e^{(1-r/c)} & \text{if } c\leq r \end{cases}$$
 
 The final definition of BLEU is then
 
@@ -190,7 +190,7 @@ The general questions asked for the typical age and gender and specific to the s
 
 For the evaluation of the main part, the average was calculated overall candidates for each question and then the average for each translator was calculated. The BLEU score was newly calculated on the study questions with the human translation as a reference and all possible translations including the human translation as hypotheses. This was important to be able to calculate the Spearman correlation between the human and machine evaluation. The Spearman correlation coefficient was chosen as a measure because this correlation shows a monotonous correlation between two variables that are not necessarily bivariate nor have a normal distribution as the data were in this experiment [@Spearman]. 
 
-SCREENSHOT
+![**Example Question**](images/screenshot.png)
 
 ### Participants
 
@@ -291,7 +291,7 @@ It looks a little different for the German study. The ranks again were all signi
 
 The scores overall are very mediocre on a 1 to 5 scale they are all below a four.
 
-![Study Results](images/studyresults.png){#fig:studyresults}
+![Study Results](images/StudyResults.png){#fig:studyresults}
 
 
 
