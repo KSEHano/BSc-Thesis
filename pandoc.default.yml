@@ -12,12 +12,13 @@ template: newtemplate.tex
 # Specify meta data not added in the Markdown file
 metadata:
   xnos-number-by-section: false
-  citeproc-preamble: bibliography_preamble.latex
+  
   toc-own-page: true
   titlepage: true
   book: true
   linestretch: 1.25
   float-placement-figure: h
+  citeproc-preamble: bibliography_preamble.latex
 
 
 
@@ -29,29 +30,16 @@ bibliography:
 number-sections: true
 top-level-division: chapter
 table-of-contents: true
+toc-depth: 2
 
 filters:
-- type: json
-  path: pandoc-xnos
 - citeproc
-- type: json
+- type: bib
   path: pandoc-citeproc-preamble
-
-#variables:
-#  fontsize: 12pt
-
-#  geometry:
-#  - top=30mm
-#  - bottom=30mm
-#  - left=30mm
-#  - right=30mm
-  
-  
-
-
 
 
 
 # Add log files to the output
 log-file: output/log.json
+wrap: preserve
 ...
