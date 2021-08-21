@@ -1,9 +1,9 @@
 ---
 title: "Comparison of different Machine Translation Engines with BLEU"
 author:
-  name: Kaja Hano
+  name: Kaja Seraphina Elisa Hano
   email: khano@uos.de
-date: 22nd of August 2021
+date: 21st of August 2021
 city: Osnabrück
 degree: Bachelor of Science
 area: Cognitive Science
